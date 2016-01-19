@@ -6,7 +6,7 @@ import (
 )
 
 func TestLock(t *testing.T) {
-	l := New()
+	l := NewNamedMutex()
 	l.Lock("test1")
 	l.Lock("test2")
 	if len(l.mutexMap) != 2 {
@@ -30,7 +30,7 @@ func TestLock(t *testing.T) {
 }
 
 func TestLock2(t *testing.T) {
-	l := New()
+	l := NewNamedMutex()
 	l.Lock("test1")
 	go func() {
 		time.Sleep(time.Millisecond * 10)
@@ -41,7 +41,7 @@ func TestLock2(t *testing.T) {
 }
 
 func TestTryLock(t *testing.T) {
-	l := New()
+	l := NewNamedMutex()
 	if !l.TryLock("test1") {
 		t.Error("Didn't acquire lock")
 	}
@@ -58,7 +58,7 @@ func TestTryLock(t *testing.T) {
 }
 
 func TestTryLockTimeout(t *testing.T) {
-	l := New()
+	l := NewNamedMutex()
 	if !l.TryLockTimeout("test1", time.Millisecond) {
 		t.Error("Didn't acquire lock")
 	}

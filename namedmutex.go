@@ -15,8 +15,8 @@ type NamedMutex struct {
 	localMutex sync.Mutex
 }
 
-// New makes a new named mutex instance.
-func New() *NamedMutex {
+// NewNamedMutex makes a new named mutex instance.
+func NewNamedMutex() *NamedMutex {
 	return &NamedMutex{
 		mutexMap: make(map[string]chan struct{}),
 	}
