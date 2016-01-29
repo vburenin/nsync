@@ -20,3 +20,15 @@ The following set of methods is available:
   3. TryLock(name) - return true if lock acquired, otherwise false.
   4. TryLockTimeout(name, timeout) - tries to acquire lock for a certain amount of time. Returns false if timeouts.
   
+# Semaphore
+
+Semaphore is a standard semaphore implementation that uses channel as a synchronization point.
+
+The following set of methods is available:
+
+1. Acquire - acquire lock.
+2. Release - releases lock.
+3. TryAcquire - tries to acqure lock returning true/false in case of success of failure respectively.
+4. TryAcqureTimeout - the same as TryAcquire, however, timeout can be provided.
+5. Value - return number of currently holding semaphores.
+
