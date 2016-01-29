@@ -2,7 +2,7 @@
 // primitive into Go language. It uses built-in channel with empty struct
 // so it doesn't utilize a lot of memory to buffer acquired elements.
 
-package nmutex
+package nsync
 
 import "time"
 

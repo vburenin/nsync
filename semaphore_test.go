@@ -1,4 +1,4 @@
-package nmutex
+package nsync
 
 import (
 	"testing"

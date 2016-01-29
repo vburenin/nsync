@@ -1,8 +1,7 @@
-package nmutex
+package nsync
 
 import (
 	"testing"
-	//"time"
 	"time"
 )
 
