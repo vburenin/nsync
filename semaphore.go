@@ -23,10 +23,6 @@ func (s *Semaphore) Acquire() {
 	s.sch <- struct{}{}
 }
 
-func (s *Semaphore) Value() int {
-	return len(s.sch)
-}
-
 // Release releases acquired semaphore. If semaphore is not acquired it will panic.
 func (s *Semaphore) Release() {
 	select {
@@ -55,4 +51,9 @@ func (s *Semaphore) TryAcquireTimeout(d time.Duration) bool {
 	case <-time.After(d):
 		return false
 	}
+}
+
+// Value returns the number of currently acquired semaphores.
+func (s *Semaphore) Value() int {
+	return len(s.sch)
 }
