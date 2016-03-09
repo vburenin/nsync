@@ -32,3 +32,11 @@ The following set of methods is available:
 4. TryAcqureTimeout - the same as TryAcquire, however, timeout can be provided.
 5. Value - return number of currently holding semaphores.
 
+
+# OnceMutex
+
+Mutex that can be acquired only once. Successful lock will return true. All concurrent locks will block and return false when mutex is unlocked.
+
+# NamedOnceMutex
+
+A named set of OnceMutex. Can be used to update local cache of data identified by some key to avoid many concurrent request for the same data if data is not in the cache yet.
