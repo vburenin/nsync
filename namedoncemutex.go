@@ -11,7 +11,7 @@ type OnceMutex struct {
 	used bool
 }
 
-// NewOnceMutex returns an instance of OneMutex.
+// NewOnceMutex returns an instance of OnсeMutex.
 func NewOnceMutex() *OnceMutex {
 	return &OnceMutex{}
 }

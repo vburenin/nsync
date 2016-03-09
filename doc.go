@@ -11,5 +11,4 @@
 // Semaphore - a semaphore primitive that can be acquired limited number of times.
 //
 // TryMutex - A mutex that provide ability to set a timeout to acquire a lock.
-
 package nsync
