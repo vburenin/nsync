@@ -11,6 +11,10 @@ type OnceMutex struct {
 	used bool
 }
 
+func NewOnceMutex() *OnceMutex {
+	return &OnceMutex{}
+}
+
 // Lock tries to acquire lock.
 func (this *OnceMutex) Lock() bool {
 	this.mu.Lock()
@@ -40,6 +44,12 @@ type NamedOnceMutex struct {
 	mutex   sync.Mutex
 }
 
+func NewNamedOnceMutex() *NamedOnceMutex {
+	return &NamedOnceMutex{
+		lockMap: make(map[interface{}]*OnceMutex),
+	}
+}
+
 // Lock try to acquire a lock for provided id. If attempt is successful, true is returned
 // If lock is already acquired by something else it will block until mutex is unlocked returning false.
 func (this *NamedOnceMutex) Lock(useMutexKey interface{}) bool {
@@ -62,8 +72,10 @@ func (this *NamedOnceMutex) Unlock(useMutexKey interface{}) {
 	this.mutex.Lock()
 	m, ok := this.lockMap[useMutexKey]
 	if ok {
-		delete(useMutexKey, this.lockMap)
+		delete(this.lockMap, useMutexKey)
 		this.mutex.Unlock()
-		return m.Unlock()
+		m.Unlock()
+	} else {
+		this.mutex.Unlock()
 	}
 }
