@@ -1,5 +1,3 @@
-package nsync
-
 // This package provide a set of primitives that are not provided by standard Go library.
 //
 // NamedMutex - a map of dynamically created mutexes by a referred name.
@@ -13,3 +11,5 @@ package nsync
 // Semaphore - a semaphore primitive that can be acquired limited number of times.
 //
 // TryMutex - A mutex that provide ability to set a timeout to acquire a lock.
+
+package nsync
