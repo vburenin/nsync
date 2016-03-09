@@ -11,24 +11,25 @@ type OnceMutex struct {
 	used bool
 }
 
+// NewOnceMutex returns an instance of OneMutex.
 func NewOnceMutex() *OnceMutex {
 	return &OnceMutex{}
 }
 
 // Lock tries to acquire lock.
-func (this *OnceMutex) Lock() bool {
-	this.mu.Lock()
-	if this.used {
-		this.mu.Unlock()
+func (om *OnceMutex) Lock() bool {
+	om.mu.Lock()
+	if om.used {
+		om.mu.Unlock()
 		return false
 	}
 	return true
 }
 
 // Unlock tries to release a lock.
-func (this *OnceMutex) Unlock() {
-	this.used = true
-	this.mu.Unlock()
+func (om *OnceMutex) Unlock() {
+	om.used = true
+	om.mu.Unlock()
 }
 
 // NamedOnceMutex is a map of dynamically created mutexes by provided id.
@@ -38,12 +39,12 @@ func (this *OnceMutex) Unlock() {
 // Unlocked mutex is discarded. Next attempt to acquire a lock for the same id will succeed.
 // Such behaviour may be used to refresh a local cache of data identified by some key avoiding
 // concurrent request to receive a refreshed value for the same key.
-
 type NamedOnceMutex struct {
 	lockMap map[interface{}]*OnceMutex
 	mutex   sync.Mutex
 }
 
+// NewNamedOnceMutex returns an instance of NamedOnceMutex.
 func NewNamedOnceMutex() *NamedOnceMutex {
 	return &NamedOnceMutex{
 		lockMap: make(map[interface{}]*OnceMutex),
@@ -52,30 +53,30 @@ func NewNamedOnceMutex() *NamedOnceMutex {
 
 // Lock try to acquire a lock for provided id. If attempt is successful, true is returned
 // If lock is already acquired by something else it will block until mutex is unlocked returning false.
-func (this *NamedOnceMutex) Lock(useMutexKey interface{}) bool {
-	this.mutex.Lock()
-	m, ok := this.lockMap[useMutexKey]
+func (nom *NamedOnceMutex) Lock(useMutexKey interface{}) bool {
+	nom.mutex.Lock()
+	m, ok := nom.lockMap[useMutexKey]
 	if ok {
-		this.mutex.Unlock()
+		nom.mutex.Unlock()
 		return m.Lock()
 	}
 
 	m = &OnceMutex{}
 	m.Lock()
-	this.lockMap[useMutexKey] = m
-	this.mutex.Unlock()
+	nom.lockMap[useMutexKey] = m
+	nom.mutex.Unlock()
 	return true
 }
 
 // Unlock unlocks the locked mutex. Used mutex will be discarded.
-func (this *NamedOnceMutex) Unlock(useMutexKey interface{}) {
-	this.mutex.Lock()
-	m, ok := this.lockMap[useMutexKey]
+func (nom *NamedOnceMutex) Unlock(useMutexKey interface{}) {
+	nom.mutex.Lock()
+	m, ok := nom.lockMap[useMutexKey]
 	if ok {
-		delete(this.lockMap, useMutexKey)
-		this.mutex.Unlock()
+		delete(nom.lockMap, useMutexKey)
+		nom.mutex.Unlock()
 		m.Unlock()
 	} else {
-		this.mutex.Unlock()
+		nom.mutex.Unlock()
 	}
 }

@@ -4,7 +4,6 @@ import "time"
 
 // TryMutex is another implementation to the lock primitives
 // providing additional way to acquire locks.
-
 type TryMutex struct {
 	c chan struct{}
 }

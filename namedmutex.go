@@ -1,3 +1,6 @@
+// Mutex that can be acquired by a given name. Makes overall life much easier during handling map key specific updates.
+// Warning: Created named mutexes are never removed.
+
 package nsync
 
 import (
@@ -9,7 +12,6 @@ import (
 // Can be used in factories which produce singleton objects depending
 // on the name. For example: queue name, user name, etc.
 // Locks are based on channels, so an additional TryLock has been introduced.
-
 type NamedMutex struct {
 	mutexMap   map[string]chan struct{}
 	localMutex sync.Mutex

@@ -28,7 +28,7 @@ func (s *Semaphore) Release() {
 	select {
 	case <-s.sch:
 	default:
-		panic("No semafore locks!")
+		panic("No semaphore locks!")
 	}
 }
 
@@ -42,7 +42,7 @@ func (s *Semaphore) TryAcquire() bool {
 	}
 }
 
-// TryAcquire tries to acquire semaphore for a specified time interval.
+// TryAcquireTimeout tries to acquire semaphore for a specified time interval.
 // Returns true/false if success/failure accordingly.
 func (s *Semaphore) TryAcquireTimeout(d time.Duration) bool {
 	select {
