@@ -1,4 +1,4 @@
-// This package provide a set of primitives that are not provided by standard Go library.
+// nsync package provides a set of primitives that are not provided by standard Go library.
 //
 // NamedMutex - a map of dynamically created mutexes by a referred name.
 //

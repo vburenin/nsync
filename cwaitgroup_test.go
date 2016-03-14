@@ -1,9 +1,9 @@
 package nsync
 
 import (
+	"sync"
 	"testing"
 	"time"
-	"sync"
 )
 
 func TestCWaitGroup(t *testing.T) {
