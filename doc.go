@@ -11,4 +11,7 @@
 // Semaphore - a semaphore primitive that can be acquired limited number of times.
 //
 // TryMutex - A mutex that provide ability to set a timeout to acquire a lock.
+//
+// ControlWaitGroup - a controlled goroutine executor that can limit the number concurrently running
+// goroutines. Can help to solve a resource exhaustion problem.
 package nsync
