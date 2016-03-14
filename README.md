@@ -1,3 +1,6 @@
+
+[![GoDoc](https://godoc.org/github.com/vburenin/nsync?status.svg)](https://godoc.org/github.com/vburenin/nsync)
+
 # TryMutex
 
 TryMutex is another synchronization primitive that additionaly to standard Lock and Unlock 
@@ -40,3 +43,7 @@ Mutex that can be acquired only once. Successful lock will return true. All conc
 # NamedOnceMutex
 
 A named set of OnceMutex. Can be used to update local cache of data identified by some key to avoid many concurrent request for the same data if data is not in the cache yet.
+
+# ControlWaitGroup
+
+A controlled goroutine executor that can limit the number concurrently running goroutines. Can help to solve a resource exhaustion problem.
