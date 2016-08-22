@@ -14,4 +14,7 @@
 //
 // ControlWaitGroup - a controlled goroutine executor that can limit the number concurrently running
 // goroutines. Can help to solve a resource exhaustion problem.
+//
+// SyncFlag - an atomic flag that is wrapped by mutex. Mutex can be set/unset separately to prevent
+// the flag from being set/unset.
 package nsync
