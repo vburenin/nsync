@@ -1,0 +1,51 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/vburenin/nsync
+cpu: Apple M3 Max
+BenchmarkNamedMutex/HotKey            	 3578258	        31.87 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey            	 4556925	        26.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey            	 4316197	        26.77 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-4          	 4552776	        26.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-4          	 4451004	        26.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-4          	 4610906	        25.98 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-16         	 4629428	        26.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-16         	 4544055	        26.16 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-16         	 4660118	        25.82 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel            	 4656840	        25.89 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel            	 4639765	        25.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel            	 4656651	        26.03 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-4          	 2834073	        42.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-4          	 2898037	        43.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-4          	 2694615	        38.39 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-16         	 2923418	        42.77 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-16         	 3007735	        44.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-16         	 2726391	        43.07 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys            	 4452303	        26.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys            	 4460343	        26.91 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys            	 4457168	        26.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-4          	16759581	         7.006 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-4          	16678442	         7.010 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-4          	16961730	         7.008 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-16         	47036924	         2.934 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-16         	36803222	         3.017 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-16         	42024806	         2.701 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys                   	 3709752	        32.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys                   	 3743866	        32.06 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys                   	 3740220	        32.06 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-4                 	 3707384	        32.28 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-4                 	 3723224	        32.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-4                 	 3744066	        32.02 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-16                	 3765615	        32.01 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-16                	 3722209	        32.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-16                	 3721290	        32.22 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/Create1024                 	    1275	     87959 ns/op	  174049 B/op	    1495 allocs/op
+BenchmarkNamedMutex/Create1024                 	    1179	    104370 ns/op	  174048 B/op	    1495 allocs/op
+BenchmarkNamedMutex/Create1024                 	    1150	    104988 ns/op	  174048 B/op	    1495 allocs/op
+BenchmarkNamedMutex/Create1024-4               	    1401	     84530 ns/op	  174048 B/op	    1495 allocs/op
+BenchmarkNamedMutex/Create1024-4               	    1419	     84274 ns/op	  174048 B/op	    1495 allocs/op
+BenchmarkNamedMutex/Create1024-4               	    1419	     84725 ns/op	  174048 B/op	    1495 allocs/op
+BenchmarkNamedMutex/Create1024-16              	    1368	     88111 ns/op	  174049 B/op	    1495 allocs/op
+BenchmarkNamedMutex/Create1024-16              	    1407	     87034 ns/op	  174048 B/op	    1495 allocs/op
+BenchmarkNamedMutex/Create1024-16              	    1386	     87768 ns/op	  174048 B/op	    1495 allocs/op
+PASS
+ok  	github.com/vburenin/nsync	6.299s

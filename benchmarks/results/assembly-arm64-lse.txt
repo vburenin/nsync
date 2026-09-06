@@ -1,0 +1,18 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/vburenin/nsync/benchmarks/asm
+cpu: Apple M3 Max
+BenchmarkAtomicPair/Intrinsics         	103596198	         2.269 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Intrinsics         	100000000	         2.046 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Intrinsics         	100000000	         2.078 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Intrinsics         	100000000	         2.050 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Intrinsics         	100000000	         2.051 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Intrinsics         	100000000	         2.045 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Assembly           	78988498	         3.023 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Assembly           	79375998	         3.029 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Assembly           	79193780	         3.032 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Assembly           	78761682	         3.030 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Assembly           	79157839	         3.090 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Assembly           	76016506	         3.056 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/vburenin/nsync/benchmarks/asm	3.021s

@@ -1,0 +1,133 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/vburenin/nsync
+cpu: Apple M3 Max
+                              │ benchmarks/results/three-state-arm64.txt │ benchmarks/results/spin16-arm64.txt  │
+                              │                  sec/op                  │    sec/op     vs base                │
+TryMutex/Uncontended                                        3.348n ± ∞ ¹   3.344n ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Uncontended-4                                      3.324n ± ∞ ¹   3.344n ± ∞ ¹       ~ (p=0.400 n=3) ²
+TryMutex/Uncontended-16                                     3.353n ± ∞ ¹   3.334n ± ∞ ¹       ~ (p=0.400 n=3) ²
+TryMutex/TrySuccess                                         6.260n ± ∞ ¹   6.220n ± ∞ ¹       ~ (p=0.100 n=3) ²
+TryMutex/TrySuccess-4                                       6.257n ± ∞ ¹   6.270n ± ∞ ¹       ~ (p=0.200 n=3) ²
+TryMutex/TrySuccess-16                                      6.240n ± ∞ ¹   6.286n ± ∞ ¹       ~ (p=0.700 n=3) ²
+TryMutex/TryFailure                                         2.284n ± ∞ ¹   2.295n ± ∞ ¹       ~ (p=0.100 n=3) ²
+TryMutex/TryFailure-4                                       2.286n ± ∞ ¹   2.298n ± ∞ ¹       ~ (p=0.700 n=3) ²
+TryMutex/TryFailure-16                                      2.298n ± ∞ ¹   2.300n ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutSuccess                                     6.331n ± ∞ ¹   6.215n ± ∞ ¹       ~ (p=0.500 n=3) ²
+TryMutex/TimeoutSuccess-4                                   6.187n ± ∞ ¹   6.198n ± ∞ ¹       ~ (p=0.700 n=3) ²
+TryMutex/TimeoutSuccess-16                                  6.215n ± ∞ ¹   6.224n ± ∞ ¹       ~ (p=0.700 n=3) ²
+TryMutex/TimeoutExpired                                     393.7n ± ∞ ¹   389.9n ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutExpired-4                                   480.9n ± ∞ ¹   472.6n ± ∞ ¹       ~ (p=0.100 n=3) ²
+TryMutex/TimeoutExpired-16                                  478.6n ± ∞ ¹   482.5n ± ∞ ¹       ~ (p=0.700 n=3) ²
+TryMutex/Contended0                                         2.947n ± ∞ ¹   2.924n ± ∞ ¹       ~ (p=0.200 n=3) ²
+TryMutex/Contended0-4                                       9.262n ± ∞ ¹   8.879n ± ∞ ¹       ~ (p=0.700 n=3) ²
+TryMutex/Contended0-16                                      12.72n ± ∞ ¹   13.30n ± ∞ ¹       ~ (p=0.200 n=3) ²
+TryMutex/Contended100                                       234.5n ± ∞ ¹   261.0n ± ∞ ¹       ~ (p=0.100 n=3) ²
+TryMutex/Contended100-4                                     252.1n ± ∞ ¹   274.2n ± ∞ ¹       ~ (p=0.100 n=3) ²
+TryMutex/Contended100-16                                    250.9n ± ∞ ¹   271.8n ± ∞ ¹       ~ (p=0.100 n=3) ²
+NamedMutex/HotKey                                           24.28n ± ∞ ¹   24.30n ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/HotKey-4                                         24.29n ± ∞ ¹   24.33n ± ∞ ¹       ~ (p=0.400 n=3) ²
+NamedMutex/HotKey-16                                        24.16n ± ∞ ¹   24.76n ± ∞ ¹       ~ (p=0.100 n=3) ²
+NamedMutex/SameKeyParallel                                  24.24n ± ∞ ¹   24.26n ± ∞ ¹       ~ (p=0.700 n=3) ²
+NamedMutex/SameKeyParallel-4                                62.03n ± ∞ ¹   51.20n ± ∞ ¹       ~ (p=0.100 n=3) ²
+NamedMutex/SameKeyParallel-16                               78.42n ± ∞ ¹   86.94n ± ∞ ¹       ~ (p=0.100 n=3) ²
+NamedMutex/IndependentKeys                                  24.97n ± ∞ ¹   24.95n ± ∞ ¹       ~ (p=0.700 n=3) ²
+NamedMutex/IndependentKeys-4                                5.809n ± ∞ ¹   5.736n ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/IndependentKeys-16                               2.257n ± ∞ ¹   2.213n ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/ManyKeys                                         36.13n ± ∞ ¹   38.13n ± ∞ ¹       ~ (p=0.100 n=3) ²
+NamedMutex/ManyKeys-4                                       35.67n ± ∞ ¹   37.51n ± ∞ ¹       ~ (p=0.100 n=3) ²
+NamedMutex/ManyKeys-16                                      35.62n ± ∞ ¹   37.58n ± ∞ ¹       ~ (p=0.100 n=3) ²
+NamedMutex/Create1024                                       133.5µ ± ∞ ¹   133.2µ ± ∞ ¹       ~ (p=0.700 n=3) ²
+NamedMutex/Create1024-4                                     108.2µ ± ∞ ¹   108.5µ ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/Create1024-16                                    112.0µ ± ∞ ¹   110.5µ ± ∞ ¹       ~ (p=0.700 n=3) ²
+geomean                                                     37.60n         37.91n        +0.82%
+¹ need >= 6 samples for confidence interval at level 0.95
+² need >= 4 samples to detect a difference at alpha level 0.05
+
+                              │ benchmarks/results/three-state-arm64.txt │  benchmarks/results/spin16-arm64.txt  │
+                              │                   B/op                   │     B/op       vs base                │
+TryMutex/Uncontended                                         0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Uncontended-4                                       0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Uncontended-16                                      0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TrySuccess                                          0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TrySuccess-4                                        0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TrySuccess-16                                       0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TryFailure                                          0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TryFailure-4                                        0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TryFailure-16                                       0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutSuccess                                      0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutSuccess-4                                    0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutSuccess-16                                   0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutExpired                                      137.0 ± ∞ ¹     137.0 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutExpired-4                                    137.0 ± ∞ ¹     137.0 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutExpired-16                                   137.0 ± ∞ ¹     137.0 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Contended0                                          0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Contended0-4                                        0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Contended0-16                                       0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Contended100                                        0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Contended100-4                                      0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Contended100-16                                     0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/HotKey                                            0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/HotKey-4                                          0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/HotKey-16                                         0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/SameKeyParallel                                   0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/SameKeyParallel-4                                 0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/SameKeyParallel-16                                0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/IndependentKeys                                   0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/IndependentKeys-4                                 0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/IndependentKeys-16                                0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/ManyKeys                                          0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/ManyKeys-4                                        0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/ManyKeys-16                                       0.000 ± ∞ ¹     0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/Create1024                                      201.3Ki ± ∞ ¹   201.4Ki ± ∞ ¹       ~ (p=1.000 n=3) ³
+NamedMutex/Create1024-4                                    201.4Ki ± ∞ ¹   201.3Ki ± ∞ ¹       ~ (p=0.700 n=3) ³
+NamedMutex/Create1024-16                                   201.3Ki ± ∞ ¹   201.3Ki ± ∞ ¹       ~ (p=0.700 n=3) ³
+geomean                                                                ⁴                  -0.00%               ⁴
+¹ need >= 6 samples for confidence interval at level 0.95
+² all samples are equal
+³ need >= 4 samples to detect a difference at alpha level 0.05
+⁴ summaries must be >0 to compute geomean
+
+                              │ benchmarks/results/three-state-arm64.txt │ benchmarks/results/spin16-arm64.txt  │
+                              │                allocs/op                 │  allocs/op    vs base                │
+TryMutex/Uncontended                                         0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Uncontended-4                                       0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Uncontended-16                                      0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TrySuccess                                          0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TrySuccess-4                                        0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TrySuccess-16                                       0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TryFailure                                          0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TryFailure-4                                        0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TryFailure-16                                       0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutSuccess                                      0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutSuccess-4                                    0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutSuccess-16                                   0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutExpired                                      3.000 ± ∞ ¹    3.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutExpired-4                                    3.000 ± ∞ ¹    3.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/TimeoutExpired-16                                   3.000 ± ∞ ¹    3.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Contended0                                          0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Contended0-4                                        0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Contended0-16                                       0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Contended100                                        0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Contended100-4                                      0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+TryMutex/Contended100-16                                     0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/HotKey                                            0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/HotKey-4                                          0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/HotKey-16                                         0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/SameKeyParallel                                   0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/SameKeyParallel-4                                 0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/SameKeyParallel-16                                0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/IndependentKeys                                   0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/IndependentKeys-4                                 0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/IndependentKeys-16                                0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/ManyKeys                                          0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/ManyKeys-4                                        0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/ManyKeys-16                                       0.000 ± ∞ ¹    0.000 ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/Create1024                                       3.439k ± ∞ ¹   3.439k ± ∞ ¹       ~ (p=1.000 n=3) ³
+NamedMutex/Create1024-4                                     3.439k ± ∞ ¹   3.439k ± ∞ ¹       ~ (p=1.000 n=3) ²
+NamedMutex/Create1024-16                                    3.439k ± ∞ ¹   3.439k ± ∞ ¹       ~ (p=1.000 n=3) ²
+geomean                                                                ⁴                 +0.00%               ⁴
+¹ need >= 6 samples for confidence interval at level 0.95
+² all samples are equal
+³ need >= 4 samples to detect a difference at alpha level 0.05
+⁴ summaries must be >0 to compute geomean

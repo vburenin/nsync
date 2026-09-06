@@ -1,0 +1,33 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/vburenin/nsync
+cpu: Apple M3 Max
+BenchmarkNamedOnceMutex/Uncontended            	 1383922	        84.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended            	 1536708	        78.27 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended            	 1524645	        78.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-4          	 1501915	        79.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-4          	 1525914	        78.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-4          	 1530819	        78.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-16         	 1520376	        78.78 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-16         	 1502608	        79.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-16         	 1527024	        78.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel        	 1511168	        78.72 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel        	 1509974	        78.73 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel        	 1525783	        78.93 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-4      	  555254	       227.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-4      	  541118	       227.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-4      	  558766	       225.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-16     	  268528	       487.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-16     	  263294	       505.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-16     	  258553	       483.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys        	 1767213	        67.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys        	 1767124	        67.86 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys        	 1746796	        65.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-4      	 7635570	        15.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-4      	 7690088	        15.12 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-4      	 7941037	        15.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-16     	23555205	         4.851 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-16     	19395506	         5.170 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-16     	20400211	         5.047 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/vburenin/nsync	4.117s

@@ -1,0 +1,114 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/vburenin/nsync
+cpu: Apple M3 Max
+BenchmarkNamedMutex/HotKey    	14708049	         7.475 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey    	19593570	         6.138 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey    	19543311	         6.131 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-4  	19571600	         6.142 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-4  	19454070	         6.126 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-4  	20929777	         6.122 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-16 	20697984	         6.121 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-16 	20800228	         6.097 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-16 	19139392	         6.236 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel            	18216318	         6.452 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel            	18397852	         6.232 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel            	19614387	         6.144 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-4          	 4768219	        25.22 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-4          	 4722348	        26.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-4          	 4985761	        24.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-16         	 3551043	        33.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-16         	 3535750	        34.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-16         	 3461883	        33.77 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys            	19837851	         6.137 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys            	19406223	         6.133 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys            	19590505	         6.155 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-4          	35299744	         3.353 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-4          	35334824	         3.328 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-4          	35456634	         3.329 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-16         	87561808	         1.395 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-16         	83849740	         1.405 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-16         	84339067	         1.440 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys                   	 2924397	        38.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys                   	 3202999	        37.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys                   	 3237074	        37.05 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-4                 	 3213399	        37.26 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-4                 	 3216956	        37.39 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-4                 	 3223968	        37.22 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-16                	 3264202	        37.01 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-16                	 3203947	        37.61 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-16                	 3185356	        37.79 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/Create1024                 	    1286	     89714 ns/op	  169921 B/op	    1472 allocs/op
+BenchmarkNamedMutex/Create1024                 	    1178	    106112 ns/op	  169920 B/op	    1472 allocs/op
+BenchmarkNamedMutex/Create1024                 	    1129	    106405 ns/op	  169920 B/op	    1472 allocs/op
+BenchmarkNamedMutex/Create1024-4               	    1366	     86570 ns/op	  169920 B/op	    1472 allocs/op
+BenchmarkNamedMutex/Create1024-4               	    1384	     85750 ns/op	  169920 B/op	    1472 allocs/op
+BenchmarkNamedMutex/Create1024-4               	    1387	     88860 ns/op	  169920 B/op	    1472 allocs/op
+BenchmarkNamedMutex/Create1024-16              	    1266	     95807 ns/op	  169921 B/op	    1472 allocs/op
+BenchmarkNamedMutex/Create1024-16              	    1357	     88910 ns/op	  169920 B/op	    1472 allocs/op
+BenchmarkNamedMutex/Create1024-16              	    1370	     88475 ns/op	  169920 B/op	    1472 allocs/op
+BenchmarkNamedOnceMutex/Uncontended            	 5494892	        21.95 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended            	 5528913	        21.93 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended            	 5570728	        21.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-4          	 5617484	        21.77 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-4          	 5565184	        21.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-4          	 5555930	        21.95 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-16         	 5522965	        21.86 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-16         	 5565582	        21.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-16         	 5570512	        21.73 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel        	 5524670	        22.41 ns/op	         1.000 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel        	 5394459	        22.18 ns/op	         1.000 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel        	 5421308	        22.17 ns/op	         1.000 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-4      	 2213276	        52.20 ns/op	         0.9894 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-4      	 2166657	        54.31 ns/op	         0.9881 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-4      	 1979905	        55.73 ns/op	         0.9872 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-16     	  729630	       179.7 ns/op	         0.8834 leaders/op	       2 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-16     	 1000000	       135.5 ns/op	         0.8848 leaders/op	       2 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-16     	  976640	       128.3 ns/op	         0.8816 leaders/op	       2 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys        	 6622196	        18.16 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys        	 6624922	        18.13 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys        	 6621388	        18.13 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-4      	24441993	         4.867 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-4      	23414826	         4.839 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-4      	24568766	         4.870 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-16     	71694590	         1.653 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-16     	71556206	         1.783 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-16     	71774598	         1.686 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex                 	 7286618	        16.16 ns/op	      88 B/op	       2 allocs/op
+BenchmarkConstruction/TryMutex                 	 5758456	        21.00 ns/op	      88 B/op	       2 allocs/op
+BenchmarkConstruction/TryMutex                 	 5713729	        21.02 ns/op	      88 B/op	       2 allocs/op
+BenchmarkConstruction/TryMutex-4               	 7992828	        14.69 ns/op	      88 B/op	       2 allocs/op
+BenchmarkConstruction/TryMutex-4               	 8146108	        14.73 ns/op	      88 B/op	       2 allocs/op
+BenchmarkConstruction/TryMutex-4               	 8100171	        14.85 ns/op	      88 B/op	       2 allocs/op
+BenchmarkConstruction/TryMutex-16              	 7806908	        15.95 ns/op	      88 B/op	       2 allocs/op
+BenchmarkConstruction/TryMutex-16              	 7317202	        15.83 ns/op	      88 B/op	       2 allocs/op
+BenchmarkConstruction/TryMutex-16              	 7698249	        15.78 ns/op	      88 B/op	       2 allocs/op
+BenchmarkConstruction/Semaphore                	 4214080	        29.49 ns/op	     160 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore                	 4221536	        28.15 ns/op	     160 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore                	 4338099	        28.38 ns/op	     160 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-4              	 4016450	        30.79 ns/op	     160 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-4              	 4605022	        25.45 ns/op	     160 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-4              	 4817398	        25.65 ns/op	     160 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-16             	 4145948	        28.37 ns/op	     160 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-16             	 4208956	        29.93 ns/op	     160 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-16             	 3659372	        32.38 ns/op	     160 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey       	 2091595	        58.16 ns/op	     272 B/op	       2 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey       	 2046619	        58.37 ns/op	     272 B/op	       2 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey       	 2063216	        58.20 ns/op	     272 B/op	       2 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-4     	 2343709	        51.22 ns/op	     272 B/op	       2 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-4     	 2335587	        51.15 ns/op	     272 B/op	       2 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-4     	 2392914	        50.47 ns/op	     272 B/op	       2 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-16    	 2280846	        53.00 ns/op	     272 B/op	       2 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-16    	 2247946	        55.21 ns/op	     272 B/op	       2 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-16    	 2051246	        58.74 ns/op	     272 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey        	 1732994	        68.20 ns/op	     312 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey        	 1540887	        77.81 ns/op	     312 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey        	 1541920	        77.74 ns/op	     312 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-4      	 1923723	        62.48 ns/op	     312 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-4      	 1904163	        62.97 ns/op	     312 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-4      	 1898137	        62.80 ns/op	     312 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-16     	 1829212	        65.10 ns/op	     312 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-16     	 1847622	        64.92 ns/op	     312 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-16     	 1825438	        65.69 ns/op	     312 B/op	       2 allocs/op
+PASS
+ok  	github.com/vburenin/nsync	14.473s

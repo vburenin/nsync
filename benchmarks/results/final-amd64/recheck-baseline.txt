@@ -1,0 +1,144 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkOnceMutex/First-4      	27233541	        20.71 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-16     	23345089	        24.65 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-32     	25008835	        23.62 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4          	  993034	       604.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1000000	       561.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	  986785	       562.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkStandardMutex/Uncontended-4     	166172473	         3.558 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16    	160373174	         3.710 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32    	158411755	         3.745 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4       	40091090	        17.22 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16      	12710310	        64.13 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32      	 6596803	       123.6 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/vburenin/nsync	8.679s
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkOnceMutex/First-4      	26785525	        22.83 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-16     	26830093	        23.50 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-32     	25264845	        23.58 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4          	 1045896	       556.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1000000	       562.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1000000	       529.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkStandardMutex/Uncontended-4     	164702772	         3.619 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16    	166095410	         3.572 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32    	160511564	         3.639 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4       	47714433	        16.16 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16      	 8809278	        96.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32      	 5708734	       108.2 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/vburenin/nsync	8.195s
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkOnceMutex/First-4      	30160038	        20.22 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-16     	24760918	        23.64 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-32     	26162256	        23.33 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4          	 1000000	       552.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1000000	       549.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1000000	       557.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkStandardMutex/Uncontended-4     	162548018	         3.658 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16    	167343440	         3.546 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32    	160015621	         3.730 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4       	28884360	        17.65 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16      	10951693	        72.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32      	 6832014	       116.0 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/vburenin/nsync	7.530s
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkOnceMutex/First-4      	28932014	        21.20 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-16     	26831151	        21.33 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-32     	27313482	        22.79 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4          	 1084329	       559.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1000000	       556.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1000000	       552.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkStandardMutex/Uncontended-4     	166145374	         3.572 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16    	165747338	         3.596 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32    	162175671	         3.686 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4       	29972156	        16.99 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16      	11172666	        69.90 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32      	 6312933	        93.17 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/vburenin/nsync	7.382s
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkOnceMutex/First-4      	27096630	        22.89 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-16     	25967725	        23.04 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-32     	29129874	        20.61 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4          	  883922	       622.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	  920066	       573.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1000000	       547.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkStandardMutex/Uncontended-4     	162165474	         3.647 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16    	163125792	         3.642 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32    	166514839	         3.559 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4       	33642561	        17.03 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16      	11510430	        97.83 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32      	 5381323	       120.3 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/vburenin/nsync	7.780s
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkOnceMutex/First-4      	23318836	        22.31 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-16     	21582597	        31.85 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-32     	29716352	        19.59 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4          	 1000000	       512.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1141476	       531.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	  957538	       574.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkStandardMutex/Uncontended-4     	163324866	         3.650 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16    	162984966	         3.670 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32    	166967244	         3.550 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4       	36987153	        15.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16      	 8972254	        80.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32      	 6518413	       111.6 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/vburenin/nsync	7.479s
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkOnceMutex/First-4      	25027219	        21.28 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-16     	28065790	        21.68 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-32     	25665290	        23.10 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4          	  910083	       562.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1000000	       544.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1000000	       568.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkStandardMutex/Uncontended-4     	162458497	         3.693 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16    	162082405	         3.700 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32    	164883687	         3.599 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4       	32734863	        17.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16      	10952025	        59.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32      	 9167487	        96.95 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/vburenin/nsync	7.420s
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkOnceMutex/First-4      	31081616	        20.87 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-16     	28869805	        20.52 ns/op	      16 B/op	       1 allocs/op
+BenchmarkOnceMutex/First-32     	29294773	        20.83 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4          	 1000000	       597.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	  921668	       552.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1000000	       578.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkStandardMutex/Uncontended-4     	162418759	         3.649 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16    	160743036	         3.696 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32    	164061874	         3.626 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4       	35458471	        16.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16      	11035110	        68.06 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32      	 5394061	       115.3 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/vburenin/nsync	7.473s

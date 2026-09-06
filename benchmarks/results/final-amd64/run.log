@@ -1,0 +1,6 @@
+Validating native default and spin implementations
+Running baseline throughput and allocation benchmarks
+Running optimized throughput and allocation benchmarks
+Running baseline and optimized acquisition-latency diagnostics
+Running handwritten assembly and bounded-spin comparisons
+All native AMD64 comparisons completed

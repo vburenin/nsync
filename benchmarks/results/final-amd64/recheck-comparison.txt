@@ -1,0 +1,55 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+                             │ benchmarks/results/final-amd64/recheck-baseline.txt │ benchmarks/results/final-amd64/recheck-optimized.txt │
+                             │                       sec/op                        │            sec/op              vs base               │
+OnceMutex/First-4                                                     21.24n ±  7%                    23.80n ±  9%  +12.05% (p=0.001 n=8)
+OnceMutex/First-16                                                    23.27n ± 12%                    24.85n ± 12%        ~ (p=0.123 n=8)
+OnceMutex/First-32                                                    22.95n ± 15%                    23.45n ±  7%        ~ (p=0.083 n=8)
+ControlWaitGroup/256-4                                                561.1n ±  9%                    525.2n ±  5%   -6.40% (p=0.010 n=8)
+ControlWaitGroup/256-16                                               554.4n ±  4%                    603.9n ± 57%   +8.94% (p=0.010 n=8)
+ControlWaitGroup/256-32                                               560.0n ±  6%                    568.8n ± 26%        ~ (p=0.382 n=8)
+StandardMutex/Uncontended-4                                           3.648n ±  2%                    3.698n ±  2%   +1.37% (p=0.050 n=8)
+StandardMutex/Uncontended-16                                          3.656n ±  3%                    3.592n ±  4%        ~ (p=0.574 n=8)
+StandardMutex/Uncontended-32                                          3.632n ±  3%                    3.740n ±  5%        ~ (p=0.328 n=8)
+StandardMutex/Contended-4                                             17.01n ±  7%                    17.89n ±  8%   +5.17% (p=0.021 n=8)
+StandardMutex/Contended-16                                            71.14n ± 35%                    63.21n ± 23%        ~ (p=0.105 n=8)
+StandardMutex/Contended-32                                            113.4n ± 18%                    113.2n ± 23%        ~ (p=0.959 n=8)
+geomean                                                               39.19n                          39.83n         +1.61%
+
+                             │ benchmarks/results/final-amd64/recheck-baseline.txt │ benchmarks/results/final-amd64/recheck-optimized.txt │
+                             │                        B/op                         │             B/op              vs base                │
+OnceMutex/First-4                                                     16.00 ± 0%                       16.00 ± 0%       ~ (p=1.000 n=8) ¹
+OnceMutex/First-16                                                    16.00 ± 0%                       16.00 ± 0%       ~ (p=1.000 n=8) ¹
+OnceMutex/First-32                                                    16.00 ± 0%                       16.00 ± 0%       ~ (p=1.000 n=8) ¹
+ControlWaitGroup/256-4                                                24.00 ± 0%                       24.00 ± 0%       ~ (p=1.000 n=8) ¹
+ControlWaitGroup/256-16                                               24.00 ± 0%                       24.00 ± 0%       ~ (p=1.000 n=8) ¹
+ControlWaitGroup/256-32                                               24.00 ± 0%                       24.00 ± 0%       ~ (p=1.000 n=8) ¹
+StandardMutex/Uncontended-4                                           0.000 ± 0%                       0.000 ± 0%       ~ (p=1.000 n=8) ¹
+StandardMutex/Uncontended-16                                          0.000 ± 0%                       0.000 ± 0%       ~ (p=1.000 n=8) ¹
+StandardMutex/Uncontended-32                                          0.000 ± 0%                       0.000 ± 0%       ~ (p=1.000 n=8) ¹
+StandardMutex/Contended-4                                             0.000 ± 0%                       0.000 ± 0%       ~ (p=1.000 n=8) ¹
+StandardMutex/Contended-16                                            0.000 ± 0%                       0.000 ± 0%       ~ (p=1.000 n=8) ¹
+StandardMutex/Contended-32                                            0.000 ± 0%                       0.000 ± 0%       ~ (p=1.000 n=8) ¹
+geomean                                                                          ²                                 +0.00%               ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                             │ benchmarks/results/final-amd64/recheck-baseline.txt │ benchmarks/results/final-amd64/recheck-optimized.txt │
+                             │                      allocs/op                      │          allocs/op            vs base                │
+OnceMutex/First-4                                                     1.000 ± 0%                       1.000 ± 0%       ~ (p=1.000 n=8) ¹
+OnceMutex/First-16                                                    1.000 ± 0%                       1.000 ± 0%       ~ (p=1.000 n=8) ¹
+OnceMutex/First-32                                                    1.000 ± 0%                       1.000 ± 0%       ~ (p=1.000 n=8) ¹
+ControlWaitGroup/256-4                                                1.000 ± 0%                       1.000 ± 0%       ~ (p=1.000 n=8) ¹
+ControlWaitGroup/256-16                                               1.000 ± 0%                       1.000 ± 0%       ~ (p=1.000 n=8) ¹
+ControlWaitGroup/256-32                                               1.000 ± 0%                       1.000 ± 0%       ~ (p=1.000 n=8) ¹
+StandardMutex/Uncontended-4                                           0.000 ± 0%                       0.000 ± 0%       ~ (p=1.000 n=8) ¹
+StandardMutex/Uncontended-16                                          0.000 ± 0%                       0.000 ± 0%       ~ (p=1.000 n=8) ¹
+StandardMutex/Uncontended-32                                          0.000 ± 0%                       0.000 ± 0%       ~ (p=1.000 n=8) ¹
+StandardMutex/Contended-4                                             0.000 ± 0%                       0.000 ± 0%       ~ (p=1.000 n=8) ¹
+StandardMutex/Contended-16                                            0.000 ± 0%                       0.000 ± 0%       ~ (p=1.000 n=8) ¹
+StandardMutex/Contended-32                                            0.000 ± 0%                       0.000 ± 0%       ~ (p=1.000 n=8) ¹
+geomean                                                                          ²                                 +0.00%               ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

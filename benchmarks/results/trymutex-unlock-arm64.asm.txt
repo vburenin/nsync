@@ -1,0 +1,37 @@
+TEXT github.com/vburenin/nsync.TryMutex.Unlock(SB) /Users/vburenin/workspace/nsync/trymutex.go
+  trymutex.go:32	0x10014a050		f9400b90		MOVD 16(R28), R16						
+  trymutex.go:32	0x10014a054		eb3063ff		CMP R16, RSP							
+  trymutex.go:32	0x10014a058		54000349		BLS 26(PC)							
+  trymutex.go:32	0x10014a05c		f81e0ffe		MOVD.W R30, -32(RSP)						
+  trymutex.go:32	0x10014a060		f81f83fd		MOVD R29, -8(RSP)						
+  trymutex.go:32	0x10014a064		d10023fd		SUB $8, RSP, R29						
+  mutex.go:143		0x10014a068		3980001b		MOVB (R0), R27							
+  type.go:90		0x10014a06c		b00010fb		ADRP 2215936(PC), R27						
+  type.go:90		0x10014a070		394dbb61		MOVBU 878(R27), R1						
+  type.go:90		0x10014a074		360000e1		TBZ $0, R1, 7(PC)						
+  type.go:90		0x10014a078		b24003e1		ORR $1, ZR, R1							
+  type.go:90		0x10014a07c		93407c3b		SXTW R1, R27							
+  type.go:90		0x10014a080		88fbfc1f		?								
+  type.go:90		0x10014a084		6b01037f		CMPW R1, R27							
+  type.go:90		0x10014a088		9a9f17e2		CSET EQ, R2							
+  type.go:90		0x10014a08c		14000008		JMP 8(PC)							
+  type.go:90		0x10014a090		b24003e1		ORR $1, ZR, R1							
+  type.go:90		0x10014a094		885ffc1b		LDAXRW (R0), R27						
+  type.go:90		0x10014a098		6b01037f		CMPW R1, R27							
+  type.go:90		0x10014a09c		54000061		BNE 3(PC)							
+  type.go:90		0x10014a0a0		881bfc1f		STLXRW ZR, (R0), R27						
+  type.go:90		0x10014a0a4		b5ffff9b		CBNZ R27, -4(PC)						
+  type.go:90		0x10014a0a8		9a9f17e2		CSET EQ, R2							
+  mutex.go:143		0x10014a0ac		37000042		TBNZ $0, R2, 2(PC)						
+  mutex.go:144		0x10014a0b0		97fff89c		CALL github.com/vburenin/nsync.(*mutexState).unlockSlow(SB)	
+  trymutex.go:32	0x10014a0b4		f85f83fd		MOVD -8(RSP), R29						
+  trymutex.go:32	0x10014a0b8		f84207fe		MOVD.P 32(RSP), R30						
+  trymutex.go:32	0x10014a0bc		d65f03c0		RET								
+  trymutex.go:32	0x10014a0c0		f90007e0		MOVD R0, 8(RSP)							
+  trymutex.go:32	0x10014a0c4		aa1e03e3		MOVD R30, R3							
+  trymutex.go:32	0x10014a0c8		97fce07a		CALL runtime.morestack_noctxt.abi0(SB)				
+  trymutex.go:32	0x10014a0cc		f94007e0		MOVD 8(RSP), R0							
+  trymutex.go:32	0x10014a0d0		17ffffe0		JMP github.com/vburenin/nsync.TryMutex.Unlock(SB)		
+  trymutex.go:32	0x10014a0d4		00000000		?								
+  trymutex.go:32	0x10014a0d8		00000000		?								
+  trymutex.go:32	0x10014a0dc		00000000		?								

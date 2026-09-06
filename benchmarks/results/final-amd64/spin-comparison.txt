@@ -1,0 +1,55 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+                         │ benchmarks/results/final-amd64/optimized.txt │ benchmarks/results/final-amd64/spin.txt │
+                         │                    sec/op                    │      sec/op       vs base               │
+TryMutex/Uncontended                                       3.662n ±  5%       3.717n ± 25%        ~ (p=0.556 n=6)
+TryMutex/Uncontended-4                                     3.957n ±  4%       3.841n ± 10%        ~ (p=0.589 n=6)
+TryMutex/Uncontended-16                                    3.909n ±  5%       3.847n ±  5%        ~ (p=0.699 n=6)
+TryMutex/Uncontended-32                                    3.829n ±  5%       3.870n ±  5%        ~ (p=0.197 n=6)
+TryMutex/Contended0                                        3.719n ±  0%       3.863n ±  1%   +3.89% (p=0.002 n=6)
+TryMutex/Contended0-4                                      8.838n ± 13%      10.143n ± 34%        ~ (p=0.180 n=6)
+TryMutex/Contended0-16                                     9.880n ±  2%      10.465n ± 12%        ~ (p=0.065 n=6)
+TryMutex/Contended0-32                                     10.35n ±  2%       11.70n ± 46%        ~ (p=0.368 n=6)
+TryMutex/Contended100                                      85.42n ±  0%       82.20n ±  4%        ~ (p=0.058 n=6)
+TryMutex/Contended100-4                                    135.9n ± 24%       121.6n ± 15%        ~ (p=0.180 n=6)
+TryMutex/Contended100-16                                   115.7n ± 23%       152.7n ± 13%  +31.99% (p=0.009 n=6)
+TryMutex/Contended100-32                                   133.5n ± 16%       159.0n ± 20%  +19.15% (p=0.026 n=6)
+geomean                                                    15.01n             15.83n         +5.47%
+
+                         │ benchmarks/results/final-amd64/optimized.txt │ benchmarks/results/final-amd64/spin.txt │
+                         │                     B/op                     │      B/op        vs base                │
+TryMutex/Uncontended                                       0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Uncontended-4                                     0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Uncontended-16                                    0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Uncontended-32                                    0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended0                                        0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended0-4                                      0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended0-16                                     0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended0-32                                     0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended100                                      0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended100-4                                    0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended100-16                                   0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended100-32                                   0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+geomean                                                               ²                    +0.00%               ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                         │ benchmarks/results/final-amd64/optimized.txt │ benchmarks/results/final-amd64/spin.txt │
+                         │                  allocs/op                   │    allocs/op     vs base                │
+TryMutex/Uncontended                                       0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Uncontended-4                                     0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Uncontended-16                                    0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Uncontended-32                                    0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended0                                        0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended0-4                                      0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended0-16                                     0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended0-32                                     0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended100                                      0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended100-4                                    0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended100-16                                   0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+TryMutex/Contended100-32                                   0.000 ± 0%          0.000 ± 0%       ~ (p=1.000 n=6) ¹
+geomean                                                               ²                    +0.00%               ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

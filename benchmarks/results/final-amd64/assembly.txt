@@ -1,0 +1,18 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync/benchmarks/asm
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkAtomicPair/Intrinsics         	60905824	         3.740 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Intrinsics         	67119818	         3.553 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Intrinsics         	66552380	         3.577 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Intrinsics         	66835183	         3.559 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Intrinsics         	67311057	         3.604 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Intrinsics         	66668703	         3.603 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Assembly           	61692597	         3.910 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Assembly           	61173475	         3.960 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Assembly           	61168641	         3.923 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Assembly           	61201148	         4.011 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Assembly           	61159117	         3.930 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPair/Assembly           	61050945	         3.933 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/vburenin/nsync/benchmarks/asm	2.881s

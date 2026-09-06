@@ -1,49 +1,106 @@
+# nsync
 
-[![GoDoc](https://godoc.org/github.com/vburenin/nsync?status.svg)](https://godoc.org/github.com/vburenin/nsync)
+[![Go Reference](https://pkg.go.dev/badge/github.com/vburenin/nsync.svg)](https://pkg.go.dev/github.com/vburenin/nsync)
 
-# TryMutex
+Synchronization primitives for Go: timed locks, named locks, semaphores, a
+bounded goroutine executor, and an atomic flag with an optional external lock.
 
-TryMutex is another synchronization primitive that additionaly to standard Lock and Unlock 
-provides TryLock and TryLockTimeout methods.
+Requires Go 1.27 or later. The development toolchain is Go 1.27.1.
+The package uses only the standard library. Synchronization uses atomic fast
+paths and condition variables, with no channels in the library implementation.
+The default backend is portable Go; compiler intrinsics emit native atomic
+instructions on ARM, x86, and other Go architectures.
 
-  1. TryLock - tries to acquire lock returning true on success or false if failed.
-  2. TryLockTimeout - tries to acquire a lock during specified time interval return false if time is out.
+```sh
+go get github.com/vburenin/nsync
+```
 
-# NamedMutex
+## TryMutex
 
-Named mutex is a syncroniation primitive that acquires lock based on name.
-Primary usecase for myself is a lazy instantiation of objects based on name
-that may take significant amount of time.
+Create a mutex with `NewTryMutex()`. It provides `Lock`, `Unlock`, `TryLock`, and
+`TryLockTimeout(time.Duration)`. The try methods return whether the lock was
+acquired. Unlocking an unlocked mutex panics.
+Copies of a constructed `TryMutex` share the same lock.
 
+Contended mutexes adaptively hand ownership to waiting goroutines after extended
+waiting. They do not guarantee FIFO order or a strict acquisition-latency bound.
 
-The following set of methods is available:
-  
-  1. Lock(name) - acquire lock by name.
-  2. Unlock(name) - release lock by name.
-  3. TryLock(name) - return true if lock acquired, otherwise false.
-  4. TryLockTimeout(name, timeout) - tries to acquire lock for a certain amount of time. Returns false if timeouts.
-  
-# Semaphore
+For ordinary locks without a timeout, the standard library's `sync.Mutex` also
+provides `TryLock`.
 
-Semaphore is a standard semaphore implementation that uses channel as a synchronization point.
+## NamedMutex
 
-The following set of methods is available:
+`NamedMutex` acquires independent locks by string name. Its zero value is ready
+to use; `NewNamedMutex()` is also available.
 
-1. Acquire - acquire lock.
-2. Release - releases lock.
-3. TryAcquire - tries to acqure lock returning true/false in case of success of failure respectively.
-4. TryAcqureTimeout - the same as TryAcquire, however, timeout can be provided.
-5. Value - return number of currently holding semaphores.
+It provides `Lock(name)`, `Unlock(name)`, `TryLock(name)`, and
+`TryLockTimeout(name, timeout)`. Unlocking an unknown or unlocked name panics.
+Created locks are retained for the lifetime of the instance, so use a bounded
+set of names.
 
+## Semaphore
 
-# OnceMutex
+`NewSemaphore(capacity)` limits concurrent acquisitions. Capacity must be
+positive; zero or negative capacities panic.
 
-Mutex that can be acquired only once. Successful lock will return true. All concurrent locks will block and return false when mutex is unlocked.
+It provides `Acquire`, `Release`, `TryAcquire`, `TryAcquireTimeout`, and `Value`.
+`Value` reports the number of occupied slots. Releasing without an acquisition
+panics. Do not copy a semaphore after first use.
 
-# NamedOnceMutex
+All timed acquisition methods try immediately before waiting. Zero or negative
+timeouts perform a single nonblocking attempt.
 
-A named set of OnceMutex. Can be used to update local cache of data identified by some key to avoid many concurrent request for the same data if data is not in the cache yet.
+## OnceMutex and NamedOnceMutex
 
-# ControlWaitGroup
+`OnceMutex.Lock()` returns true for the first acquisition. Other calls block
+until `Unlock`, then return false. Only the successful caller should unlock it.
+Its zero value is ready to use.
 
-A controlled goroutine executor that can limit the number concurrently running goroutines. Can help to solve a resource exhaustion problem.
+`NamedOnceMutex` maintains an independent `OnceMutex` per key. Its zero value is
+ready to use. Keys must be comparable and equal to themselves (avoid NaN keys).
+`Unlock(key)` discards the completed mutex, so a later `Lock(key)` starts a new
+cycle. Unlocking an unknown key does nothing. This can combine overlapping
+cache refreshes for the same key into a single operation.
+
+## ControlWaitGroup
+
+`NewControlWaitGroup(poolSize)` limits the number of tasks running concurrently.
+The pool size must be positive. `Do(func())` blocks until a slot is available,
+then launches the task and returns true. `Wait()` waits for running tasks and
+pending submissions to finish.
+
+```go
+workers := nsync.NewControlWaitGroup(4)
+for _, job := range jobs {
+    workers.Do(func() { process(job) })
+}
+workers.Wait()
+```
+
+`Abort()` permanently rejects new tasks and unblocks pending `Do` calls, which
+return false. Already admitted tasks may continue running; call `Wait` to wait
+for them. Repeated calls to `Abort` are safe.
+
+As with `sync.WaitGroup`, submission to an empty group must precede `Wait`.
+Before reusing a group, wait for all previous `Wait` calls to return. `Working`
+and `Waiting` are snapshots for monitoring, not synchronization.
+
+## SyncFlag
+
+`SyncFlag` has an unset zero value. `Set` and `Unset` serialize writes with its
+embedded mutex; `IsSet` and `IsUnset` read atomically. Hold `Lock` to prevent
+changes, then call `Unlock` to allow changes again. Calling `Set` or `Unset`
+while holding that mutex would deadlock.
+
+## Development
+
+```sh
+go test -race -shuffle=on ./...
+go vet ./...
+./benchmarks/cross-build.sh
+```
+
+See [performance measurements and design decisions](benchmarks/README.md) for
+the frozen baseline, reproducible benchmarks, assembly experiments, allocation
+measurements, and throughput/latency tradeoffs. Native results are included for
+Apple M3 Max ARM64 and [AMD Ryzen 9 5950X on Linux](benchmarks/results/final-amd64/README.md).

@@ -1,0 +1,3 @@
+ok  	github.com/vburenin/nsync	4.248s
+ok  	github.com/vburenin/nsync/benchmarks/asm	1.016s
+?   	github.com/vburenin/nsync/internal/baseline	[no test files]

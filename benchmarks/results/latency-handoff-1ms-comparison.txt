@@ -1,0 +1,70 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/vburenin/nsync
+cpu: Apple M3 Max
+                                     │ benchmarks/results/latency-baseline-arm64.txt │ benchmarks/results/latency-optimized-arm64.txt │
+                                     │                    sec/op                     │         sec/op           vs base               │
+WaitLatency/TryMutex/Work0-4                                            126.00n ± 5%              13.26n ± 67%  -89.47% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-16                                           138.85n ± 1%              16.25n ± 10%  -88.29% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work0-4                                        95.91n ± 7%              86.57n ±  1%   -9.73% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work0-16                                       121.3n ± 3%              119.8n ±  8%        ~ (p=0.195 n=6)
+WaitLatency/TryMutex/Work100-4                                           403.8n ± 1%              269.7n ±  4%  -33.21% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-16                                          448.6n ± 3%              282.8n ±  2%  -36.94% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work100-4                                      317.4n ± 4%              313.0n ±  4%        ~ (p=0.132 n=6)
+WaitLatency/StandardMutex/Work100-16                                     339.2n ± 8%              424.3n ± 24%        ~ (p=0.063 n=6)
+geomean                                                                  211.3n                   110.8n        -47.57%
+
+                                     │ benchmarks/results/latency-baseline-arm64.txt │ benchmarks/results/latency-optimized-arm64.txt │
+                                     │                 max-wait-sec                  │     max-wait-sec      vs base                  │
+WaitLatency/TryMutex/Work0-4                                           12.15µ ± 330%         304.88µ ±  19%   +2410.19% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-16                                          78.88µ ±  95%         957.75µ ±  49%   +1114.26% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work0-4                                      154.0µ ± 116%          167.0µ ± 121%           ~ (p=0.589 n=6)
+WaitLatency/StandardMutex/Work0-16                                     1.593m ±  34%          1.680m ±  26%           ~ (p=0.485 n=6)
+WaitLatency/TryMutex/Work100-4                                         14.48µ ±  51%        5853.04µ ±  43%  +40322.96% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-16                                        74.40µ ±  57%        7070.25µ ±  28%   +9403.54% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work100-4                                    1.061m ±  38%          1.427m ±  34%     +34.48% (p=0.041 n=6)
+WaitLatency/StandardMutex/Work100-16                                   2.462m ±  42%          1.574m ± 180%           ~ (p=0.065 n=6)
+geomean                                                                168.9µ                 1.289m           +663.18%
+
+                                     │ benchmarks/results/latency-baseline-arm64.txt │ benchmarks/results/latency-optimized-arm64.txt │
+                                     │                 p50-wait-sec                  │    p50-wait-sec     vs base                    │
+WaitLatency/TryMutex/Work0-4                                           2021.00n ± 7%       41.00n ±  2%     -97.97% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-16                                          9500.00n ± 5%       41.00n ±   ∞ ¹   -99.57% (p=0.004 n=6+5)
+WaitLatency/StandardMutex/Work0-4                                        208.0n ± 0%       166.5n ±  0%     -19.95% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work0-16                                       166.5n ± 0%       166.0n ±  1%           ~ (p=0.545 n=6)
+WaitLatency/TryMutex/Work100-4                                         6125.00n ± 1%       41.00n ±  0%     -99.33% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-16                                       30271.00n ± 6%       41.00n ±  0%     -99.86% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work100-4                                      42.00n ± 0%       42.00n ±  0%           ~ (p=1.000 n=6)   ²
+WaitLatency/StandardMutex/Work100-16                                     42.00n ± 0%      125.00n ± 66%    +197.62% (p=0.015 n=6)
+geomean                                                                  826.4n            67.08n           -91.88%
+¹ need >= 6 samples for confidence interval at level 0.95
+² all samples are equal
+
+                                     │ benchmarks/results/latency-baseline-arm64.txt │ benchmarks/results/latency-optimized-arm64.txt │
+                                     │                 p99-wait-sec                  │      p99-wait-sec       vs base                │
+WaitLatency/TryMutex/Work0-4                                            4.188µ ± 15%            17.000µ ± 94%  +305.97% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-16                                           15.17µ ± 16%            108.75µ ±  9%  +617.04% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work0-4                                       35.08µ ±  3%             28.10µ ± 61%   -19.89% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work0-16                                      237.1µ ± 10%             242.4µ ±  8%         ~ (p=0.818 n=6)
+WaitLatency/TryMutex/Work100-4                                          9.354µ ±  3%            90.896µ ±  3%  +871.68% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-16                                         36.92µ ±  4%            388.00µ ± 65%  +951.02% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work100-4                                     254.0µ ± 29%             274.0µ ± 28%         ~ (p=0.132 n=6)
+WaitLatency/StandardMutex/Work100-16                                    658.1µ ±  7%             503.7µ ± 34%   -23.46% (p=0.041 n=6)
+geomean                                                                 48.48µ                   125.4µ        +158.77%
+
+                                     │ benchmarks/results/latency-baseline-arm64.txt │ benchmarks/results/latency-optimized-arm64.txt │
+                                     │                    samples                    │         samples           vs base              │
+WaitLatency/TryMutex/Work0-4                                             31.26k ± 0%                31.26k ± 0%       ~ (p=0.660 n=6)
+WaitLatency/TryMutex/Work0-16                                            31.30k ± 0%                31.29k ± 0%  -0.04% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work0-4                                        31.26k ± 0%                31.26k ± 0%       ~ (p=1.000 n=6)
+WaitLatency/StandardMutex/Work0-16                                       31.28k ± 0%                31.28k ± 0%       ~ (p=0.812 n=6)
+WaitLatency/TryMutex/Work100-4                                           31.26k ± 0%                31.26k ± 0%  -0.02% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-16                                          31.30k ± 0%                31.29k ± 0%  -0.03% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work100-4                                      31.26k ± 0%                31.26k ± 0%       ~ (p=0.429 n=6)
+WaitLatency/StandardMutex/Work100-16                                     31.28k ± 0%                31.28k ± 0%       ~ (p=0.426 n=6)
+geomean                                                                  31.28k                     31.27k       -0.01%
+
+                              │ benchmarks/results/latency-optimized-arm64.txt │
+                              │                  p50-wait-ns                   │
+WaitLatency/TryMutex/Work0-16                                      0.000 ± ∞ ¹
+¹ need >= 6 samples for confidence interval at level 0.95

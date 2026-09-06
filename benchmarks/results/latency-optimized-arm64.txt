@@ -1,0 +1,54 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/vburenin/nsync
+cpu: Apple M3 Max
+BenchmarkWaitLatency/TryMutex/Work0-4          	 2000000	        15.68 ns/op	    289958 max-wait-ns	        41.00 p50-wait-ns	       500.0 p99-wait-ns	     31259 samples
+BenchmarkWaitLatency/TryMutex/Work0-4          	 2000000	        11.68 ns/op	    227875 max-wait-ns	        41.00 p50-wait-ns	       417.0 p99-wait-ns	     31259 samples
+BenchmarkWaitLatency/TryMutex/Work0-4          	 2000000	        13.07 ns/op	    198333 max-wait-ns	        41.00 p50-wait-ns	     16125 p99-wait-ns	     31259 samples
+BenchmarkWaitLatency/TryMutex/Work0-4          	 2000000	        14.25 ns/op	    260917 max-wait-ns	        41.00 p50-wait-ns	     21292 p99-wait-ns	     31257 samples
+BenchmarkWaitLatency/TryMutex/Work0-4          	 2000000	        14.56 ns/op	    260792 max-wait-ns	        41.00 p50-wait-ns	     16541 p99-wait-ns	     31259 samples
+BenchmarkWaitLatency/TryMutex/Work0-4          	 2000000	        13.86 ns/op	    201041 max-wait-ns	        41.00 p50-wait-ns	     19292 p99-wait-ns	     31259 samples
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	        11.85 ns/op	    614458 max-wait-ns	        41.00 p50-wait-ns	     65458 p99-wait-ns	     31287 samples
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	        11.91 ns/op	    387208 max-wait-ns	        41.00 p50-wait-ns	     74625 p99-wait-ns	     31287 samples
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	        11.92 ns/op	    504000 max-wait-ns	        41.00 p50-wait-ns	     47083 p99-wait-ns	     31281 samples
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	        11.47 ns/op	    525125 max-wait-ns	        41.00 p50-wait-ns	     24250 p99-wait-ns	     31285 samples
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	        12.07 ns/op	    298167 max-wait-ns	        41.00 p50-wait-ns	     58083 p99-wait-ns	     31288 samples
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	        12.09 ns/op	    411209 max-wait-ns	        41.00 p50-wait-ns	     70000 p99-wait-ns	     31283 samples
+BenchmarkWaitLatency/StandardMutex/Work0-4     	 2000000	        98.68 ns/op	    191500 max-wait-ns	       208.0 p50-wait-ns	     38875 p99-wait-ns	     31258 samples
+BenchmarkWaitLatency/StandardMutex/Work0-4     	 2000000	        89.83 ns/op	    174209 max-wait-ns	       208.0 p50-wait-ns	     33417 p99-wait-ns	     31257 samples
+BenchmarkWaitLatency/StandardMutex/Work0-4     	 2000000	        89.04 ns/op	    138750 max-wait-ns	       167.0 p50-wait-ns	     31167 p99-wait-ns	     31259 samples
+BenchmarkWaitLatency/StandardMutex/Work0-4     	 2000000	        90.01 ns/op	    157125 max-wait-ns	       167.0 p50-wait-ns	     33416 p99-wait-ns	     31258 samples
+BenchmarkWaitLatency/StandardMutex/Work0-4     	 2000000	        88.70 ns/op	    136625 max-wait-ns	       167.0 p50-wait-ns	     32583 p99-wait-ns	     31258 samples
+BenchmarkWaitLatency/StandardMutex/Work0-4     	 2000000	        88.83 ns/op	    170958 max-wait-ns	       167.0 p50-wait-ns	     32500 p99-wait-ns	     31258 samples
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	       116.8 ns/op	   2077500 max-wait-ns	       125.0 p50-wait-ns	    189542 p99-wait-ns	     31283 samples
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	       110.8 ns/op	   1779916 max-wait-ns	       125.0 p50-wait-ns	    195459 p99-wait-ns	     31282 samples
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	       120.7 ns/op	   1235792 max-wait-ns	       167.0 p50-wait-ns	    231583 p99-wait-ns	     31282 samples
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	       110.4 ns/op	   1343292 max-wait-ns	       125.0 p50-wait-ns	    164083 p99-wait-ns	     31282 samples
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	       109.9 ns/op	   1670250 max-wait-ns	       125.0 p50-wait-ns	    142791 p99-wait-ns	     31284 samples
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	       109.4 ns/op	   1637417 max-wait-ns	       125.0 p50-wait-ns	    162209 p99-wait-ns	     31280 samples
+BenchmarkWaitLatency/TryMutex/Work100-4        	 2000000	       283.1 ns/op	    647042 max-wait-ns	        41.00 p50-wait-ns	    148333 p99-wait-ns	     31257 samples
+BenchmarkWaitLatency/TryMutex/Work100-4        	 2000000	       283.9 ns/op	    522167 max-wait-ns	        41.00 p50-wait-ns	    148041 p99-wait-ns	     31259 samples
+BenchmarkWaitLatency/TryMutex/Work100-4        	 2000000	       286.2 ns/op	    597375 max-wait-ns	        41.00 p50-wait-ns	    147042 p99-wait-ns	     31259 samples
+BenchmarkWaitLatency/TryMutex/Work100-4        	 2000000	       286.4 ns/op	    519791 max-wait-ns	        41.00 p50-wait-ns	    150750 p99-wait-ns	     31257 samples
+BenchmarkWaitLatency/TryMutex/Work100-4        	 2000000	       270.5 ns/op	    800250 max-wait-ns	        41.00 p50-wait-ns	    145334 p99-wait-ns	     31259 samples
+BenchmarkWaitLatency/TryMutex/Work100-4        	 2000000	       274.0 ns/op	    619500 max-wait-ns	        41.00 p50-wait-ns	    146708 p99-wait-ns	     31258 samples
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       319.6 ns/op	    683167 max-wait-ns	        41.00 p50-wait-ns	    199208 p99-wait-ns	     31281 samples
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       326.3 ns/op	    482083 max-wait-ns	        41.00 p50-wait-ns	    198167 p99-wait-ns	     31280 samples
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       311.1 ns/op	    409459 max-wait-ns	        41.00 p50-wait-ns	    198417 p99-wait-ns	     31277 samples
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       329.0 ns/op	    425500 max-wait-ns	        41.00 p50-wait-ns	    198458 p99-wait-ns	     31281 samples
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       329.1 ns/op	    398542 max-wait-ns	        41.00 p50-wait-ns	    197917 p99-wait-ns	     31284 samples
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       320.0 ns/op	    397000 max-wait-ns	        41.00 p50-wait-ns	    198625 p99-wait-ns	     31280 samples
+BenchmarkWaitLatency/StandardMutex/Work100-4   	 2000000	       332.5 ns/op	    588375 max-wait-ns	        42.00 p50-wait-ns	    176291 p99-wait-ns	     31256 samples
+BenchmarkWaitLatency/StandardMutex/Work100-4   	 2000000	       320.4 ns/op	    794375 max-wait-ns	        42.00 p50-wait-ns	    211458 p99-wait-ns	     31257 samples
+BenchmarkWaitLatency/StandardMutex/Work100-4   	 2000000	       304.7 ns/op	   1151125 max-wait-ns	        42.00 p50-wait-ns	    251375 p99-wait-ns	     31258 samples
+BenchmarkWaitLatency/StandardMutex/Work100-4   	 2000000	       315.2 ns/op	    987417 max-wait-ns	        42.00 p50-wait-ns	    267666 p99-wait-ns	     31258 samples
+BenchmarkWaitLatency/StandardMutex/Work100-4   	 2000000	       315.7 ns/op	   1031875 max-wait-ns	        42.00 p50-wait-ns	    253458 p99-wait-ns	     31260 samples
+BenchmarkWaitLatency/StandardMutex/Work100-4   	 2000000	       315.7 ns/op	   1139750 max-wait-ns	        42.00 p50-wait-ns	    267083 p99-wait-ns	     31257 samples
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	       421.1 ns/op	   1543333 max-wait-ns	       125.0 p50-wait-ns	    532000 p99-wait-ns	     31282 samples
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	       334.6 ns/op	   2252250 max-wait-ns	        42.00 p50-wait-ns	    640041 p99-wait-ns	     31281 samples
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	       360.0 ns/op	   1861667 max-wait-ns	        42.00 p50-wait-ns	    635458 p99-wait-ns	     31282 samples
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	       340.2 ns/op	   2014417 max-wait-ns	        42.00 p50-wait-ns	    639666 p99-wait-ns	     31284 samples
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	       420.8 ns/op	   1570625 max-wait-ns	       125.0 p50-wait-ns	    517458 p99-wait-ns	     31282 samples
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	       341.6 ns/op	   2027750 max-wait-ns	        42.00 p50-wait-ns	    595083 p99-wait-ns	     31285 samples
+PASS
+ok  	github.com/vburenin/nsync	18.510s

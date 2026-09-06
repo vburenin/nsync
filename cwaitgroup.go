@@ -1,82 +1,120 @@
 package nsync
 
-import "sync"
+import (
+	"sync"
+	"sync/atomic"
+)
 
-// ControlWaitGroup is a combination of the WaitGroup and Semaphore primitives to run goroutines.
-// WaitGroup is used to insure all tasks are complete, Semaphore server a lock job to limit
-// a number of concurrently running goroutines. Go is well known for its capabilities to run
-// tens of thousands of goroutines, however, it is also very easy to exceed available system resources
-// such as connections, opened files, etc. Thus, ControlWaitGroup fits well to limit the number
-// of running goroutines.
+// ControlWaitGroup runs tasks with a limit on concurrent goroutines.
+// Use NewControlWaitGroup to initialize it. A ControlWaitGroup must not be
+// copied after first use.
 type ControlWaitGroup struct {
-	sem     *Semaphore
-	wg      sync.WaitGroup
-	mu      sync.Mutex
-	waiting int
-	abort   bool
+	abort    atomic.Bool
+	mu       sync.Mutex
+	cond     sync.Cond
+	finished *sync.Cond
+	limit    int
+	working  int
+	waiting  int
 }
 
-// NewControlWaitGroup returns new instance of ControlWaitGroup
+// NewControlWaitGroup creates a group. It panics unless poolSize is positive.
 func NewControlWaitGroup(poolSize int) *ControlWaitGroup {
-	return &ControlWaitGroup{
-		sem: NewSemaphore(poolSize),
+	if poolSize <= 0 {
+		panic("nsync: worker limit must be positive")
 	}
+	cwg := &ControlWaitGroup{limit: poolSize}
+	cwg.cond.L = &cwg.mu
+	return cwg
 }
 
-// Do runs user defined function with no interface.
-// all parameters passed to the required call should be provided
-// withing a function closure.
+// Do waits for a free slot and starts userFunc in a new goroutine, returning true.
+// If the group is aborted before admission, Do returns false without running
+// userFunc. Submission to an empty group must precede Wait.
 func (cwg *ControlWaitGroup) Do(userFunc func()) bool {
-	cwg.wg.Add(1)
-
+	if cwg.abort.Load() {
+		return false
+	}
 	cwg.mu.Lock()
-	cwg.waiting++
-	cwg.mu.Unlock()
-
-	cwg.sem.Acquire()
-	cwg.mu.Lock()
-	cwg.waiting--
-
-	if cwg.abort {
-		cwg.sem.Release()
-		cwg.wg.Done()
+	if cwg.abort.Load() {
 		cwg.mu.Unlock()
 		return false
 	}
-
+	if cwg.working == cwg.limit {
+		cwg.waiting++
+		for cwg.working == cwg.limit && !cwg.abort.Load() {
+			cwg.cond.Wait()
+		}
+		cwg.waiting--
+		if cwg.abort.Load() {
+			cwg.notifyFinished()
+			cwg.mu.Unlock()
+			return false
+		}
+	}
+	cwg.working++
 	cwg.mu.Unlock()
-
 	go func() {
-		defer cwg.wg.Done()
-		defer cwg.sem.Release()
+		defer cwg.finish()
 		userFunc()
 	}()
 	return true
 }
 
-// Abort interrupts execution of any pending task that is blocked by semaphore.
+func (cwg *ControlWaitGroup) finish() {
+	cwg.mu.Lock()
+	cwg.working--
+	if cwg.waiting != 0 {
+		cwg.cond.Signal()
+	}
+	cwg.notifyFinished()
+	cwg.mu.Unlock()
+}
+
+// Abort unblocks pending Do calls and permanently rejects new tasks.
+// Already admitted tasks may continue running; use Wait to wait for them.
+// Repeated calls are safe.
 func (cwg *ControlWaitGroup) Abort() {
 	cwg.mu.Lock()
-	cwg.abort = true
+	cwg.abort.Store(true)
+	cwg.cond.Broadcast()
 	cwg.mu.Unlock()
 }
 
-// Working is a number of the currently running goroutines. This value is highly
-// dynamic so it only make sense to use it for logging purposes.
+// Working returns a snapshot of the number of occupied worker slots.
 func (cwg *ControlWaitGroup) Working() int {
-	return cwg.sem.Value()
+	cwg.mu.Lock()
+	n := cwg.working
+	cwg.mu.Unlock()
+	return n
 }
 
-// Waiting is a number of the currently scheduled, but not running goroutines. This value is highly
-// dynamic so it only make sense to use it for logging purposes.
+// Waiting returns a snapshot of the number of pending Do calls.
 func (cwg *ControlWaitGroup) Waiting() int {
 	cwg.mu.Lock()
-	w := cwg.waiting
+	n := cwg.waiting
 	cwg.mu.Unlock()
-	return w
+	return n
 }
 
-// Wait blocks until all goroutines finish their work.
+// Wait waits for all admitted tasks and pending Do calls to finish.
+// Submission to an empty group must precede Wait. Before reusing a group,
+// all previous Wait calls must have returned.
 func (cwg *ControlWaitGroup) Wait() {
-	cwg.wg.Wait()
+	cwg.mu.Lock()
+	for cwg.working != 0 || cwg.waiting != 0 {
+		if cwg.finished == nil {
+			cwg.finished = sync.NewCond(&cwg.mu)
+		}
+		cwg.finished.Wait()
+	}
+	cwg.mu.Unlock()
+}
+
+// Called with mu held. Completion waiters use a separate condition variable
+// so a worker-slot signal cannot accidentally wake the wrong class of waiter.
+func (cwg *ControlWaitGroup) notifyFinished() {
+	if cwg.working == 0 && cwg.waiting == 0 && cwg.finished != nil {
+		cwg.finished.Broadcast()
+	}
 }

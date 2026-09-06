@@ -2,51 +2,31 @@ package nsync
 
 import "time"
 
-// TryMutex is another implementation to the lock primitives
-// providing additional way to acquire locks.
-type TryMutex struct {
-	c chan struct{}
-}
+// TryMutex provides blocking, nonblocking, and timed lock acquisition.
+// Use NewTryMutex to initialize it. Copies refer to the same underlying lock.
+type TryMutex struct{ state *mutexState }
 
-// NewTryMutex makes a new TryMutex instance.
+// NewTryMutex creates an unlocked mutex.
 func NewTryMutex() *TryMutex {
-	return &TryMutex{
-		c: make(chan struct{}, 1),
-	}
+	// Allocate the public handle and its shared state together. Value copies
+	// still refer to the same state, without a second heap allocation.
+	m := new(struct {
+		handle TryMutex
+		state  mutexState
+	})
+	m.handle.state = &m.state
+	return &m.handle
 }
 
-// Lock acquires the lock.
-func (tm TryMutex) Lock() {
-	tm.c <- struct{}{}
-}
+// Lock acquires the mutex, blocking if it is already locked.
+func (tm TryMutex) Lock() { tm.state.lock() }
 
-// TryLock tries to acquires the lock returning true on success.
-func (tm TryMutex) TryLock() bool {
-	select {
-	case tm.c <- struct{}{}:
-		return true
-	default:
-		return false
-	}
-}
+// TryLock acquires the mutex without waiting, returning true on success.
+func (tm TryMutex) TryLock() bool { return tm.state.tryLock() }
 
-// TryLockTimeout tries to acquires the lock returning true on success.
-// Attempt to acquire the lock will timeout after the caller defined interval.
-func (tm TryMutex) TryLockTimeout(timeout time.Duration) bool {
-	select {
-	case tm.c <- struct{}{}:
-		return true
-	case <-time.After(timeout):
-		return false
-	}
-}
+// TryLockTimeout tries immediately, then waits up to timeout for the mutex.
+// A non-positive timeout is equivalent to TryLock.
+func (tm TryMutex) TryLockTimeout(timeout time.Duration) bool { return tm.state.lockTimeout(timeout) }
 
-// Unlock releases the lock. If lock hasn't been acquired
-// function will panic.
-func (tm TryMutex) Unlock() {
-	select {
-	case <-tm.c:
-	default:
-		panic("Attemt to release not acquired mutex")
-	}
-}
+// Unlock releases the mutex. It panics if the mutex is unlocked.
+func (tm TryMutex) Unlock() { tm.state.unlock() }

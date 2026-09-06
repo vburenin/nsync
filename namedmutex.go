@@ -1,87 +1,133 @@
-// Mutex that can be acquired by a given name. Makes overall life much easier during handling map key specific updates.
-// Warning: Created named mutexes are never removed.
-
 package nsync
 
 import (
-	"sync"
+	"hash/maphash"
+	"sync/atomic"
 	"time"
+	"unsafe"
 )
 
-// NamedMutex acquires a lock based on a user defined name.
-// Can be used in factories which produce singleton objects depending
-// on the name. For example: queue name, user name, etc.
-// Locks are based on channels, so an additional TryLock has been introduced.
+// NamedMutex provides independent locks by name. The zero value is ready to use.
+// A NamedMutex must not be copied after first use. Locks are retained for the
+// lifetime of the NamedMutex, so the set of names should be bounded.
 type NamedMutex struct {
-	mutexMap   map[string]chan struct{}
-	localMutex sync.Mutex
+	first atomic.Pointer[namedPrimaryEntry]
+	table atomic.Pointer[namedMutexTable]
 }
 
-// NewNamedMutex makes a new named mutex instance.
-func NewNamedMutex() *NamedMutex {
-	return &NamedMutex{
-		mutexMap: make(map[string]chan struct{}),
-	}
+type namedMutexTable [64]atomic.Pointer[namedMutexShard]
+
+// The name is read by every lookup, so keep it on a separate cache
+// line from the lock that its owner modifies.
+type namedPrimaryEntry struct {
+	name  string
+	_     [cacheLineSize - unsafe.Sizeof("")]byte
+	mutex mutexState
+	_     [(cacheLineSize - unsafe.Sizeof(mutexState{})%cacheLineSize) % cacheLineSize]byte
 }
 
-// Lock acquires the lock. On the first lock attempt
-// a new channel is automatically created.
-func (nm *NamedMutex) Lock(name string) {
-	nm.localMutex.Lock()
-	mc, ok := nm.mutexMap[name]
-	if !ok {
-		mc = make(chan struct{}, 1)
-		nm.mutexMap[name] = mc
-	}
-	nm.localMutex.Unlock()
-	mc <- struct{}{}
+type namedMutexShard struct {
+	first atomic.Pointer[namedMutexEntry]
+	mu    mutexState
+	locks map[string]*mutexState
 }
 
-// TryLock tries to acquires the lock returning true on success.
-// On the first lock attempt a new channel is automatically created.
-func (nm *NamedMutex) TryLock(name string) bool {
-	nm.localMutex.Lock()
-	mc, ok := nm.mutexMap[name]
-	if !ok {
-		mc = make(chan struct{}, 1)
-		nm.mutexMap[name] = mc
-	}
-	nm.localMutex.Unlock()
-	select {
-	case mc <- struct{}{}:
-		return true
-	default:
-		return false
-	}
+// The first key in each shard has a read-only lookup slot. Its lock occupies
+// its own cache line, avoiding writes shared with an independent hot key.
+type namedMutexEntryData struct {
+	name  string
+	mutex mutexState
 }
 
-// TryLockTimeout tries to acquires the lock returning true on success.
-// Attempt to acquire the lock will timeout after the caller defined interval.
-// On the first lock attempt a new channel is automatically created.
+type namedMutexEntry struct {
+	_ [(cacheLineSize - unsafe.Sizeof(namedMutexEntryData{})%cacheLineSize) % cacheLineSize]byte
+	namedMutexEntryData
+}
+
+var namedMutexSeed = maphash.MakeSeed()
+
+// NewNamedMutex creates a named mutex.
+func NewNamedMutex() *NamedMutex { return &NamedMutex{} }
+
+func (nm *NamedMutex) lookup(name string, create bool) *mutexState {
+	// A repeated name avoids hashing, including long strings. Checking the
+	// suffix first rejects common-prefix names without comparing every byte.
+	primary := nm.first.Load()
+	if primary == nil && create {
+		primary = &namedPrimaryEntry{name: name}
+		if !nm.first.CompareAndSwap(nil, primary) {
+			primary = nm.first.Load()
+		}
+	}
+	if primary != nil && len(primary.name) == len(name) &&
+		(len(name) <= 32 || primary.name[len(name)-8:] == name[len(name)-8:]) &&
+		primary.name == name {
+		return &primary.mutex
+	}
+	table := nm.table.Load()
+	if table == nil {
+		if !create {
+			return nil
+		}
+		table = new(namedMutexTable)
+		if !nm.table.CompareAndSwap(nil, table) {
+			table = nm.table.Load()
+		}
+	}
+	cell := &table[maphash.String(namedMutexSeed, name)&63]
+	sh := cell.Load()
+	if sh == nil {
+		if !create {
+			return nil
+		}
+		sh = new(namedMutexShard)
+		if !cell.CompareAndSwap(nil, sh) {
+			sh = cell.Load()
+		}
+	}
+	first := sh.first.Load()
+	if first == nil {
+		if !create {
+			return nil
+		}
+		first = &namedMutexEntry{namedMutexEntryData: namedMutexEntryData{name: name}}
+		if !sh.first.CompareAndSwap(nil, first) {
+			first = sh.first.Load()
+		}
+	}
+	if first.name == name {
+		return &first.mutex
+	}
+	sh.mu.lock()
+	m := sh.locks[name]
+	if m == nil && create {
+		m = new(mutexState)
+		if sh.locks == nil {
+			sh.locks = make(map[string]*mutexState)
+		}
+		sh.locks[name] = m
+	}
+	sh.mu.unlock()
+	return m
+}
+
+// Lock acquires the named lock, creating it if necessary.
+func (nm *NamedMutex) Lock(name string) { nm.lookup(name, true).lock() }
+
+// TryLock tries to acquire the named lock without waiting.
+func (nm *NamedMutex) TryLock(name string) bool { return nm.lookup(name, true).tryLock() }
+
+// TryLockTimeout tries immediately, then waits up to timeout for the named lock.
+// A non-positive timeout is equivalent to TryLock.
 func (nm *NamedMutex) TryLockTimeout(name string, timeout time.Duration) bool {
-	nm.localMutex.Lock()
-	mc, ok := nm.mutexMap[name]
-	if !ok {
-		mc = make(chan struct{}, 1)
-		nm.mutexMap[name] = mc
-	}
-	nm.localMutex.Unlock()
-	select {
-	case mc <- struct{}{}:
-		return true
-	case <-time.After(timeout):
-		return false
-	}
+	return nm.lookup(name, true).lockTimeout(timeout)
 }
 
-// Unlock releases the lock. If lock hasn't been acquired
-// function will panic.
+// Unlock releases the named lock. It panics if the name is unknown or unlocked.
 func (nm *NamedMutex) Unlock(name string) {
-	nm.localMutex.Lock()
-	defer nm.localMutex.Unlock()
-	mc := nm.mutexMap[name]
-	if len(mc) == 0 {
-		panic("No named mutex acquired: " + name)
+	m := nm.lookup(name, false)
+	if m == nil {
+		panic("nsync: unknown mutex: " + name)
 	}
-	<-mc
+	m.unlock()
 }

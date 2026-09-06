@@ -1,20 +1,15 @@
-// nsync package provides a set of primitives that are not provided by standard Go library.
+// Package nsync provides timed locks, named locks, semaphores, a bounded
+// goroutine executor, and an atomic flag with an external lock.
 //
-// NamedMutex - a map of dynamically created mutexes by a referred name.
+// Acquisitions use atomic fast paths and condition variables for parking,
+// without channels. Contended mutexes adaptively hand ownership to waiting
+// goroutines to limit repeated barging; FIFO order is not guaranteed.
 //
-// OnceMutex - very similar to sync.Once, however, it is a mutex not a function wrapper.
+// NamedMutex retains a lock for each string name. NamedOnceMutex combines
+// overlapping operations for a comparable key and removes completed operations.
+// Semaphore bounds concurrent acquisitions, while ControlWaitGroup bounds
+// concurrently running functions and supports canceling pending submissions.
 //
-// NamedOnceMutex - a map of dynamically created mutexes that can be acquired only once.
-// However, once mutex unlocked it is removed from the map.
-// So, next attempt to acquire this mutex will succeed.
-//
-// Semaphore - a semaphore primitive that can be acquired limited number of times.
-//
-// TryMutex - A mutex that provide ability to set a timeout to acquire a lock.
-//
-// ControlWaitGroup - a controlled goroutine executor that can limit the number concurrently running
-// goroutines. Can help to solve a resource exhaustion problem.
-//
-// SyncFlag - an atomic flag that is wrapped by mutex. Mutex can be set/unset separately to prevent
-// the flag from being set/unset.
+// TryMutex, Semaphore, and ControlWaitGroup require their constructors. The
+// zero values of NamedMutex, OnceMutex, NamedOnceMutex, and SyncFlag are usable.
 package nsync

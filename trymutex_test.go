@@ -8,8 +8,8 @@ import (
 func TestTryMutexLock(t *testing.T) {
 	l := NewTryMutex()
 	l.Lock()
-	if len(l.c) != 1 {
-		t.Error("Failed to acquire lock")
+	if l.TryLock() {
+		t.Error("Lock acquired twice")
 	}
 	l.Unlock()
 }

@@ -1,0 +1,2228 @@
+{
+  "baseline": {
+    "TryMutex/Uncontended": {
+      "ns/op": 21.485,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Uncontended-4": {
+      "ns/op": 22.67,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Uncontended-16": {
+      "ns/op": 22.67,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Uncontended-32": {
+      "ns/op": 23.21,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TrySuccess": {
+      "ns/op": 23.939999999999998,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TrySuccess-4": {
+      "ns/op": 24.439999999999998,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TrySuccess-16": {
+      "ns/op": 25.98,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TrySuccess-32": {
+      "ns/op": 24.935,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TryFailure": {
+      "ns/op": 3.091,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TryFailure-4": {
+      "ns/op": 3.1639999999999997,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TryFailure-16": {
+      "ns/op": 3.1639999999999997,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TryFailure-32": {
+      "ns/op": 3.2235,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutSuccess": {
+      "ns/op": 25.1,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutSuccess-4": {
+      "ns/op": 26.1,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutSuccess-16": {
+      "ns/op": 25.98,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutSuccess-32": {
+      "ns/op": 25.85,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutExpired": {
+      "ns/op": 324.15,
+      "B/op": 248.0,
+      "allocs/op": 3.0
+    },
+    "TryMutex/TimeoutExpired-4": {
+      "ns/op": 404.1,
+      "B/op": 248.0,
+      "allocs/op": 3.0
+    },
+    "TryMutex/TimeoutExpired-16": {
+      "ns/op": 500.1,
+      "B/op": 248.0,
+      "allocs/op": 3.0
+    },
+    "TryMutex/TimeoutExpired-32": {
+      "ns/op": 518.25,
+      "B/op": 248.0,
+      "allocs/op": 3.0
+    },
+    "TryMutex/TimeoutPark": {
+      "ns/op": 1052727.5,
+      "B/op": 248.0,
+      "allocs/op": 3.0
+    },
+    "TryMutex/TimeoutPark-4": {
+      "ns/op": 697258.5,
+      "B/op": 248.0,
+      "allocs/op": 3.0
+    },
+    "TryMutex/TimeoutPark-16": {
+      "ns/op": 689974.0,
+      "B/op": 248.0,
+      "allocs/op": 3.0
+    },
+    "TryMutex/TimeoutPark-32": {
+      "ns/op": 676327.5,
+      "B/op": 248.0,
+      "allocs/op": 3.0
+    },
+    "TryMutex/Contended0": {
+      "ns/op": 23.45,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended0-4": {
+      "ns/op": 216.1,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended0-16": {
+      "ns/op": 155.85,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended0-32": {
+      "ns/op": 138.4,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended100": {
+      "ns/op": 99.02,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended100-4": {
+      "ns/op": 341.2,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended100-16": {
+      "ns/op": 235.4,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended100-32": {
+      "ns/op": 256.0,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Uncontended": {
+      "ns/op": 22.450000000000003,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Uncontended-4": {
+      "ns/op": 23.4,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Uncontended-16": {
+      "ns/op": 23.535,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Uncontended-32": {
+      "ns/op": 23.619999999999997,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Parallel": {
+      "ns/op": 23.545,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Parallel-4": {
+      "ns/op": 176.2,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Parallel-16": {
+      "ns/op": 166.6,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Parallel-32": {
+      "ns/op": 135.25,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Uncontended": {
+      "ns/op": 23.735,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Uncontended-4": {
+      "ns/op": 24.93,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Uncontended-16": {
+      "ns/op": 24.68,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Uncontended-32": {
+      "ns/op": 24.175,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Parallel": {
+      "ns/op": 24.11,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Parallel-4": {
+      "ns/op": 45.555,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Parallel-16": {
+      "ns/op": 493.65,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Parallel-32": {
+      "ns/op": 677.8499999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Uncontended": {
+      "ns/op": 24.03,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Uncontended-4": {
+      "ns/op": 24.415,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Uncontended-16": {
+      "ns/op": 24.53,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Uncontended-32": {
+      "ns/op": 24.215,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Parallel": {
+      "ns/op": 23.66,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Parallel-4": {
+      "ns/op": 44.955,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Parallel-16": {
+      "ns/op": 87.67,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Parallel-32": {
+      "ns/op": 93.42500000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TryFailure": {
+      "ns/op": 3.3445,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TryFailure-4": {
+      "ns/op": 3.3114999999999997,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TryFailure-16": {
+      "ns/op": 3.4735,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TryFailure-32": {
+      "ns/op": 3.4585,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TimeoutSuccess": {
+      "ns/op": 25.565,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TimeoutSuccess-4": {
+      "ns/op": 25.025,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TimeoutSuccess-16": {
+      "ns/op": 26.835,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TimeoutSuccess-32": {
+      "ns/op": 26.29,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Value": {
+      "ns/op": 1.3375,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Value-4": {
+      "ns/op": 1.3875,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Value-16": {
+      "ns/op": 1.3735,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Value-32": {
+      "ns/op": 1.393,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Full8TryFailure": {
+      "ns/op": 2.897,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Full8TryFailure-4": {
+      "ns/op": 2.8955,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Full8TryFailure-16": {
+      "ns/op": 2.9615,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Full8TryFailure-32": {
+      "ns/op": 2.9095,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey32": {
+      "ns/op": 43.08,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey32-4": {
+      "ns/op": 45.095,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey32-16": {
+      "ns/op": 45.540000000000006,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey32-32": {
+      "ns/op": 44.540000000000006,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey128": {
+      "ns/op": 41.870000000000005,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey128-4": {
+      "ns/op": 45.535,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey128-16": {
+      "ns/op": 44.45,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey128-32": {
+      "ns/op": 44.955,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey1024": {
+      "ns/op": 42.135000000000005,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey1024-4": {
+      "ns/op": 45.09,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey1024-16": {
+      "ns/op": 45.175,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey1024-32": {
+      "ns/op": 45.96,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/HotKey": {
+      "ns/op": 42.86,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/HotKey-4": {
+      "ns/op": 43.995,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/HotKey-16": {
+      "ns/op": 44.775,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/HotKey-32": {
+      "ns/op": 45.635,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/SameKeyParallel": {
+      "ns/op": 42.34,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/SameKeyParallel-4": {
+      "ns/op": 249.3,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/SameKeyParallel-16": {
+      "ns/op": 175.60000000000002,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/SameKeyParallel-32": {
+      "ns/op": 166.8,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/IndependentKeys": {
+      "ns/op": 43.04,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/IndependentKeys-4": {
+      "ns/op": 120.44999999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/IndependentKeys-16": {
+      "ns/op": 264.35,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/IndependentKeys-32": {
+      "ns/op": 309.15,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/ManyKeys": {
+      "ns/op": 49.47,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/ManyKeys-4": {
+      "ns/op": 52.485,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/ManyKeys-16": {
+      "ns/op": 55.120000000000005,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/ManyKeys-32": {
+      "ns/op": 54.465,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/Create1024": {
+      "ns/op": 169164.5,
+      "B/op": 223720.0,
+      "allocs/op": 1047.0
+    },
+    "NamedMutex/Create1024-4": {
+      "ns/op": 199946.0,
+      "B/op": 223720.0,
+      "allocs/op": 1047.0
+    },
+    "NamedMutex/Create1024-16": {
+      "ns/op": 275104.5,
+      "B/op": 223720.0,
+      "allocs/op": 1047.0
+    },
+    "NamedMutex/Create1024-32": {
+      "ns/op": 275413.5,
+      "B/op": 223720.0,
+      "allocs/op": 1047.0
+    },
+    "OnceMutex/First": {
+      "ns/op": 15.455,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "OnceMutex/First-4": {
+      "ns/op": 16.59,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "OnceMutex/First-16": {
+      "ns/op": 21.560000000000002,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "OnceMutex/First-32": {
+      "ns/op": 24.255000000000003,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "OnceMutex/Completed": {
+      "ns/op": 3.661,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/Completed-4": {
+      "ns/op": 3.8735,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/Completed-16": {
+      "ns/op": 3.7904999999999998,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/Completed-32": {
+      "ns/op": 3.841,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/CompletedParallel": {
+      "ns/op": 3.7445000000000004,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/CompletedParallel-4": {
+      "ns/op": 23.564999999999998,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/CompletedParallel-16": {
+      "ns/op": 58.545,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/CompletedParallel-32": {
+      "ns/op": 110.94999999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/Uncontended": {
+      "ns/op": 88.51499999999999,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "NamedOnceMutex/Uncontended-4": {
+      "ns/op": 101.965,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "NamedOnceMutex/Uncontended-16": {
+      "ns/op": 111.45,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "NamedOnceMutex/Uncontended-32": {
+      "ns/op": 107.95,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "NamedOnceMutex/SameKeyParallel": {
+      "ns/op": 91.775,
+      "leaders/op": 1.0,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "NamedOnceMutex/SameKeyParallel-4": {
+      "ns/op": 202.14999999999998,
+      "leaders/op": 0.9793000000000001,
+      "B/op": 15.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/SameKeyParallel-16": {
+      "ns/op": 373.85,
+      "leaders/op": 0.8603000000000001,
+      "B/op": 13.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/SameKeyParallel-32": {
+      "ns/op": 557.3,
+      "leaders/op": 0.6727000000000001,
+      "B/op": 10.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/IndependentKeys": {
+      "ns/op": 88.215,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "NamedOnceMutex/IndependentKeys-4": {
+      "ns/op": 196.3,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "NamedOnceMutex/IndependentKeys-16": {
+      "ns/op": 398.8,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "NamedOnceMutex/IndependentKeys-32": {
+      "ns/op": 434.45,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "TryFailureParallel": {
+      "ns/op": 2.8275,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryFailureParallel-4": {
+      "ns/op": 0.8037000000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryFailureParallel-16": {
+      "ns/op": 0.23565,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryFailureParallel-32": {
+      "ns/op": 0.2149,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Construction/TryMutex": {
+      "ns/op": 45.025000000000006,
+      "B/op": 120.0,
+      "allocs/op": 2.0
+    },
+    "Construction/TryMutex-4": {
+      "ns/op": 73.075,
+      "B/op": 120.0,
+      "allocs/op": 2.0
+    },
+    "Construction/TryMutex-16": {
+      "ns/op": 81.53999999999999,
+      "B/op": 120.0,
+      "allocs/op": 2.0
+    },
+    "Construction/TryMutex-32": {
+      "ns/op": 85.62,
+      "B/op": 120.0,
+      "allocs/op": 2.0
+    },
+    "Construction/Semaphore": {
+      "ns/op": 46.230000000000004,
+      "B/op": 120.0,
+      "allocs/op": 2.0
+    },
+    "Construction/Semaphore-4": {
+      "ns/op": 73.88,
+      "B/op": 120.0,
+      "allocs/op": 2.0
+    },
+    "Construction/Semaphore-16": {
+      "ns/op": 82.65,
+      "B/op": 120.0,
+      "allocs/op": 2.0
+    },
+    "Construction/Semaphore-32": {
+      "ns/op": 83.93,
+      "B/op": 120.0,
+      "allocs/op": 2.0
+    },
+    "Construction/NamedMutexFirstKey": {
+      "ns/op": 181.35,
+      "B/op": 384.0,
+      "allocs/op": 4.0
+    },
+    "Construction/NamedMutexFirstKey-4": {
+      "ns/op": 260.25,
+      "B/op": 384.0,
+      "allocs/op": 4.0
+    },
+    "Construction/NamedMutexFirstKey-16": {
+      "ns/op": 332.05,
+      "B/op": 384.0,
+      "allocs/op": 4.0
+    },
+    "Construction/NamedMutexFirstKey-32": {
+      "ns/op": 331.5,
+      "B/op": 384.0,
+      "allocs/op": 4.0
+    },
+    "Construction/NamedOnceFirstKey": {
+      "ns/op": 198.25,
+      "B/op": 288.0,
+      "allocs/op": 4.0
+    },
+    "Construction/NamedOnceFirstKey-4": {
+      "ns/op": 243.89999999999998,
+      "B/op": 288.0,
+      "allocs/op": 4.0
+    },
+    "Construction/NamedOnceFirstKey-16": {
+      "ns/op": 299.5,
+      "B/op": 288.0,
+      "allocs/op": 4.0
+    },
+    "Construction/NamedOnceFirstKey-32": {
+      "ns/op": 330.15,
+      "B/op": 288.0,
+      "allocs/op": 4.0
+    },
+    "ControlWaitGroup/1": {
+      "ns/op": 392.85,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/1-4": {
+      "ns/op": 660.45,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/1-16": {
+      "ns/op": 786.65,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/1-32": {
+      "ns/op": 850.2,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/16": {
+      "ns/op": 397.1,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/16-4": {
+      "ns/op": 753.5,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/16-16": {
+      "ns/op": 807.7,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/16-32": {
+      "ns/op": 797.75,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256": {
+      "ns/op": 374.75,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256-4": {
+      "ns/op": 514.55,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256-16": {
+      "ns/op": 539.3499999999999,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256-32": {
+      "ns/op": 569.35,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/Aborted": {
+      "ns/op": 3.7510000000000003,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "ControlWaitGroup/Aborted-4": {
+      "ns/op": 3.92,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "ControlWaitGroup/Aborted-16": {
+      "ns/op": 3.862,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "ControlWaitGroup/Aborted-32": {
+      "ns/op": 3.93,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Read": {
+      "ns/op": 1.0715,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Read-4": {
+      "ns/op": 1.0755,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Read-16": {
+      "ns/op": 1.1165,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Read-32": {
+      "ns/op": 1.13,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Write": {
+      "ns/op": 10.055,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Write-4": {
+      "ns/op": 10.555,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Write-16": {
+      "ns/op": 10.695,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Write-32": {
+      "ns/op": 10.905000000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Uncontended": {
+      "ns/op": 3.6790000000000003,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Uncontended-4": {
+      "ns/op": 3.6995,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Uncontended-16": {
+      "ns/op": 3.7584999999999997,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Uncontended-32": {
+      "ns/op": 3.822,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended": {
+      "ns/op": 3.5054999999999996,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended-4": {
+      "ns/op": 11.61,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended-16": {
+      "ns/op": 62.56,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended-32": {
+      "ns/op": 119.9,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    }
+  },
+  "optimized": {
+    "TryMutex/Uncontended": {
+      "ns/op": 3.662,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Uncontended-4": {
+      "ns/op": 3.9575,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Uncontended-16": {
+      "ns/op": 3.909,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Uncontended-32": {
+      "ns/op": 3.8285,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TrySuccess": {
+      "ns/op": 4.0385,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TrySuccess-4": {
+      "ns/op": 4.0715,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TrySuccess-16": {
+      "ns/op": 4.261,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TrySuccess-32": {
+      "ns/op": 4.274,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TryFailure": {
+      "ns/op": 0.6493,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TryFailure-4": {
+      "ns/op": 0.66885,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TryFailure-16": {
+      "ns/op": 0.69125,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TryFailure-32": {
+      "ns/op": 0.6926,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutSuccess": {
+      "ns/op": 3.6079999999999997,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutSuccess-4": {
+      "ns/op": 3.8194999999999997,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutSuccess-16": {
+      "ns/op": 3.8515,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutSuccess-32": {
+      "ns/op": 3.9124999999999996,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutExpired": {
+      "ns/op": 69.315,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutExpired-4": {
+      "ns/op": 75.00999999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutExpired-16": {
+      "ns/op": 75.85,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutExpired-32": {
+      "ns/op": 75.375,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/TimeoutPark": {
+      "ns/op": 1052089.5,
+      "B/op": 112.0,
+      "allocs/op": 1.0
+    },
+    "TryMutex/TimeoutPark-4": {
+      "ns/op": 714870.5,
+      "B/op": 113.5,
+      "allocs/op": 1.0
+    },
+    "TryMutex/TimeoutPark-16": {
+      "ns/op": 699832.0,
+      "B/op": 121.5,
+      "allocs/op": 1.0
+    },
+    "TryMutex/TimeoutPark-32": {
+      "ns/op": 669876.5,
+      "B/op": 130.0,
+      "allocs/op": 1.0
+    },
+    "TryMutex/Contended0": {
+      "ns/op": 3.7185,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended0-4": {
+      "ns/op": 8.838,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended0-16": {
+      "ns/op": 9.879999999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended0-32": {
+      "ns/op": 10.344999999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended100": {
+      "ns/op": 85.42,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended100-4": {
+      "ns/op": 135.89999999999998,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended100-16": {
+      "ns/op": 115.65,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended100-32": {
+      "ns/op": 133.45,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Uncontended": {
+      "ns/op": 3.8405,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Uncontended-4": {
+      "ns/op": 3.839,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Uncontended-16": {
+      "ns/op": 3.9964999999999997,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Uncontended-32": {
+      "ns/op": 3.9435000000000002,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Parallel": {
+      "ns/op": 3.7685,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Parallel-4": {
+      "ns/op": 8.185,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Parallel-16": {
+      "ns/op": 9.763,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/1/Parallel-32": {
+      "ns/op": 10.705,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Uncontended": {
+      "ns/op": 9.368500000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Uncontended-4": {
+      "ns/op": 9.525,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Uncontended-16": {
+      "ns/op": 9.9025,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Uncontended-32": {
+      "ns/op": 9.881,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Parallel": {
+      "ns/op": 9.0135,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Parallel-4": {
+      "ns/op": 21.665,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Parallel-16": {
+      "ns/op": 29.185000000000002,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/8/Parallel-32": {
+      "ns/op": 40.365,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Uncontended": {
+      "ns/op": 9.3645,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Uncontended-4": {
+      "ns/op": 9.751,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Uncontended-16": {
+      "ns/op": 9.7725,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Uncontended-32": {
+      "ns/op": 9.882000000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Parallel": {
+      "ns/op": 9.4315,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Parallel-4": {
+      "ns/op": 21.095,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Parallel-16": {
+      "ns/op": 23.34,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/64/Parallel-32": {
+      "ns/op": 25.595,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TryFailure": {
+      "ns/op": 1.5465,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TryFailure-4": {
+      "ns/op": 1.5935000000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TryFailure-16": {
+      "ns/op": 1.5815000000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TryFailure-32": {
+      "ns/op": 1.6035,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TimeoutSuccess": {
+      "ns/op": 4.2855,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TimeoutSuccess-4": {
+      "ns/op": 4.653499999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TimeoutSuccess-16": {
+      "ns/op": 4.515499999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/TimeoutSuccess-32": {
+      "ns/op": 4.611,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Value": {
+      "ns/op": 3.783,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Value-4": {
+      "ns/op": 3.822,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Value-16": {
+      "ns/op": 3.9505,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Value-32": {
+      "ns/op": 3.9565,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Full8TryFailure": {
+      "ns/op": 4.298500000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Full8TryFailure-4": {
+      "ns/op": 4.4544999999999995,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Full8TryFailure-16": {
+      "ns/op": 4.443,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Semaphore/Full8TryFailure-32": {
+      "ns/op": 4.4675,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey32": {
+      "ns/op": 9.095500000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey32-4": {
+      "ns/op": 9.5845,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey32-16": {
+      "ns/op": 9.379999999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey32-32": {
+      "ns/op": 9.2305,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey128": {
+      "ns/op": 11.64,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey128-4": {
+      "ns/op": 11.82,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey128-16": {
+      "ns/op": 11.615,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey128-32": {
+      "ns/op": 12.05,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey1024": {
+      "ns/op": 11.690000000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey1024-4": {
+      "ns/op": 11.8,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey1024-16": {
+      "ns/op": 11.855,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/LongKey1024-32": {
+      "ns/op": 12.149999999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/HotKey": {
+      "ns/op": 9.229,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/HotKey-4": {
+      "ns/op": 9.495000000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/HotKey-16": {
+      "ns/op": 9.5625,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/HotKey-32": {
+      "ns/op": 9.527000000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/SameKeyParallel": {
+      "ns/op": 9.048,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/SameKeyParallel-4": {
+      "ns/op": 19.37,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/SameKeyParallel-16": {
+      "ns/op": 21.98,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/SameKeyParallel-32": {
+      "ns/op": 23.814999999999998,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/IndependentKeys": {
+      "ns/op": 8.8495,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/IndependentKeys-4": {
+      "ns/op": 4.617,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/IndependentKeys-16": {
+      "ns/op": 2.4255,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/IndependentKeys-32": {
+      "ns/op": 2.3845,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/ManyKeys": {
+      "ns/op": 46.535,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/ManyKeys-4": {
+      "ns/op": 46.685,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/ManyKeys-16": {
+      "ns/op": 48.2,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/ManyKeys-32": {
+      "ns/op": 50.485,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedMutex/Create1024": {
+      "ns/op": 146703.5,
+      "B/op": 166616.0,
+      "allocs/op": 1463.0
+    },
+    "NamedMutex/Create1024-4": {
+      "ns/op": 188960.0,
+      "B/op": 166616.0,
+      "allocs/op": 1463.0
+    },
+    "NamedMutex/Create1024-16": {
+      "ns/op": 235578.5,
+      "B/op": 166616.0,
+      "allocs/op": 1463.0
+    },
+    "NamedMutex/Create1024-32": {
+      "ns/op": 249743.0,
+      "B/op": 166616.0,
+      "allocs/op": 1463.0
+    },
+    "OnceMutex/First": {
+      "ns/op": 16.15,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "OnceMutex/First-4": {
+      "ns/op": 18.67,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "OnceMutex/First-16": {
+      "ns/op": 26.22,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "OnceMutex/First-32": {
+      "ns/op": 27.369999999999997,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "OnceMutex/Completed": {
+      "ns/op": 1.758,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/Completed-4": {
+      "ns/op": 1.8375,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/Completed-16": {
+      "ns/op": 1.815,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/Completed-32": {
+      "ns/op": 1.8210000000000002,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/CompletedParallel": {
+      "ns/op": 1.4585,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/CompletedParallel-4": {
+      "ns/op": 0.39325,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/CompletedParallel-16": {
+      "ns/op": 0.11935,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "OnceMutex/CompletedParallel-32": {
+      "ns/op": 0.1059,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/Uncontended": {
+      "ns/op": 28.235,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/Uncontended-4": {
+      "ns/op": 28.564999999999998,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/Uncontended-16": {
+      "ns/op": 28.41,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/Uncontended-32": {
+      "ns/op": 29.96,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/SameKeyParallel": {
+      "ns/op": 29.19,
+      "leaders/op": 1.0,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/SameKeyParallel-4": {
+      "ns/op": 72.965,
+      "leaders/op": 0.9941,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/SameKeyParallel-16": {
+      "ns/op": 117.1,
+      "leaders/op": 0.9642,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/SameKeyParallel-32": {
+      "ns/op": 141.55,
+      "leaders/op": 0.9412499999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/IndependentKeys": {
+      "ns/op": 26.26,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/IndependentKeys-4": {
+      "ns/op": 7.093500000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/IndependentKeys-16": {
+      "ns/op": 2.409,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "NamedOnceMutex/IndependentKeys-32": {
+      "ns/op": 2.2365000000000004,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryFailureParallel": {
+      "ns/op": 0.6431,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryFailureParallel-4": {
+      "ns/op": 0.1678,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryFailureParallel-16": {
+      "ns/op": 0.053265,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryFailureParallel-32": {
+      "ns/op": 0.049755,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "Construction/TryMutex": {
+      "ns/op": 34.230000000000004,
+      "B/op": 96.0,
+      "allocs/op": 1.0
+    },
+    "Construction/TryMutex-4": {
+      "ns/op": 53.980000000000004,
+      "B/op": 96.0,
+      "allocs/op": 1.0
+    },
+    "Construction/TryMutex-16": {
+      "ns/op": 63.065,
+      "B/op": 96.0,
+      "allocs/op": 1.0
+    },
+    "Construction/TryMutex-32": {
+      "ns/op": 62.295,
+      "B/op": 96.0,
+      "allocs/op": 1.0
+    },
+    "Construction/Semaphore": {
+      "ns/op": 34.605000000000004,
+      "B/op": 112.0,
+      "allocs/op": 1.0
+    },
+    "Construction/Semaphore-4": {
+      "ns/op": 67.18,
+      "B/op": 112.0,
+      "allocs/op": 1.0
+    },
+    "Construction/Semaphore-16": {
+      "ns/op": 67.925,
+      "B/op": 112.0,
+      "allocs/op": 1.0
+    },
+    "Construction/Semaphore-32": {
+      "ns/op": 68.495,
+      "B/op": 112.0,
+      "allocs/op": 1.0
+    },
+    "Construction/NamedMutexFirstKey": {
+      "ns/op": 74.145,
+      "B/op": 208.0,
+      "allocs/op": 2.0
+    },
+    "Construction/NamedMutexFirstKey-4": {
+      "ns/op": 103.7,
+      "B/op": 208.0,
+      "allocs/op": 2.0
+    },
+    "Construction/NamedMutexFirstKey-16": {
+      "ns/op": 136.2,
+      "B/op": 208.0,
+      "allocs/op": 2.0
+    },
+    "Construction/NamedMutexFirstKey-32": {
+      "ns/op": 138.85000000000002,
+      "B/op": 208.0,
+      "allocs/op": 2.0
+    },
+    "Construction/NamedOnceFirstKey": {
+      "ns/op": 103.8,
+      "B/op": 216.0,
+      "allocs/op": 2.0
+    },
+    "Construction/NamedOnceFirstKey-4": {
+      "ns/op": 142.2,
+      "B/op": 216.0,
+      "allocs/op": 2.0
+    },
+    "Construction/NamedOnceFirstKey-16": {
+      "ns/op": 168.7,
+      "B/op": 216.0,
+      "allocs/op": 2.0
+    },
+    "Construction/NamedOnceFirstKey-32": {
+      "ns/op": 156.65,
+      "B/op": 216.0,
+      "allocs/op": 2.0
+    },
+    "ControlWaitGroup/1": {
+      "ns/op": 288.1,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/1-4": {
+      "ns/op": 480.65,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/1-16": {
+      "ns/op": 557.0,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/1-32": {
+      "ns/op": 551.8499999999999,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/16": {
+      "ns/op": 274.45000000000005,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/16-4": {
+      "ns/op": 357.29999999999995,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/16-16": {
+      "ns/op": 425.85,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/16-32": {
+      "ns/op": 354.3,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256": {
+      "ns/op": 272.6,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256-4": {
+      "ns/op": 381.95,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256-16": {
+      "ns/op": 601.05,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256-32": {
+      "ns/op": 583.6,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/Aborted": {
+      "ns/op": 1.5350000000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "ControlWaitGroup/Aborted-4": {
+      "ns/op": 1.5975000000000001,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "ControlWaitGroup/Aborted-16": {
+      "ns/op": 1.583,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "ControlWaitGroup/Aborted-32": {
+      "ns/op": 1.609,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Read": {
+      "ns/op": 1.0434999999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Read-4": {
+      "ns/op": 1.032,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Read-16": {
+      "ns/op": 1.138,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Read-32": {
+      "ns/op": 1.1175000000000002,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Write": {
+      "ns/op": 10.16,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Write-4": {
+      "ns/op": 10.39,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Write-16": {
+      "ns/op": 10.64,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "SyncFlag/Write-32": {
+      "ns/op": 10.8,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Uncontended": {
+      "ns/op": 3.674,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Uncontended-4": {
+      "ns/op": 3.8099999999999996,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Uncontended-16": {
+      "ns/op": 3.8215,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Uncontended-32": {
+      "ns/op": 3.873,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended": {
+      "ns/op": 3.6845,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended-4": {
+      "ns/op": 17.425,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended-16": {
+      "ns/op": 96.94,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended-32": {
+      "ns/op": 115.69999999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    }
+  },
+  "latency_baseline": {
+    "WaitLatency/TryMutex/Work0-4": {
+      "ns/op": 153.2,
+      "max-wait-ns": 37671.0,
+      "p50-wait-ns": 1949.0,
+      "p99-wait-ns": 5741.0,
+      "samples": 31257.5
+    },
+    "WaitLatency/TryMutex/Work0-16": {
+      "ns/op": 144.8,
+      "max-wait-ns": 186731.0,
+      "p50-wait-ns": 8096.0,
+      "p99-wait-ns": 20758.5,
+      "samples": 31295.5
+    },
+    "WaitLatency/TryMutex/Work0-32": {
+      "ns/op": 144.35,
+      "max-wait-ns": 171046.5,
+      "p50-wait-ns": 17899.0,
+      "p99-wait-ns": 41613.0,
+      "samples": 31360.5
+    },
+    "WaitLatency/StandardMutex/Work0-4": {
+      "ns/op": 67.69,
+      "max-wait-ns": 426531.5,
+      "p50-wait-ns": 130.0,
+      "p99-wait-ns": 50119.5,
+      "samples": 31258.0
+    },
+    "WaitLatency/StandardMutex/Work0-16": {
+      "ns/op": 130.75,
+      "max-wait-ns": 1419920.0,
+      "p50-wait-ns": 185.0,
+      "p99-wait-ns": 351881.5,
+      "samples": 31281.0
+    },
+    "WaitLatency/StandardMutex/Work0-32": {
+      "ns/op": 136.5,
+      "max-wait-ns": 3939859.5,
+      "p50-wait-ns": 190.0,
+      "p99-wait-ns": 757269.5,
+      "samples": 31312.5
+    },
+    "WaitLatency/TryMutex/Work100-4": {
+      "ns/op": 254.25,
+      "max-wait-ns": 58254.5,
+      "p50-wait-ns": 3376.5,
+      "p99-wait-ns": 10579.5,
+      "samples": 31257.0
+    },
+    "WaitLatency/TryMutex/Work100-16": {
+      "ns/op": 231.35000000000002,
+      "max-wait-ns": 69561.0,
+      "p50-wait-ns": 12979.5,
+      "p99-wait-ns": 29775.5,
+      "samples": 31296.5
+    },
+    "WaitLatency/TryMutex/Work100-32": {
+      "ns/op": 244.39999999999998,
+      "max-wait-ns": 153739.0,
+      "p50-wait-ns": 28548.5,
+      "p99-wait-ns": 65383.0,
+      "samples": 31360.5
+    },
+    "WaitLatency/StandardMutex/Work100-4": {
+      "ns/op": 248.75,
+      "max-wait-ns": 979707.5,
+      "p50-wait-ns": 55.0,
+      "p99-wait-ns": 131763.0,
+      "samples": 31258.5
+    },
+    "WaitLatency/StandardMutex/Work100-16": {
+      "ns/op": 225.25,
+      "max-wait-ns": 6628230.5,
+      "p50-wait-ns": 60.0,
+      "p99-wait-ns": 947702.5,
+      "samples": 31283.0
+    },
+    "WaitLatency/StandardMutex/Work100-32": {
+      "ns/op": 263.85,
+      "max-wait-ns": 4092141.0,
+      "p50-wait-ns": 60.0,
+      "p99-wait-ns": 1127705.5,
+      "samples": 31318.5
+    }
+  },
+  "latency_optimized": {
+    "WaitLatency/TryMutex/Work0-4": {
+      "ns/op": 16.73,
+      "max-wait-ns": 281820.0,
+      "p50-wait-ns": 50.0,
+      "p99-wait-ns": 70.0,
+      "samples": 31259.5
+    },
+    "WaitLatency/TryMutex/Work0-16": {
+      "ns/op": 21.78,
+      "max-wait-ns": 429102.0,
+      "p50-wait-ns": 50.0,
+      "p99-wait-ns": 111790.0,
+      "samples": 31280.5
+    },
+    "WaitLatency/TryMutex/Work0-32": {
+      "ns/op": 34.09,
+      "max-wait-ns": 449810.5,
+      "p50-wait-ns": 50.0,
+      "p99-wait-ns": 174057.0,
+      "samples": 31314.0
+    },
+    "WaitLatency/StandardMutex/Work0-4": {
+      "ns/op": 81.565,
+      "max-wait-ns": 409630.0,
+      "p50-wait-ns": 120.0,
+      "p99-wait-ns": 38102.0,
+      "samples": 31257.5
+    },
+    "WaitLatency/StandardMutex/Work0-16": {
+      "ns/op": 109.84,
+      "max-wait-ns": 1453268.5,
+      "p50-wait-ns": 150.0,
+      "p99-wait-ns": 269086.0,
+      "samples": 31282.5
+    },
+    "WaitLatency/StandardMutex/Work0-32": {
+      "ns/op": 137.45,
+      "max-wait-ns": 3775921.0,
+      "p50-wait-ns": 190.0,
+      "p99-wait-ns": 763225.5,
+      "samples": 31312.0
+    },
+    "WaitLatency/TryMutex/Work100-4": {
+      "ns/op": 160.75,
+      "max-wait-ns": 316334.5,
+      "p50-wait-ns": 40.0,
+      "p99-wait-ns": 125555.5,
+      "samples": 31258.5
+    },
+    "WaitLatency/TryMutex/Work100-16": {
+      "ns/op": 190.8,
+      "max-wait-ns": 378266.5,
+      "p50-wait-ns": 40.0,
+      "p99-wait-ns": 145904.5,
+      "samples": 31282.0
+    },
+    "WaitLatency/TryMutex/Work100-32": {
+      "ns/op": 198.85,
+      "max-wait-ns": 460516.0,
+      "p50-wait-ns": 40.0,
+      "p99-wait-ns": 193739.5,
+      "samples": 31314.5
+    },
+    "WaitLatency/StandardMutex/Work100-4": {
+      "ns/op": 211.85,
+      "max-wait-ns": 1060179.0,
+      "p50-wait-ns": 50.0,
+      "p99-wait-ns": 107056.0,
+      "samples": 31257.5
+    },
+    "WaitLatency/StandardMutex/Work100-16": {
+      "ns/op": 218.45,
+      "max-wait-ns": 7682508.5,
+      "p50-wait-ns": 60.0,
+      "p99-wait-ns": 1124801.0,
+      "samples": 31284.0
+    },
+    "WaitLatency/StandardMutex/Work100-32": {
+      "ns/op": 249.3,
+      "max-wait-ns": 7193909.5,
+      "p50-wait-ns": 60.0,
+      "p99-wait-ns": 1557800.0,
+      "samples": 31316.5
+    }
+  },
+  "assembly": {
+    "AtomicPair/Intrinsics": {
+      "ns/op": 3.59,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "AtomicPair/Assembly": {
+      "ns/op": 3.9314999999999998,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    }
+  },
+  "spin": {
+    "TryMutex/Uncontended": {
+      "ns/op": 3.7165,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Uncontended-4": {
+      "ns/op": 3.841,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Uncontended-16": {
+      "ns/op": 3.8465,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Uncontended-32": {
+      "ns/op": 3.87,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended0": {
+      "ns/op": 3.863,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended0-4": {
+      "ns/op": 10.1435,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended0-16": {
+      "ns/op": 10.465,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended0-32": {
+      "ns/op": 11.7,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended100": {
+      "ns/op": 82.205,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended100-4": {
+      "ns/op": 121.6,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended100-16": {
+      "ns/op": 152.65,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "TryMutex/Contended100-32": {
+      "ns/op": 159.0,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    }
+  },
+  "latency_spin": {
+    "WaitLatency/TryMutex/Work0-4": {
+      "ns/op": 12.215,
+      "max-wait-ns": 230077.5,
+      "p50-wait-ns": 35.5,
+      "p99-wait-ns": 120.0,
+      "samples": 31171.5
+    },
+    "WaitLatency/TryMutex/Work0-16": {
+      "ns/op": 18.805,
+      "max-wait-ns": 329515.0,
+      "p50-wait-ns": 40.0,
+      "p99-wait-ns": 536.0,
+      "samples": 31285.5
+    },
+    "WaitLatency/TryMutex/Work0-32": {
+      "ns/op": 67.075,
+      "max-wait-ns": 374209.0,
+      "p50-wait-ns": 40.0,
+      "p99-wait-ns": 180434.5,
+      "samples": 31320.5
+    },
+    "WaitLatency/TryMutex/Work100-4": {
+      "ns/op": 190.75,
+      "max-wait-ns": 318559.0,
+      "p50-wait-ns": 50.0,
+      "p99-wait-ns": 126047.0,
+      "samples": 31258.5
+    },
+    "WaitLatency/TryMutex/Work100-16": {
+      "ns/op": 246.75,
+      "max-wait-ns": 441731.0,
+      "p50-wait-ns": 40.5,
+      "p99-wait-ns": 186085.0,
+      "samples": 31282.5
+    },
+    "WaitLatency/TryMutex/Work100-32": {
+      "ns/op": 235.85000000000002,
+      "max-wait-ns": 394742.5,
+      "p50-wait-ns": 30.0,
+      "p99-wait-ns": 192041.0,
+      "samples": 31312.5
+    }
+  },
+  "recheck_baseline": {
+    "OnceMutex/First-4": {
+      "ns/op": 21.240000000000002,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "OnceMutex/First-16": {
+      "ns/op": 23.27,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "OnceMutex/First-32": {
+      "ns/op": 22.945,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256-4": {
+      "ns/op": 561.0999999999999,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256-16": {
+      "ns/op": 554.4,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256-32": {
+      "ns/op": 560.05,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "StandardMutex/Uncontended-4": {
+      "ns/op": 3.6479999999999997,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Uncontended-16": {
+      "ns/op": 3.6559999999999997,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Uncontended-32": {
+      "ns/op": 3.6325,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended-4": {
+      "ns/op": 17.009999999999998,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended-16": {
+      "ns/op": 71.14,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended-32": {
+      "ns/op": 113.44999999999999,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    }
+  },
+  "recheck_optimized": {
+    "OnceMutex/First-4": {
+      "ns/op": 23.8,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "OnceMutex/First-16": {
+      "ns/op": 24.85,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "OnceMutex/First-32": {
+      "ns/op": 23.450000000000003,
+      "B/op": 16.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256-4": {
+      "ns/op": 525.2,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256-16": {
+      "ns/op": 603.95,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "ControlWaitGroup/256-32": {
+      "ns/op": 568.8,
+      "B/op": 24.0,
+      "allocs/op": 1.0
+    },
+    "StandardMutex/Uncontended-4": {
+      "ns/op": 3.6980000000000004,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Uncontended-16": {
+      "ns/op": 3.592,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Uncontended-32": {
+      "ns/op": 3.7395,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended-4": {
+      "ns/op": 17.89,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended-16": {
+      "ns/op": 63.21,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    },
+    "StandardMutex/Contended-32": {
+      "ns/op": 113.25,
+      "B/op": 0.0,
+      "allocs/op": 0.0
+    }
+  }
+}

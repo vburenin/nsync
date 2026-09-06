@@ -1,0 +1,60 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/vburenin/nsync
+cpu: Apple M3 Max
+BenchmarkTryMutex/Uncontended            	51958941	         3.372 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended            	60777444	         2.968 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended            	61295708	         2.969 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended            	61043683	         2.966 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended            	60360492	         2.972 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended            	60991972	         2.966 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-4          	64671618	         2.968 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-4          	64231232	         2.962 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-4          	63070281	         2.963 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-4          	63922360	         2.960 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-4          	64137784	         2.962 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-4          	59570594	         2.968 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-16         	64285713	         2.963 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-16         	64707468	         2.991 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-16         	63501403	         2.966 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-16         	64873630	         2.958 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-16         	64536368	         3.068 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-16         	61776930	         2.965 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0             	74354570	         2.605 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0             	68909412	         2.616 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0             	69375283	         2.659 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0             	68423710	         2.608 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0             	69594345	         2.615 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0             	68175361	         2.622 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4           	21622594	         7.746 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4           	23672918	         7.816 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4           	22638424	         7.705 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4           	24480356	         7.489 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4           	24840434	         7.014 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4           	24925710	         7.678 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	23159810	         7.991 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	22696586	         7.987 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	21322592	         7.962 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	24800079	         7.982 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	23461684	         8.039 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	21792315	         7.969 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100           	  980769	       182.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100           	  996126	       182.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100           	  985176	       183.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100           	  984278	       184.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100           	  980725	       181.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100           	  989690	       181.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4         	  699583	       258.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4         	  692851	       253.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4         	  693262	       260.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4         	  693819	       256.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4         	  791193	       258.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4         	  692773	       259.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	  681537	       260.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	  679758	       258.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	  807009	       256.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	  685333	       259.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	  691675	       262.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	  674925	       261.2 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/vburenin/nsync	10.487s

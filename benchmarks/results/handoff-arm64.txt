@@ -1,0 +1,138 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/vburenin/nsync
+cpu: Apple M3 Max
+BenchmarkTryMutex/Uncontended-4          	29564838	         3.646 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-4          	43175826	         2.940 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-4          	42818284	         2.971 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-16         	43109905	         2.946 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-16         	42918454	         2.955 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Uncontended-16         	42494798	         2.916 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-4           	24036255	         4.996 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-4           	24040868	         4.989 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-4           	24028833	         4.997 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-16          	23728113	         4.998 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-16          	24061558	         4.995 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-16          	23543066	         5.038 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-4           	62403858	         1.816 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-4           	68501282	         1.763 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-4           	66847712	         1.749 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-16          	68661355	         1.742 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-16          	68957274	         1.843 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-16          	61914169	         1.919 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-4       	41753042	         3.065 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-4       	40450578	         3.045 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-4       	40294932	         3.077 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-16      	37663305	         3.149 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-16      	39095371	         3.091 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-16      	40328230	         3.037 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-4       	 1419044	        84.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-4       	 1407274	        85.21 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-4       	 1411567	        84.87 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-16      	 1424931	        84.26 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-16      	 1418080	        84.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-16      	 1421175	        84.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-4          	    6190	     17368 ns/op	     112 B/op	       1 allocs/op
+BenchmarkTryMutex/TimeoutPark-4          	    7731	     16052 ns/op	     112 B/op	       1 allocs/op
+BenchmarkTryMutex/TimeoutPark-4          	    7620	     15988 ns/op	     112 B/op	       1 allocs/op
+BenchmarkTryMutex/TimeoutPark-16         	    7743	     17548 ns/op	     112 B/op	       1 allocs/op
+BenchmarkTryMutex/TimeoutPark-16         	    7548	     17668 ns/op	     112 B/op	       1 allocs/op
+BenchmarkTryMutex/TimeoutPark-16         	    7281	     18669 ns/op	     112 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-4           	23630572	         5.781 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4           	19660579	         5.215 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4           	23464998	         5.769 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	17772074	         6.746 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	17430459	         7.093 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	17356504	         6.965 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4         	  430113	       277.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4         	  436819	       265.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4         	  430833	       278.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	  439070	       272.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	  435380	       274.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	  442816	       272.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-4       	43275086	         2.938 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-4       	42221304	         2.922 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-4       	42949176	         2.929 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-16      	43051905	         2.932 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-16      	41506936	         2.974 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-16      	43040973	         2.934 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-4          	19410276	         8.308 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-4          	19992962	         5.969 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-4          	19750748	         5.928 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-16         	17414649	         9.122 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-16         	13083296	         8.783 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-16         	13050747	         8.669 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-4       	17397188	         7.297 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-4       	16527787	         7.358 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-4       	16912327	         7.361 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-16      	16068468	         7.333 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-16      	16609186	         7.313 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-16      	16262456	         7.314 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-4          	 6375757	        18.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-4          	 9394448	        14.98 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-4          	 7885657	        19.03 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-16         	 8505560	        14.90 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-16         	 8508424	        22.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-16         	 8289868	        22.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-4      	16387098	         7.375 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-4      	16698362	         7.313 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-4      	16587282	         7.354 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-16     	16823314	         7.276 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-16     	16582315	         7.351 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-16     	16776566	         7.314 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-4         	 7238344	        18.95 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-4         	 9498649	        16.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-4         	 7068542	        16.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-16        	 8887160	        19.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-16        	 9147112	        19.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-16        	 9093399	        19.98 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-4          	65937072	         1.860 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-4          	63788798	         1.863 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-4          	67624682	         1.850 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-16         	67302298	         1.857 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-16         	67836506	         1.900 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-16         	65423331	         1.862 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-4      	34665799	         3.681 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-4      	31906407	         3.728 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-4      	33275175	         3.615 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-16     	33347227	         3.644 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-16     	33418820	         3.596 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-16     	34370826	         3.650 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-4               	44978926	         2.592 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-4               	50657854	         2.636 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-4               	48198422	         2.532 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-16              	48143622	         2.639 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-16              	43871017	         2.622 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-16              	49309988	         2.592 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-4     	36719706	         3.332 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-4     	35882034	         3.328 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-4     	38141649	         3.327 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-16    	37671676	         3.391 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-16    	35061668	         3.375 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-16    	36229608	         3.335 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work0-4    	12107452	        10.79 ns/op	    354917 max-wait-ns	        41.00 p50-wait-ns	     29916 p99-wait-ns	    131072 samples
+BenchmarkWaitLatency/TryMutex/Work0-4    	12371133	        10.90 ns/op	    293291 max-wait-ns	        41.00 p50-wait-ns	     29708 p99-wait-ns	    131072 samples
+BenchmarkWaitLatency/TryMutex/Work0-4    	11752654	        10.75 ns/op	    423958 max-wait-ns	        41.00 p50-wait-ns	     29167 p99-wait-ns	    131072 samples
+BenchmarkWaitLatency/TryMutex/Work0-16   	11083017	        11.32 ns/op	   1187333 max-wait-ns	        41.00 p50-wait-ns	    158292 p99-wait-ns	    173205 samples
+BenchmarkWaitLatency/TryMutex/Work0-16   	11622040	        10.37 ns/op	   2081084 max-wait-ns	        41.00 p50-wait-ns	    139042 p99-wait-ns	    181623 samples
+BenchmarkWaitLatency/TryMutex/Work0-16   	10711734	        10.19 ns/op	   1549750 max-wait-ns	        41.00 p50-wait-ns	    133708 p99-wait-ns	    167396 samples
+BenchmarkWaitLatency/StandardMutex/Work0-4          	 1321177	        90.82 ns/op	    106750 max-wait-ns	       167.0 p50-wait-ns	     29750 p99-wait-ns	     20652 samples
+BenchmarkWaitLatency/StandardMutex/Work0-4          	 1334223	        90.05 ns/op	    175958 max-wait-ns	       167.0 p50-wait-ns	     34459 p99-wait-ns	     20854 samples
+BenchmarkWaitLatency/StandardMutex/Work0-4          	 1314952	        90.39 ns/op	    127042 max-wait-ns	       167.0 p50-wait-ns	     34084 p99-wait-ns	     20555 samples
+BenchmarkWaitLatency/StandardMutex/Work0-16         	 1000000	       101.8 ns/op	   1052042 max-wait-ns	       125.0 p50-wait-ns	    183917 p99-wait-ns	     15635 samples
+BenchmarkWaitLatency/StandardMutex/Work0-16         	 1000000	       102.5 ns/op	   1475292 max-wait-ns	       125.0 p50-wait-ns	    201541 p99-wait-ns	     15677 samples
+BenchmarkWaitLatency/StandardMutex/Work0-16         	 1000000	       101.0 ns/op	   1659625 max-wait-ns	       125.0 p50-wait-ns	    158583 p99-wait-ns	     15654 samples
+BenchmarkWaitLatency/TryMutex/Work100-4             	  430930	       281.2 ns/op	   3048791 max-wait-ns	        41.00 p50-wait-ns	     92084 p99-wait-ns	      6740 samples
+BenchmarkWaitLatency/TryMutex/Work100-4             	  443376	       281.6 ns/op	   4028416 max-wait-ns	        41.00 p50-wait-ns	     90708 p99-wait-ns	      6936 samples
+BenchmarkWaitLatency/TryMutex/Work100-4             	  443479	       255.3 ns/op	   3265667 max-wait-ns	        41.00 p50-wait-ns	     89875 p99-wait-ns	      6937 samples
+BenchmarkWaitLatency/TryMutex/Work100-16            	  500851	       278.8 ns/op	   4253584 max-wait-ns	        41.00 p50-wait-ns	   1007709 p99-wait-ns	      7858 samples
+BenchmarkWaitLatency/TryMutex/Work100-16            	  422782	       282.9 ns/op	   5518166 max-wait-ns	        41.00 p50-wait-ns	   1076666 p99-wait-ns	      6630 samples
+BenchmarkWaitLatency/TryMutex/Work100-16            	  418689	       282.0 ns/op	   5231292 max-wait-ns	        41.00 p50-wait-ns	   1071583 p99-wait-ns	      6573 samples
+BenchmarkWaitLatency/StandardMutex/Work100-4        	  382276	       309.8 ns/op	   1425750 max-wait-ns	        42.00 p50-wait-ns	    326667 p99-wait-ns	      5982 samples
+BenchmarkWaitLatency/StandardMutex/Work100-4        	  381729	       310.8 ns/op	   1087500 max-wait-ns	        42.00 p50-wait-ns	    289208 p99-wait-ns	      5971 samples
+BenchmarkWaitLatency/StandardMutex/Work100-4        	  379695	       311.5 ns/op	   1026875 max-wait-ns	        42.00 p50-wait-ns	    345792 p99-wait-ns	      5940 samples
+BenchmarkWaitLatency/StandardMutex/Work100-16       	  359977	       317.7 ns/op	   2927292 max-wait-ns	        42.00 p50-wait-ns	   1151875 p99-wait-ns	      5663 samples
+BenchmarkWaitLatency/StandardMutex/Work100-16       	  364851	       319.6 ns/op	   3830083 max-wait-ns	        42.00 p50-wait-ns	   1142000 p99-wait-ns	      5728 samples
+BenchmarkWaitLatency/StandardMutex/Work100-16       	  370070	       317.0 ns/op	   3364250 max-wait-ns	        42.00 p50-wait-ns	   1120750 p99-wait-ns	      5814 samples
+PASS
+ok  	github.com/vburenin/nsync	17.853s

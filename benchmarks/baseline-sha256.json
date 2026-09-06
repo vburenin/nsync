@@ -1,0 +1,9 @@
+{
+  "cwaitgroup.go": "43af78d70f58bbe84eeefa8014a5a95de0a1bbd93d96c27d532f587c19750619",
+  "semaphore.go": "7ae24d212fb7cfb02054c05c57887c0e3259ea35b38cbd86a6c8a5354dbe2b01",
+  "trymutex.go": "3fc270c436b22b1ebabd7a089e2c0f8fcdba4f98386f4655a2b857a6a252803b",
+  "timeout.go": "59d2ea8595825002aaebdb02acc6ba1775db880301cdc98cc1630a04365a40d8",
+  "namedmutex.go": "95eda066e7836fed7909a8a8f39392c63407be5a21b6f8d92b662685965bbb44",
+  "namedoncemutex.go": "6483cdcc6a457a75dab1bddb1105b7b3a403507aeedfd742b91e7cd2e359a30f",
+  "sync_flag.go": "b5007e03e0a919dcb4d0b926c9e6e1f771c419c6e93b7c2838f8890fecb87f7b"
+}

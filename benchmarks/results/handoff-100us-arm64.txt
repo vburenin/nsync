@@ -1,0 +1,30 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/vburenin/nsync
+cpu: Apple M3 Max
+BenchmarkTryMutex/Contended0-4          	 2000000	        18.91 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4          	 2000000	         6.540 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4          	 2000000	         6.204 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16         	 2000000	         6.624 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16         	 2000000	         7.548 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16         	 2000000	         7.585 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4        	 2000000	       266.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4        	 2000000	       272.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4        	 2000000	       278.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16       	 2000000	       280.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16       	 2000000	       283.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16       	 2000000	       283.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work0-4   	 2000000	        10.22 ns/op	    576500 max-wait-ns	        41.00 p50-wait-ns	       458.0 p99-wait-ns	     31261 samples
+BenchmarkWaitLatency/TryMutex/Work0-4   	 2000000	        11.13 ns/op	    257167 max-wait-ns	        41.00 p50-wait-ns	     13250 p99-wait-ns	     31258 samples
+BenchmarkWaitLatency/TryMutex/Work0-4   	 2000000	        10.14 ns/op	    243042 max-wait-ns	        41.00 p50-wait-ns	     11750 p99-wait-ns	     31258 samples
+BenchmarkWaitLatency/TryMutex/Work0-16  	 2000000	        10.27 ns/op	    345667 max-wait-ns	        41.00 p50-wait-ns	     39291 p99-wait-ns	     31283 samples
+BenchmarkWaitLatency/TryMutex/Work0-16  	 2000000	        10.32 ns/op	    289291 max-wait-ns	        41.00 p50-wait-ns	     35334 p99-wait-ns	     31285 samples
+BenchmarkWaitLatency/TryMutex/Work0-16  	 2000000	        10.27 ns/op	    354584 max-wait-ns	        41.00 p50-wait-ns	     39500 p99-wait-ns	     31281 samples
+BenchmarkWaitLatency/TryMutex/Work100-4          	 2000000	       285.5 ns/op	    593250 max-wait-ns	        41.00 p50-wait-ns	    148458 p99-wait-ns	     31255 samples
+BenchmarkWaitLatency/TryMutex/Work100-4          	 2000000	       265.8 ns/op	    535542 max-wait-ns	        41.00 p50-wait-ns	    143125 p99-wait-ns	     31260 samples
+BenchmarkWaitLatency/TryMutex/Work100-4          	 2000000	       264.5 ns/op	    476875 max-wait-ns	        41.00 p50-wait-ns	    141750 p99-wait-ns	     31258 samples
+BenchmarkWaitLatency/TryMutex/Work100-16         	 2000000	       329.9 ns/op	    398458 max-wait-ns	        41.00 p50-wait-ns	    198417 p99-wait-ns	     31281 samples
+BenchmarkWaitLatency/TryMutex/Work100-16         	 2000000	       317.8 ns/op	    394584 max-wait-ns	        41.00 p50-wait-ns	    198041 p99-wait-ns	     31281 samples
+BenchmarkWaitLatency/TryMutex/Work100-16         	 2000000	       330.0 ns/op	    477125 max-wait-ns	        41.00 p50-wait-ns	    198875 p99-wait-ns	     31282 samples
+PASS
+ok  	github.com/vburenin/nsync	7.427s

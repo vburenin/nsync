@@ -1,59 +1,61 @@
-// Semaphore implementation that adds so necessary synchronization
-// primitive into Go language. It uses built-in channel with empty struct
-// so it doesn't utilize a lot of memory to buffer acquired elements.
-
 package nsync
 
 import "time"
 
-// Semaphore implementation uses built in channel using 0 size struct values.
-type Semaphore struct {
-	sch chan struct{}
-}
+// Semaphore limits concurrent acquisitions. Use NewSemaphore to initialize it.
+// A Semaphore must not be copied after first use.
+type Semaphore struct{ gate gate }
 
-// NewSemaphore returns an instance of a semaphore.
+// NewSemaphore creates a semaphore. It panics unless value is positive.
 func NewSemaphore(value int) *Semaphore {
-	return &Semaphore{
-		sch: make(chan struct{}, value),
+	if value <= 0 {
+		panic("nsync: semaphore capacity must be positive")
 	}
+	return &Semaphore{gate: gate{limit: int64(value)}}
 }
 
-// Acquire tries to acquire semaphore lock. If no luck it will block.
+// Acquire acquires a slot, blocking when all slots are occupied.
 func (s *Semaphore) Acquire() {
-	s.sch <- struct{}{}
+	if s.gate.limit == 1 {
+		s.gate.mu.lock()
+		return
+	}
+	s.gate.acquire()
 }
 
-// Release releases acquired semaphore. If semaphore is not acquired it will panic.
+// Release releases a slot. It panics if no slot is occupied.
 func (s *Semaphore) Release() {
-	select {
-	case <-s.sch:
-	default:
-		panic("No semaphore locks!")
+	if s.gate.limit == 1 {
+		s.gate.mu.unlock()
+		return
 	}
+	s.gate.release()
 }
 
-// TryAcquire tries to acquire semaphore. Returns true/false if success/failure accordingly.
+// TryAcquire acquires an available slot without waiting.
 func (s *Semaphore) TryAcquire() bool {
-	select {
-	case s.sch <- struct{}{}:
-		return true
-	default:
-		return false
+	if s.gate.limit == 1 {
+		return s.gate.mu.tryLock()
 	}
+	return s.gate.tryAcquire()
 }
 
-// TryAcquireTimeout tries to acquire semaphore for a specified time interval.
-// Returns true/false if success/failure accordingly.
+// TryAcquireTimeout tries immediately, then waits up to d for a slot.
+// A non-positive duration is equivalent to TryAcquire.
 func (s *Semaphore) TryAcquireTimeout(d time.Duration) bool {
-	select {
-	case s.sch <- struct{}{}:
-		return true
-	case <-time.After(d):
-		return false
+	if s.gate.limit == 1 {
+		return s.gate.mu.lockTimeout(d)
 	}
+	return s.gate.acquireTimeout(d)
 }
 
-// Value returns the number of currently acquired semaphores.
+// Value returns a snapshot of the number of occupied slots.
 func (s *Semaphore) Value() int {
-	return len(s.sch)
+	if s.gate.limit == 1 {
+		return int(min(s.gate.mu.state.Load(), 1))
+	}
+	s.gate.mu.lock()
+	n := int(s.gate.used)
+	s.gate.mu.unlock()
+	return n
 }

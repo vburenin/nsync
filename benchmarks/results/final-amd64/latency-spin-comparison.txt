@@ -1,0 +1,53 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+                                │ benchmarks/results/final-amd64/latency-optimized.txt │ benchmarks/results/final-amd64/latency-spin.txt │
+                                │                        sec/op                        │          sec/op           vs base               │
+WaitLatency/TryMutex/Work0-4                                              16.73n ±  7%               12.21n ± 22%  -26.99% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-16                                             21.78n ±  6%               18.80n ± 12%  -13.66% (p=0.009 n=6)
+WaitLatency/TryMutex/Work0-32                                             34.09n ± 15%               67.08n ± 52%  +96.76% (p=0.041 n=6)
+WaitLatency/TryMutex/Work100-4                                            160.8n ± 24%               190.8n ± 13%  +18.66% (p=0.004 n=6)
+WaitLatency/TryMutex/Work100-16                                           190.8n ± 13%               246.8n ±  6%  +29.32% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-32                                           198.8n ±  9%               235.8n ± 10%  +18.61% (p=0.002 n=6)
+geomean                                                                   65.05n                     74.50n        +14.54%
+
+                                │ benchmarks/results/final-amd64/latency-optimized.txt │ benchmarks/results/final-amd64/latency-spin.txt │
+                                │                     max-wait-sec                     │       max-wait-sec        vs base               │
+WaitLatency/TryMutex/Work0-4                                             281.8µ ±  38%               230.1µ ± 32%        ~ (p=0.310 n=6)
+WaitLatency/TryMutex/Work0-16                                            429.1µ ±  44%               329.5µ ± 70%        ~ (p=0.093 n=6)
+WaitLatency/TryMutex/Work0-32                                            449.8µ ± 117%               374.2µ ± 57%        ~ (p=0.331 n=6)
+WaitLatency/TryMutex/Work100-4                                           316.3µ ±  21%               318.6µ ± 14%        ~ (p=0.818 n=6)
+WaitLatency/TryMutex/Work100-16                                          378.3µ ±  43%               441.7µ ± 68%        ~ (p=0.589 n=6)
+WaitLatency/TryMutex/Work100-32                                          460.5µ ±  21%               394.7µ ± 69%        ~ (p=0.485 n=6)
+geomean                                                                  379.7µ                      341.1µ        -10.16%
+
+                                │ benchmarks/results/final-amd64/latency-optimized.txt │ benchmarks/results/final-amd64/latency-spin.txt │
+                                │                     p50-wait-sec                     │       p50-wait-sec        vs base               │
+WaitLatency/TryMutex/Work0-4                                              50.00n ±  0%               35.50n ± 15%  -29.00% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-16                                             50.00n ±  0%               40.00n ±  0%  -20.00% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-32                                             50.00n ±  0%               40.00n ±  0%  -20.00% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-4                                            40.00n ± 25%               50.00n ± 20%        ~ (p=0.188 n=6)
+WaitLatency/TryMutex/Work100-16                                           40.00n ± 25%               40.50n ± 23%        ~ (p=0.773 n=6)
+WaitLatency/TryMutex/Work100-32                                           40.00n ±  0%               30.00n ±  0%  -25.00% (p=0.002 n=6)
+geomean                                                                   44.72n                     38.87n        -13.08%
+
+                                │ benchmarks/results/final-amd64/latency-optimized.txt │ benchmarks/results/final-amd64/latency-spin.txt │
+                                │                     p99-wait-sec                     │       p99-wait-sec        vs base               │
+WaitLatency/TryMutex/Work0-4                                              70.00n ± 16%              120.00n ± 41%  +71.43% (p=0.006 n=6)
+WaitLatency/TryMutex/Work0-16                                          111790.0n ± 21%               536.0n ± 42%  -99.52% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-32                                             174.1µ ±  5%               180.4µ ±  5%   +3.66% (p=0.026 n=6)
+WaitLatency/TryMutex/Work100-4                                            125.6µ ±  4%               126.0µ ±  3%        ~ (p=0.485 n=6)
+WaitLatency/TryMutex/Work100-16                                           145.9µ ±  8%               186.1µ ±  3%  +27.54% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-32                                           193.7µ ±  5%               192.0µ ±  2%        ~ (p=0.461 n=6)
+geomean                                                                   41.12µ                     19.34µ        -52.97%
+
+                                │ benchmarks/results/final-amd64/latency-optimized.txt │ benchmarks/results/final-amd64/latency-spin.txt │
+                                │                       samples                        │          samples           vs base              │
+WaitLatency/TryMutex/Work0-4                                               31.26k ± 0%                31.17k ± 19%       ~ (p=0.123 n=6)
+WaitLatency/TryMutex/Work0-16                                              31.28k ± 0%                31.29k ±  0%       ~ (p=0.582 n=6)
+WaitLatency/TryMutex/Work0-32                                              31.31k ± 0%                31.32k ±  0%       ~ (p=0.102 n=6)
+WaitLatency/TryMutex/Work100-4                                             31.26k ± 0%                31.26k ±  0%       ~ (p=0.693 n=6)
+WaitLatency/TryMutex/Work100-16                                            31.28k ± 0%                31.28k ±  0%       ~ (p=0.649 n=6)
+WaitLatency/TryMutex/Work100-32                                            31.31k ± 0%                31.31k ±  0%       ~ (p=0.558 n=6)
+geomean                                                                    31.28k                     31.27k        -0.04%

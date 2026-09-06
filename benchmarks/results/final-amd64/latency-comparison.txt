@@ -1,0 +1,84 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+                                     │ benchmarks/results/final-amd64/latency-baseline.txt │ benchmarks/results/final-amd64/latency-optimized.txt │
+                                     │                       sec/op                        │            sec/op              vs base               │
+WaitLatency/TryMutex/Work0-4                                                 153.20n ± 15%                    16.73n ±  7%  -89.08% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-16                                                144.80n ±  6%                    21.78n ±  6%  -84.96% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-32                                                144.35n ±  5%                    34.09n ± 15%  -76.38% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work0-4                                             67.69n ± 34%                    81.56n ± 20%        ~ (p=0.485 n=6)
+WaitLatency/StandardMutex/Work0-16                                            130.8n ± 41%                    109.8n ± 34%        ~ (p=0.310 n=6)
+WaitLatency/StandardMutex/Work0-32                                            136.5n ±  4%                    137.4n ± 12%        ~ (p=0.818 n=6)
+WaitLatency/TryMutex/Work100-4                                                254.3n ± 15%                    160.8n ± 24%  -36.77% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-16                                               231.3n ±  5%                    190.8n ± 13%  -17.53% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-32                                               244.4n ± 11%                    198.8n ±  9%  -18.64% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work100-4                                           248.8n ± 18%                    211.8n ± 17%        ~ (p=0.093 n=6)
+WaitLatency/StandardMutex/Work100-16                                          225.3n ± 34%                    218.4n ± 11%        ~ (p=0.485 n=6)
+WaitLatency/StandardMutex/Work100-32                                          263.9n ± 12%                    249.3n ± 12%        ~ (p=0.485 n=6)
+geomean                                                                       174.9n                          100.6n        -42.49%
+
+                                     │ benchmarks/results/final-amd64/latency-baseline.txt │ benchmarks/results/final-amd64/latency-optimized.txt │
+                                     │                    max-wait-sec                     │         max-wait-sec          vs base                │
+WaitLatency/TryMutex/Work0-4                                                 37.67µ ± 209%                 281.82µ ±  38%  +648.11% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-16                                                186.7µ ± 120%                  429.1µ ±  44%  +129.80% (p=0.009 n=6)
+WaitLatency/TryMutex/Work0-32                                                171.0µ ±  57%                  449.8µ ± 117%  +162.98% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work0-4                                            426.5µ ±  47%                  409.6µ ± 133%         ~ (p=1.000 n=6)
+WaitLatency/StandardMutex/Work0-16                                           1.420m ±  55%                  1.453m ±  69%         ~ (p=0.818 n=6)
+WaitLatency/StandardMutex/Work0-32                                           3.940m ±  31%                  3.776m ±  34%         ~ (p=0.394 n=6)
+WaitLatency/TryMutex/Work100-4                                               58.25µ ± 172%                 316.33µ ±  21%  +443.02% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-16                                              69.56µ ± 262%                 378.27µ ±  43%  +443.79% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-32                                              153.7µ ±  73%                  460.5µ ±  21%  +199.54% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work100-4                                          979.7µ ±  36%                 1060.2µ ± 105%         ~ (p=0.937 n=6)
+WaitLatency/StandardMutex/Work100-16                                         6.628m ±  68%                  7.683m ±  62%         ~ (p=0.589 n=6)
+WaitLatency/StandardMutex/Work100-32                                         4.092m ±  69%                  7.194m ±  53%         ~ (p=0.240 n=6)
+geomean                                                                      436.3µ                         925.5µ         +112.14%
+
+                                     │ benchmarks/results/final-amd64/latency-baseline.txt │ benchmarks/results/final-amd64/latency-optimized.txt │
+                                     │                    p50-wait-sec                     │        p50-wait-sec          vs base                 │
+WaitLatency/TryMutex/Work0-4                                                1949.00n ± 52%                  50.00n ±  0%  -97.43% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-16                                               8096.00n ±  8%                  50.00n ±  0%  -99.38% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-32                                              17899.00n ± 11%                  50.00n ±  0%  -99.72% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work0-4                                             130.0n ±  8%                  120.0n ±  8%        ~ (p=0.104 n=6)
+WaitLatency/StandardMutex/Work0-16                                            185.0n ± 35%                  150.0n ± 33%        ~ (p=0.413 n=6)
+WaitLatency/StandardMutex/Work0-32                                            190.0n ±  5%                  190.0n ± 11%        ~ (p=0.758 n=6)
+WaitLatency/TryMutex/Work100-4                                              3376.50n ± 16%                  40.00n ± 25%  -98.82% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-16                                            12979.50n ±  3%                  40.00n ± 25%  -99.69% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-32                                            28548.50n ± 15%                  40.00n ±  0%  -99.86% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work100-4                                           55.00n ±  9%                  50.00n ± 20%        ~ (p=0.121 n=6)
+WaitLatency/StandardMutex/Work100-16                                          60.00n ± 50%                  60.00n ±  0%        ~ (p=0.455 n=6)
+WaitLatency/StandardMutex/Work100-32                                          60.00n ±  0%                  60.00n ±  0%        ~ (p=1.000 n=6) ¹
+geomean                                                                       909.3n                        64.22n        -92.94%
+¹ all samples are equal
+
+                                     │ benchmarks/results/final-amd64/latency-baseline.txt │ benchmarks/results/final-amd64/latency-optimized.txt │
+                                     │                    p99-wait-sec                     │        p99-wait-sec          vs base                 │
+WaitLatency/TryMutex/Work0-4                                                5741.00n ± 17%                  70.00n ± 16%    -98.78% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-16                                                 20.76µ ± 28%                 111.79µ ± 21%   +438.53% (p=0.002 n=6)
+WaitLatency/TryMutex/Work0-32                                                 41.61µ ± 26%                 174.06µ ±  5%   +318.28% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work0-4                                             50.12µ ± 37%                  38.10µ ± 51%          ~ (p=0.589 n=6)
+WaitLatency/StandardMutex/Work0-16                                            351.9µ ± 38%                  269.1µ ± 40%          ~ (p=0.699 n=6)
+WaitLatency/StandardMutex/Work0-32                                            757.3µ ± 10%                  763.2µ ± 13%          ~ (p=0.818 n=6)
+WaitLatency/TryMutex/Work100-4                                                10.58µ ± 15%                 125.56µ ±  4%  +1086.78% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-16                                               29.78µ ± 14%                 145.90µ ±  8%   +390.02% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-32                                               65.38µ ± 27%                 193.74µ ±  5%   +196.31% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work100-4                                           131.8µ ± 14%                  107.1µ ± 73%          ~ (p=0.394 n=6)
+WaitLatency/StandardMutex/Work100-16                                          947.7µ ± 33%                 1124.8µ ± 25%          ~ (p=0.589 n=6)
+WaitLatency/StandardMutex/Work100-32                                          1.128m ± 68%                  1.558m ± 39%          ~ (p=0.132 n=6)
+geomean                                                                       87.16µ                        117.7µ          +35.09%
+
+                                     │ benchmarks/results/final-amd64/latency-baseline.txt │ benchmarks/results/final-amd64/latency-optimized.txt │
+                                     │                       samples                       │            samples              vs base              │
+WaitLatency/TryMutex/Work0-4                                                   31.26k ± 0%                      31.26k ± 0%       ~ (p=0.126 n=6)
+WaitLatency/TryMutex/Work0-16                                                  31.30k ± 0%                      31.28k ± 0%  -0.05% (p=0.004 n=6)
+WaitLatency/TryMutex/Work0-32                                                  31.36k ± 0%                      31.31k ± 0%  -0.15% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work0-4                                              31.26k ± 0%                      31.26k ± 0%       ~ (p=0.751 n=6)
+WaitLatency/StandardMutex/Work0-16                                             31.28k ± 0%                      31.28k ± 0%       ~ (p=0.113 n=6)
+WaitLatency/StandardMutex/Work0-32                                             31.31k ± 0%                      31.31k ± 0%       ~ (p=0.948 n=6)
+WaitLatency/TryMutex/Work100-4                                                 31.26k ± 0%                      31.26k ± 0%       ~ (p=0.082 n=6)
+WaitLatency/TryMutex/Work100-16                                                31.30k ± 0%                      31.28k ± 0%  -0.05% (p=0.002 n=6)
+WaitLatency/TryMutex/Work100-32                                                31.36k ± 0%                      31.31k ± 0%  -0.15% (p=0.002 n=6)
+WaitLatency/StandardMutex/Work100-4                                            31.26k ± 0%                      31.26k ± 0%       ~ (p=0.132 n=6)
+WaitLatency/StandardMutex/Work100-16                                           31.28k ± 0%                      31.28k ± 0%       ~ (p=0.422 n=6)
+WaitLatency/StandardMutex/Work100-32                                           31.32k ± 0%                      31.32k ± 0%       ~ (p=0.522 n=6)
+geomean                                                                        31.29k                           31.28k       -0.03%

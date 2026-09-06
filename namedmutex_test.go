@@ -9,24 +9,20 @@ func TestLock(t *testing.T) {
 	l := NewNamedMutex()
 	l.Lock("test1")
 	l.Lock("test2")
-	if len(l.mutexMap) != 2 {
-		t.Error("Unexpected number of channels.")
-	}
-	if len(l.mutexMap["test1"]) != 1 {
-		t.Error("Lock is not acquired")
-	}
-	if len(l.mutexMap["test2"]) != 1 {
-		t.Error("Lock is not acquired")
+	if l.TryLock("test1") || l.TryLock("test2") {
+		t.Error("Lock acquired twice")
 	}
 	l.Unlock("test1")
 	l.Unlock("test2")
 
-	if len(l.mutexMap["test1"]) != 0 {
+	if !l.TryLock("test1") {
 		t.Error("Lock is not released")
 	}
-	if len(l.mutexMap["test2"]) != 0 {
+	if !l.TryLock("test2") {
 		t.Error("Lock is not released")
 	}
+	l.Unlock("test1")
+	l.Unlock("test2")
 }
 
 func TestLock2(t *testing.T) {

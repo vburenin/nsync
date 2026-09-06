@@ -1,0 +1,331 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/vburenin/nsync
+cpu: Apple M3 Max
+                                  │ benchmarks/results/baseline-arm64.txt │ benchmarks/results/serialized-counter-arm64.txt │
+                                  │                sec/op                 │        sec/op         vs base                   │
+TryMutex/Uncontended                                         23.13n ±  5%
+TryMutex/Uncontended-4                                       23.10n ±  4%
+TryMutex/Uncontended-16                                      23.07n ±  2%
+TryMutex/TrySuccess                                          23.86n ±  0%
+TryMutex/TrySuccess-4                                        23.73n ±  3%
+TryMutex/TrySuccess-16                                       23.87n ±  1%
+TryMutex/TryFailure                                          2.648n ±  1%
+TryMutex/TryFailure-4                                        2.644n ±  4%
+TryMutex/TryFailure-16                                       2.647n ±  1%
+TryMutex/TimeoutSuccess                                      24.81n ±  1%
+TryMutex/TimeoutSuccess-4                                    24.84n ±  1%
+TryMutex/TimeoutSuccess-16                                   24.84n ±  0%
+TryMutex/TimeoutExpired                                      272.7n ±  8%
+TryMutex/TimeoutExpired-4                                    246.6n ±  1%
+TryMutex/TimeoutExpired-16                                   249.2n ±  3%
+TryMutex/Contended0                                          23.45n ±  3%
+TryMutex/Contended0-4                                        114.3n ±  2%
+TryMutex/Contended0-16                                       113.6n ±  2%
+TryMutex/Contended100                                        263.9n ±  4%
+TryMutex/Contended100-4                                      450.3n ± 10%
+TryMutex/Contended100-16                                     443.2n ±  0%
+Semaphore/1/Uncontended                                     23.090n ±  1%           7.231n ± ∞ ¹  -68.68% (p=0.024 n=6+3)
+Semaphore/1/Uncontended-4                                   23.060n ±  1%           7.238n ± ∞ ¹  -68.61% (p=0.024 n=6+3)
+Semaphore/1/Uncontended-16                                  23.095n ±  1%           7.182n ± ∞ ¹  -68.90% (p=0.024 n=6+3)
+Semaphore/1/Parallel                                        23.195n ±  2%           7.310n ± ∞ ¹  -68.48% (p=0.024 n=6+3)
+Semaphore/1/Parallel-4                                      114.70n ±  1%           27.24n ± ∞ ¹  -76.25% (n=6+3)
+Semaphore/1/Parallel-16                                     112.20n ±  2%           73.78n ± ∞ ¹  -34.24% (p=0.024 n=6+3)
+Semaphore/8/Uncontended                                     24.535n ±  1%           7.227n ± ∞ ¹  -70.54% (p=0.024 n=6+3)
+Semaphore/8/Uncontended-4                                   24.580n ±  3%           7.240n ± ∞ ¹  -70.55% (n=6+3)
+Semaphore/8/Uncontended-16                                  24.445n ±  1%           7.220n ± ∞ ¹  -70.46% (p=0.024 n=6+3)
+Semaphore/8/Parallel                                        24.550n ±  2%           7.273n ± ∞ ¹  -70.37% (p=0.024 n=6+3)
+Semaphore/8/Parallel-4                                       34.40n ±  7%           22.88n ± ∞ ¹  -33.49% (p=0.024 n=6+3)
+Semaphore/8/Parallel-16                                      40.87n ± 58%           39.67n ± ∞ ¹        ~ (p=0.714 n=6+3)
+Semaphore/64/Uncontended                                    23.815n ±  1%           7.242n ± ∞ ¹  -69.59% (p=0.024 n=6+3)
+Semaphore/64/Uncontended-4                                  23.785n ±  2%           7.246n ± ∞ ¹  -69.54% (p=0.024 n=6+3)
+Semaphore/64/Uncontended-16                                 23.690n ±  0%           7.316n ± ∞ ¹  -69.12% (p=0.024 n=6+3)
+Semaphore/64/Parallel                                       23.780n ±  1%           7.277n ± ∞ ¹  -69.40% (p=0.024 n=6+3)
+Semaphore/64/Parallel-4                                      33.80n ±  4%           22.72n ± ∞ ¹  -32.78% (p=0.024 n=6+3)
+Semaphore/64/Parallel-16                                     33.10n ±  9%           31.04n ± ∞ ¹   -6.21% (p=0.024 n=6+3)
+Semaphore/TryFailure                                         2.627n ±  1%           2.969n ± ∞ ¹  +13.02% (p=0.024 n=6+3)
+Semaphore/TryFailure-4                                       2.619n ±  2%           2.950n ± ∞ ¹  +12.66% (p=0.024 n=6+3)
+Semaphore/TryFailure-16                                      2.623n ±  1%           2.947n ± ∞ ¹  +12.35% (p=0.024 n=6+3)
+Semaphore/TimeoutSuccess                                    24.930n ±  3%           7.142n ± ∞ ¹  -71.35% (p=0.024 n=6+3)
+Semaphore/TimeoutSuccess-4                                  24.455n ±  4%           7.062n ± ∞ ¹  -71.12% (p=0.024 n=6+3)
+Semaphore/TimeoutSuccess-16                                 24.710n ±  3%           7.022n ± ∞ ¹  -71.58% (p=0.024 n=6+3)
+NamedMutex/HotKey                                            41.07n ±  2%
+NamedMutex/HotKey-4                                          41.02n ±  1%
+NamedMutex/HotKey-16                                         41.10n ±  1%
+NamedMutex/SameKeyParallel                                   41.15n ±  1%
+NamedMutex/SameKeyParallel-4                                 142.3n ±  0%
+NamedMutex/SameKeyParallel-16                                138.0n ±  0%
+NamedMutex/IndependentKeys                                   41.64n ±  1%
+NamedMutex/IndependentKeys-4                                 205.6n ±  4%
+NamedMutex/IndependentKeys-16                                226.2n ±  1%
+NamedMutex/ManyKeys                                          47.61n ±  1%
+NamedMutex/ManyKeys-4                                        47.27n ±  2%
+NamedMutex/ManyKeys-16                                       47.50n ±  2%
+NamedMutex/Create1024                                        153.2µ ± 19%
+NamedMutex/Create1024-4                                      121.0µ ±  1%
+NamedMutex/Create1024-16                                     125.1µ ±  2%
+OnceMutex/First                                              13.38n ± 12%
+OnceMutex/First-4                                            11.29n ±  1%
+OnceMutex/First-16                                           11.50n ±  2%
+OnceMutex/Completed                                          3.032n ±  2%
+OnceMutex/Completed-4                                        3.008n ±  1%
+OnceMutex/Completed-16                                       3.023n ±  2%
+OnceMutex/CompletedParallel                                  2.953n ±  1%
+OnceMutex/CompletedParallel-4                                61.49n ±  8%
+OnceMutex/CompletedParallel-16                               114.2n ±  1%
+NamedOnceMutex/Uncontended                                   84.44n ± 15%
+NamedOnceMutex/Uncontended-4                                 71.61n ±  1%
+NamedOnceMutex/Uncontended-16                                70.84n ±  1%
+NamedOnceMutex/SameKeyParallel                               85.21n ±  6%
+NamedOnceMutex/SameKeyParallel-4                             223.6n ±  3%
+NamedOnceMutex/SameKeyParallel-16                            280.4n ±  2%
+NamedOnceMutex/IndependentKeys                               79.38n ±  7%
+NamedOnceMutex/IndependentKeys-4                             298.1n ±  1%
+NamedOnceMutex/IndependentKeys-16                            258.6n ±  1%
+ControlWaitGroup/1                                           325.8n ± 16%
+ControlWaitGroup/1-4                                         373.9n ±  3%
+ControlWaitGroup/1-16                                        369.7n ±  6%
+ControlWaitGroup/16                                          327.6n ± 57%
+ControlWaitGroup/16-4                                        400.8n ± 11%
+ControlWaitGroup/16-16                                       573.8n ± 23%
+ControlWaitGroup/256                                         330.9n ± 98%
+ControlWaitGroup/256-4                                       385.9n ± 13%
+ControlWaitGroup/256-16                                      625.9n ± 13%
+ControlWaitGroup/Aborted                                     3.908n ± 14%
+ControlWaitGroup/Aborted-4                                   3.962n ±  2%
+ControlWaitGroup/Aborted-16                                  3.982n ±  1%
+SyncFlag/Read                                                2.298n ±  1%
+SyncFlag/Read-4                                              2.298n ±  1%
+SyncFlag/Read-16                                             2.285n ±  1%
+SyncFlag/Write                                               6.596n ±  3%
+SyncFlag/Write-4                                             6.553n ±  2%
+SyncFlag/Write-16                                            6.554n ±  0%
+StandardMutex/Uncontended                                    3.124n ±  6%
+StandardMutex/Uncontended-4                                  3.145n ±  6%
+StandardMutex/Uncontended-16                                 3.139n ±  1%
+StandardMutex/Contended                                      3.188n ±  1%
+StandardMutex/Contended-4                                    58.78n ±  3%
+StandardMutex/Contended-16                                   112.0n ±  2%
+geomean                                                      42.89n                 9.436n        -57.28%                 ²
+¹ need >= 6 samples for confidence interval at level 0.95
+² benchmark set differs from baseline; geomeans may not be comparable
+
+                                  │ benchmarks/results/baseline-arm64.txt │ benchmarks/results/serialized-counter-arm64.txt │
+                                  │                 B/op                  │        B/op          vs base                    │
+TryMutex/Uncontended                                         0.000 ± 0%
+TryMutex/Uncontended-4                                       0.000 ± 0%
+TryMutex/Uncontended-16                                      0.000 ± 0%
+TryMutex/TrySuccess                                          0.000 ± 0%
+TryMutex/TrySuccess-4                                        0.000 ± 0%
+TryMutex/TrySuccess-16                                       0.000 ± 0%
+TryMutex/TryFailure                                          0.000 ± 0%
+TryMutex/TryFailure-4                                        0.000 ± 0%
+TryMutex/TryFailure-16                                       0.000 ± 0%
+TryMutex/TimeoutSuccess                                      0.000 ± 0%
+TryMutex/TimeoutSuccess-4                                    0.000 ± 0%
+TryMutex/TimeoutSuccess-16                                   0.000 ± 0%
+TryMutex/TimeoutExpired                                      248.0 ± 0%
+TryMutex/TimeoutExpired-4                                    248.0 ± 0%
+TryMutex/TimeoutExpired-16                                   248.0 ± 0%
+TryMutex/Contended0                                          0.000 ± 0%
+TryMutex/Contended0-4                                        0.000 ± 0%
+TryMutex/Contended0-16                                       0.000 ± 0%
+TryMutex/Contended100                                        0.000 ± 0%
+TryMutex/Contended100-4                                      0.000 ± 0%
+TryMutex/Contended100-16                                     0.000 ± 0%
+Semaphore/1/Uncontended                                      0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/1/Uncontended-4                                    0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/1/Uncontended-16                                   0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/1/Parallel                                         0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/1/Parallel-4                                       0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/1/Parallel-16                                      0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/8/Uncontended                                      0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/8/Uncontended-4                                    0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/8/Uncontended-16                                   0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/8/Parallel                                         0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/8/Parallel-4                                       0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/8/Parallel-16                                      0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/64/Uncontended                                     0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/64/Uncontended-4                                   0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/64/Uncontended-16                                  0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/64/Parallel                                        0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/64/Parallel-4                                      0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/64/Parallel-16                                     0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/TryFailure                                         0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/TryFailure-4                                       0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/TryFailure-16                                      0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/TimeoutSuccess                                     0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/TimeoutSuccess-4                                   0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/TimeoutSuccess-16                                  0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+NamedMutex/HotKey                                            0.000 ± 0%
+NamedMutex/HotKey-4                                          0.000 ± 0%
+NamedMutex/HotKey-16                                         0.000 ± 0%
+NamedMutex/SameKeyParallel                                   0.000 ± 0%
+NamedMutex/SameKeyParallel-4                                 0.000 ± 0%
+NamedMutex/SameKeyParallel-16                                0.000 ± 0%
+NamedMutex/IndependentKeys                                   0.000 ± 0%
+NamedMutex/IndependentKeys-4                                 0.000 ± 0%
+NamedMutex/IndependentKeys-16                                0.000 ± 0%
+NamedMutex/ManyKeys                                          0.000 ± 0%
+NamedMutex/ManyKeys-4                                        0.000 ± 0%
+NamedMutex/ManyKeys-16                                       0.000 ± 0%
+NamedMutex/Create1024                                      218.5Ki ± 0%
+NamedMutex/Create1024-4                                    218.5Ki ± 0%
+NamedMutex/Create1024-16                                   218.5Ki ± 0%
+OnceMutex/First                                              16.00 ± 0%
+OnceMutex/First-4                                            16.00 ± 0%
+OnceMutex/First-16                                           16.00 ± 0%
+OnceMutex/Completed                                          0.000 ± 0%
+OnceMutex/Completed-4                                        0.000 ± 0%
+OnceMutex/Completed-16                                       0.000 ± 0%
+OnceMutex/CompletedParallel                                  0.000 ± 0%
+OnceMutex/CompletedParallel-4                                0.000 ± 0%
+OnceMutex/CompletedParallel-16                               0.000 ± 0%
+NamedOnceMutex/Uncontended                                   16.00 ± 0%
+NamedOnceMutex/Uncontended-4                                 16.00 ± 0%
+NamedOnceMutex/Uncontended-16                                16.00 ± 0%
+NamedOnceMutex/SameKeyParallel                               16.00 ± 0%
+NamedOnceMutex/SameKeyParallel-4                             12.00 ± 0%
+NamedOnceMutex/SameKeyParallel-16                            12.00 ± 0%
+NamedOnceMutex/IndependentKeys                               16.00 ± 0%
+NamedOnceMutex/IndependentKeys-4                             16.00 ± 0%
+NamedOnceMutex/IndependentKeys-16                            16.00 ± 0%
+ControlWaitGroup/1                                           24.00 ± 0%
+ControlWaitGroup/1-4                                         24.00 ± 0%
+ControlWaitGroup/1-16                                        24.00 ± 0%
+ControlWaitGroup/16                                          24.00 ± 0%
+ControlWaitGroup/16-4                                        24.00 ± 0%
+ControlWaitGroup/16-16                                       24.00 ± 0%
+ControlWaitGroup/256                                         24.00 ± 0%
+ControlWaitGroup/256-4                                       24.00 ± 0%
+ControlWaitGroup/256-16                                      24.00 ± 0%
+ControlWaitGroup/Aborted                                     0.000 ± 0%
+ControlWaitGroup/Aborted-4                                   0.000 ± 0%
+ControlWaitGroup/Aborted-16                                  0.000 ± 0%
+SyncFlag/Read                                                0.000 ± 0%
+SyncFlag/Read-4                                              0.000 ± 0%
+SyncFlag/Read-16                                             0.000 ± 0%
+SyncFlag/Write                                               0.000 ± 0%
+SyncFlag/Write-4                                             0.000 ± 0%
+SyncFlag/Write-16                                            0.000 ± 0%
+StandardMutex/Uncontended                                    0.000 ± 0%
+StandardMutex/Uncontended-4                                  0.000 ± 0%
+StandardMutex/Uncontended-16                                 0.000 ± 0%
+StandardMutex/Contended                                      0.000 ± 0%
+StandardMutex/Contended-4                                    0.000 ± 0%
+StandardMutex/Contended-16                                   0.000 ± 0%
+geomean                                                                 ³                        +0.00%                 ⁴ ³
+¹ need >= 6 samples for confidence interval at level 0.95
+² all samples are equal
+³ summaries must be >0 to compute geomean
+⁴ benchmark set differs from baseline; geomeans may not be comparable
+
+                                  │ benchmarks/results/baseline-arm64.txt │ benchmarks/results/serialized-counter-arm64.txt │
+                                  │               allocs/op               │      allocs/op       vs base                    │
+TryMutex/Uncontended                                         0.000 ± 0%
+TryMutex/Uncontended-4                                       0.000 ± 0%
+TryMutex/Uncontended-16                                      0.000 ± 0%
+TryMutex/TrySuccess                                          0.000 ± 0%
+TryMutex/TrySuccess-4                                        0.000 ± 0%
+TryMutex/TrySuccess-16                                       0.000 ± 0%
+TryMutex/TryFailure                                          0.000 ± 0%
+TryMutex/TryFailure-4                                        0.000 ± 0%
+TryMutex/TryFailure-16                                       0.000 ± 0%
+TryMutex/TimeoutSuccess                                      0.000 ± 0%
+TryMutex/TimeoutSuccess-4                                    0.000 ± 0%
+TryMutex/TimeoutSuccess-16                                   0.000 ± 0%
+TryMutex/TimeoutExpired                                      3.000 ± 0%
+TryMutex/TimeoutExpired-4                                    3.000 ± 0%
+TryMutex/TimeoutExpired-16                                   3.000 ± 0%
+TryMutex/Contended0                                          0.000 ± 0%
+TryMutex/Contended0-4                                        0.000 ± 0%
+TryMutex/Contended0-16                                       0.000 ± 0%
+TryMutex/Contended100                                        0.000 ± 0%
+TryMutex/Contended100-4                                      0.000 ± 0%
+TryMutex/Contended100-16                                     0.000 ± 0%
+Semaphore/1/Uncontended                                      0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/1/Uncontended-4                                    0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/1/Uncontended-16                                   0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/1/Parallel                                         0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/1/Parallel-4                                       0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/1/Parallel-16                                      0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/8/Uncontended                                      0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/8/Uncontended-4                                    0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/8/Uncontended-16                                   0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/8/Parallel                                         0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/8/Parallel-4                                       0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/8/Parallel-16                                      0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/64/Uncontended                                     0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/64/Uncontended-4                                   0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/64/Uncontended-16                                  0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/64/Parallel                                        0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/64/Parallel-4                                      0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/64/Parallel-16                                     0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/TryFailure                                         0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/TryFailure-4                                       0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/TryFailure-16                                      0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/TimeoutSuccess                                     0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/TimeoutSuccess-4                                   0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+Semaphore/TimeoutSuccess-16                                  0.000 ± 0%             0.000 ± ∞ ¹       ~ (p=1.000 n=6+3) ²
+NamedMutex/HotKey                                            0.000 ± 0%
+NamedMutex/HotKey-4                                          0.000 ± 0%
+NamedMutex/HotKey-16                                         0.000 ± 0%
+NamedMutex/SameKeyParallel                                   0.000 ± 0%
+NamedMutex/SameKeyParallel-4                                 0.000 ± 0%
+NamedMutex/SameKeyParallel-16                                0.000 ± 0%
+NamedMutex/IndependentKeys                                   0.000 ± 0%
+NamedMutex/IndependentKeys-4                                 0.000 ± 0%
+NamedMutex/IndependentKeys-16                                0.000 ± 0%
+NamedMutex/ManyKeys                                          0.000 ± 0%
+NamedMutex/ManyKeys-4                                        0.000 ± 0%
+NamedMutex/ManyKeys-16                                       0.000 ± 0%
+NamedMutex/Create1024                                       1.047k ± 0%
+NamedMutex/Create1024-4                                     1.047k ± 0%
+NamedMutex/Create1024-16                                    1.047k ± 0%
+OnceMutex/First                                              1.000 ± 0%
+OnceMutex/First-4                                            1.000 ± 0%
+OnceMutex/First-16                                           1.000 ± 0%
+OnceMutex/Completed                                          0.000 ± 0%
+OnceMutex/Completed-4                                        0.000 ± 0%
+OnceMutex/Completed-16                                       0.000 ± 0%
+OnceMutex/CompletedParallel                                  0.000 ± 0%
+OnceMutex/CompletedParallel-4                                0.000 ± 0%
+OnceMutex/CompletedParallel-16                               0.000 ± 0%
+NamedOnceMutex/Uncontended                                   1.000 ± 0%
+NamedOnceMutex/Uncontended-4                                 1.000 ± 0%
+NamedOnceMutex/Uncontended-16                                1.000 ± 0%
+NamedOnceMutex/SameKeyParallel                               1.000 ± 0%
+NamedOnceMutex/SameKeyParallel-4                             0.000 ± 0%
+NamedOnceMutex/SameKeyParallel-16                            0.000 ± 0%
+NamedOnceMutex/IndependentKeys                               1.000 ± 0%
+NamedOnceMutex/IndependentKeys-4                             1.000 ± 0%
+NamedOnceMutex/IndependentKeys-16                            1.000 ± 0%
+ControlWaitGroup/1                                           1.000 ± 0%
+ControlWaitGroup/1-4                                         1.000 ± 0%
+ControlWaitGroup/1-16                                        1.000 ± 0%
+ControlWaitGroup/16                                          1.000 ± 0%
+ControlWaitGroup/16-4                                        1.000 ± 0%
+ControlWaitGroup/16-16                                       1.000 ± 0%
+ControlWaitGroup/256                                         1.000 ± 0%
+ControlWaitGroup/256-4                                       1.000 ± 0%
+ControlWaitGroup/256-16                                      1.000 ± 0%
+ControlWaitGroup/Aborted                                     0.000 ± 0%
+ControlWaitGroup/Aborted-4                                   0.000 ± 0%
+ControlWaitGroup/Aborted-16                                  0.000 ± 0%
+SyncFlag/Read                                                0.000 ± 0%
+SyncFlag/Read-4                                              0.000 ± 0%
+SyncFlag/Read-16                                             0.000 ± 0%
+SyncFlag/Write                                               0.000 ± 0%
+SyncFlag/Write-4                                             0.000 ± 0%
+SyncFlag/Write-16                                            0.000 ± 0%
+StandardMutex/Uncontended                                    0.000 ± 0%
+StandardMutex/Uncontended-4                                  0.000 ± 0%
+StandardMutex/Uncontended-16                                 0.000 ± 0%
+StandardMutex/Contended                                      0.000 ± 0%
+StandardMutex/Contended-4                                    0.000 ± 0%
+StandardMutex/Contended-16                                   0.000 ± 0%
+geomean                                                                 ³                        +0.00%                 ⁴ ³
+¹ need >= 6 samples for confidence interval at level 0.95
+² all samples are equal
+³ summaries must be >0 to compute geomean
+⁴ benchmark set differs from baseline; geomeans may not be comparable
