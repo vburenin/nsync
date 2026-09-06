@@ -1,0 +1,2 @@
+# Keep text checkouts consistent across platforms, including gofmt's LF endings.
+* text=auto eol=lf

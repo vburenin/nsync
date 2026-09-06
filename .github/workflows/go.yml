@@ -25,7 +25,12 @@ jobs:
           check-latest: true
           cache: false
       - name: Check formatting
-        run: test -z "$(gofmt -l .)"
+        run: |
+          unformatted_files=$(gofmt -l .)
+          if [ -n "$unformatted_files" ]; then
+            printf 'Files requiring gofmt:\n%s\n' "$unformatted_files"
+            exit 1
+          fi
       - name: Vet
         run: go vet ./...
       - name: Test with race detector
