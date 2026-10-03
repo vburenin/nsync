@@ -1,0 +1,43 @@
+Sat Oct  3 05:06:22 PM UTC 2026
+Linux linuxserver 7.0.0-38-generic #38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  4 09:10:14 UTC 2026 x86_64 GNU/Linux
+go version go1.27.1 linux/amd64
+linux
+amd64
+v1
+
+model name	: AMD Ryzen 9 5950X 16-Core Processor
+/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor: performance
+/sys/devices/system/cpu/cpu0/cpufreq/scaling_driver: amd-pstate-epp
+base: 6e6bc423fa7a069baedf9391db5d77a98dcd6659
+new: 6e6bc423fa7a069baedf9391db5d77a98dcd6659 plus working tree changes:
+ M .github/workflows/go.yml
+ M README.md
+ M benchmark_test.go
+ M benchmarks/README.md
+ M benchmarks/cross-build.sh
+ M benchmarks/results/INDEX.md
+ M benchmarks/results/final-amd64/README.md
+ M cwaitgroup.go
+ M doc.go
+D  gate.go
+ M invariants_test.go
+ M mutex.go
+ M namedmutex.go
+ M namedmutex_test.go
+ M namedoncemutex.go
+ M semaphore.go
+ M spin_disabled.go
+ M spin_enabled.go
+D  timed_wait.go
+ M trymutex.go
+?? benchmark_context_test.go
+?? benchmarks/compare-revisions.sh
+?? benchmarks/results/round3-amd64-final/
+?? benchmarks/results/round3-amd64/
+?? context_test.go
+?? norace_test.go
+?? race_test.go
+?? stress_test.go
+?? waitqueue.go
+ 10:06:22 up 19:11,  6 users,  load average: 0.67, 0.60, 0.63
+ 10:17:40 up 19:22,  6 users,  load average: 4.44, 3.06, 1.94

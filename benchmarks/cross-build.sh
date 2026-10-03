@@ -7,7 +7,7 @@ task_output=$(mktemp -d "${TMPDIR:-/tmp}/nsync-cross.XXXXXX")
 trap 'rm -rf "$task_output"' EXIT
 for task_target in \
   linux/amd64 linux/arm64 linux/arm linux/386 linux/riscv64 \
-  linux/ppc64le linux/s390x linux/loong64 linux/mips64le \
+  linux/ppc64le linux/s390x linux/loong64 linux/mips64le linux/mips linux/mipsle \
   darwin/amd64 darwin/arm64 windows/amd64 windows/arm64 \
   freebsd/amd64 freebsd/arm64 js/wasm; do
   task_os=${task_target%/*}

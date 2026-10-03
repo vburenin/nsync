@@ -2,4 +2,4 @@
 
 package nsync
 
-func (m *mutexState) spin() bool { return false }
+func (l *lockState) spin() bool { return false }

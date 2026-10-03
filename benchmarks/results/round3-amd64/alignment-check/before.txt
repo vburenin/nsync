@@ -1,0 +1,360 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1         	  599274	       294.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16        	  622842	       298.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256       	  632614	       297.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted   	291627802	         0.6170 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-4 	  545257	       299.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4         	  994548	       178.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4        	 1292653	       139.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4    	285444811	         0.6311 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-16  	  582266	       307.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16 	 1102568	       162.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1243893	       147.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16     	275658242	         0.6359 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-32  	  539304	       307.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32 	  966020	       177.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1034644	       164.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32     	284564769	         0.6302 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1         	  602940	       295.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16        	  641409	       289.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256       	  640642	       288.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted   	291523837	         0.6176 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-4 	  568396	       305.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4         	  821046	       184.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4        	 1279879	       140.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4    	285133725	         0.6294 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-16  	  550004	       295.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16 	  906404	       170.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1221174	       151.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16     	282821403	         0.6294 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-32  	  566936	       305.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32 	  898068	       212.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1254436	       143.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32     	285672110	         0.6288 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1         	  603666	       292.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16        	  626368	       293.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256       	  628144	       298.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted   	291123493	         0.6173 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-4 	  570324	       307.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4         	  970270	       177.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4        	 1285059	       140.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4    	287274825	         0.6261 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-16  	  570476	       309.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16 	 1040557	       166.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1000000	       151.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16     	285614936	         0.6273 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-32  	  574149	       306.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32 	 1000000	       177.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	  961006	       164.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32     	286558386	         0.6270 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1         	  584336	       293.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16        	  614602	       290.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256       	  621336	       293.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted   	291890100	         0.6161 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-4 	  562938	       299.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4         	  889783	       220.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4        	  972968	       168.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4    	287709430	         0.6233 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-16  	  589194	       299.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16 	 1000000	       166.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1186872	       150.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16     	284998166	         0.6286 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-32  	  553694	       315.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32 	  970359	       204.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1037690	       167.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32     	286506612	         0.6270 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1         	  593960	       294.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16        	  592774	       295.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256       	  627488	       290.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted   	291672638	         0.6170 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-4 	  540314	       300.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4         	  665655	       234.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4        	 1282417	       140.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4    	287457945	         0.6263 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-16  	  568184	       310.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16 	 1056703	       166.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1000000	       153.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16     	285863016	         0.6285 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-32  	  541851	       310.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32 	  803482	       208.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1000000	       158.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32     	276135435	         0.6354 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1         	  593848	       293.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16        	  614577	       298.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256       	  626433	       290.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted   	292371471	         0.6158 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-4 	  576268	       302.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4         	  921219	       205.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4        	 1106226	       153.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4    	287389574	         0.6259 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-16  	  578721	       303.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16 	 1000000	       192.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1000000	       151.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16     	284420474	         0.6282 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-32  	  540577	       311.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32 	  796416	       211.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	  783990	       201.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32     	285947595	         0.6280 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1         	  561295	       300.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16        	  550708	       310.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256       	  621376	       305.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted   	292032861	         0.6160 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-4 	  574248	       310.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4         	  616527	       268.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4        	 1214691	       147.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4    	285763808	         0.6278 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-16  	  536262	       304.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16 	  865891	       178.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1000000	       167.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16     	286033458	         0.6353 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-32  	  560109	       301.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32 	  676262	       240.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1145378	       154.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32     	284148639	         0.6311 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1         	  574956	       299.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16        	  624294	       306.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256       	  632527	       288.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted   	291429217	         0.6170 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-4 	  548794	       314.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4         	  944011	       182.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4        	 1274006	       140.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4    	282279278	         0.6303 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-16  	  530515	       310.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16 	  989865	       177.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1000000	       160.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16     	287043918	         0.6279 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-32  	  553741	       305.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32 	  885662	       196.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1000000	       159.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32     	284430878	         0.6331 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1         	  579458	       296.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16        	  620104	       289.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256       	  629954	       292.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted   	291692433	         0.6170 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-4 	  563906	       304.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4         	  893157	       180.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4        	 1285362	       142.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4    	286745079	         0.6251 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-16  	  566578	       306.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16 	 1042282	       167.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	 1220238	       146.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16     	281752134	         0.6305 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-32  	  586681	       306.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32 	  913644	       195.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1250406	       144.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32     	285608352	         0.6280 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1         	  578904	       295.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16        	  623518	       295.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256       	  617283	       295.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted   	287178535	         0.6243 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-4 	  556971	       300.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4         	 1000000	       181.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4        	 1286013	       140.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4    	287245756	         0.6255 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-16  	  550226	       310.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16 	  852242	       195.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16         	  910069	       166.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16     	287262979	         0.6253 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkControlWaitGroup/1-32  	  562596	       308.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32 	  705212	       240.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32         	 1161537	       151.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32     	278625482	         0.6343 ns/op	       0 B/op	       0 allocs/op
+PASS

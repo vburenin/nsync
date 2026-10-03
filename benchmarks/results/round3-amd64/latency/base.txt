@@ -1,0 +1,270 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-4         	 2000000	         8.124 ns/op	    361200 max-wait-ns	        21.00 p50-wait-ns	        31.00 p99-wait-ns	    112341 p99.9-wait-ns	     31259 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-4    	 2000000	        73.59 ns/op	    349277 max-wait-ns	       120.0 p50-wait-ns	     30617 p99-wait-ns	    160943 p99.9-wait-ns	     31257 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-4       	 2000000	        91.55 ns/op	    359557 max-wait-ns	        20.00 p50-wait-ns	    113704 p99-wait-ns	    132389 p99.9-wait-ns	     31257 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-4  	 2000000	        95.08 ns/op	   3191595 max-wait-ns	        30.00 p50-wait-ns	     13145 p99-wait-ns	   1127181 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	         9.328 ns/op	    374234 max-wait-ns	        20.00 p50-wait-ns	        40.00 p99-wait-ns	    133441 p99.9-wait-ns	     31288 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	        65.24 ns/op	   1151396 max-wait-ns	        90.00 p50-wait-ns	    157997 p99-wait-ns	    516221 p99.9-wait-ns	     31280 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       104.1 ns/op	    300275 max-wait-ns	        30.00 p50-wait-ns	    128191 p99-wait-ns	    181541 p99.9-wait-ns	     28836 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	        96.68 ns/op	   6821995 max-wait-ns	        30.00 p50-wait-ns	    524066 p99-wait-ns	   2382793 p99.9-wait-ns	     31282 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-32         	 2000000	        10.48 ns/op	    583718 max-wait-ns	        21.00 p50-wait-ns	    114205 p99-wait-ns	    201469 p99.9-wait-ns	     31312 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-32    	 2000000	        65.38 ns/op	   1798383 max-wait-ns	        90.00 p50-wait-ns	    321695 p99-wait-ns	   1171754 p99.9-wait-ns	     31311 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-32       	 2000000	       118.1 ns/op	    480594 max-wait-ns	        30.00 p50-wait-ns	    146255 p99-wait-ns	    232487 p99.9-wait-ns	     31350 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-32  	 2000000	       116.2 ns/op	   6027930 max-wait-ns	        30.00 p50-wait-ns	   1038594 p99-wait-ns	   3020603 p99.9-wait-ns	     31316 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-4         	 2000000	         8.268 ns/op	    256863 max-wait-ns	        21.00 p50-wait-ns	        40.00 p99-wait-ns	    115868 p99.9-wait-ns	     31257 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-4    	 2000000	        71.18 ns/op	    545306 max-wait-ns	       110.0 p50-wait-ns	     29075 p99-wait-ns	    147818 p99.9-wait-ns	     31256 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-4       	 2000000	        91.04 ns/op	    256002 max-wait-ns	        20.00 p50-wait-ns	    113283 p99-wait-ns	    130085 p99.9-wait-ns	     30171 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-4  	 2000000	        94.62 ns/op	   4624189 max-wait-ns	        30.00 p50-wait-ns	      8656 p99-wait-ns	   1242127 p99.9-wait-ns	     31256 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	         9.597 ns/op	    433555 max-wait-ns	        20.00 p50-wait-ns	        50.00 p99-wait-ns	    141687 p99.9-wait-ns	     31279 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	        57.77 ns/op	   2226970 max-wait-ns	        60.00 p50-wait-ns	    144462 p99-wait-ns	    493518 p99.9-wait-ns	     31283 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       104.0 ns/op	   2040449 max-wait-ns	        30.00 p50-wait-ns	    128201 p99-wait-ns	    163428 p99.9-wait-ns	     30539 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	        94.68 ns/op	   6491052 max-wait-ns	        30.00 p50-wait-ns	     61856 p99-wait-ns	   2558864 p99.9-wait-ns	     31282 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-32         	 2000000	        12.34 ns/op	    702742 max-wait-ns	        21.00 p50-wait-ns	    115117 p99-wait-ns	    201198 p99.9-wait-ns	     31314 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-32    	 2000000	        65.83 ns/op	   2317510 max-wait-ns	        90.00 p50-wait-ns	    349568 p99-wait-ns	   1206810 p99.9-wait-ns	     31310 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-32       	 2000000	       118.9 ns/op	   1142329 max-wait-ns	        30.00 p50-wait-ns	    144692 p99-wait-ns	    217259 p99.9-wait-ns	     31342 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-32  	 2000000	       110.0 ns/op	   8304132 max-wait-ns	        30.00 p50-wait-ns	   1148141 p99-wait-ns	   3160065 p99.9-wait-ns	     31319 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-4         	 2000000	         8.158 ns/op	    618845 max-wait-ns	        21.00 p50-wait-ns	        31.00 p99-wait-ns	    116198 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-4    	 2000000	        60.84 ns/op	    416303 max-wait-ns	       110.0 p50-wait-ns	     29235 p99-wait-ns	    154902 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-4       	 2000000	        90.95 ns/op	    177404 max-wait-ns	        20.00 p50-wait-ns	    113434 p99-wait-ns	    129213 p99.9-wait-ns	     31260 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-4  	 2000000	        92.94 ns/op	   2398042 max-wait-ns	        30.00 p50-wait-ns	      4539 p99-wait-ns	   1033294 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	         9.603 ns/op	    499099 max-wait-ns	        21.00 p50-wait-ns	        40.00 p99-wait-ns	    140004 p99.9-wait-ns	     31285 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	        62.07 ns/op	    857774 max-wait-ns	        80.00 p50-wait-ns	    165241 p99-wait-ns	    463252 p99.9-wait-ns	     31276 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       102.7 ns/op	    394372 max-wait-ns	        30.00 p50-wait-ns	    124204 p99-wait-ns	    163558 p99.9-wait-ns	     31284 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	       101.6 ns/op	   2183217 max-wait-ns	        30.00 p50-wait-ns	    393761 p99-wait-ns	   1030920 p99.9-wait-ns	     31285 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-32         	 2000000	        11.99 ns/op	    300976 max-wait-ns	        20.00 p50-wait-ns	    116079 p99-wait-ns	    196539 p99.9-wait-ns	     31317 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-32    	 2000000	        56.20 ns/op	   2380989 max-wait-ns	        50.00 p50-wait-ns	    241354 p99-wait-ns	   1169069 p99.9-wait-ns	     31313 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-32       	 2000000	       126.4 ns/op	    427655 max-wait-ns	        30.00 p50-wait-ns	    153428 p99-wait-ns	    226757 p99.9-wait-ns	     31323 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-32  	 2000000	       111.2 ns/op	   5977185 max-wait-ns	        30.00 p50-wait-ns	    999019 p99-wait-ns	   2995346 p99.9-wait-ns	     31316 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-4         	 2000000	         8.058 ns/op	    254248 max-wait-ns	        20.00 p50-wait-ns	        31.00 p99-wait-ns	    115116 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-4    	 2000000	        67.59 ns/op	    489210 max-wait-ns	       120.0 p50-wait-ns	     36559 p99-wait-ns	    152146 p99.9-wait-ns	     31259 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-4       	 2000000	        91.88 ns/op	    328799 max-wait-ns	        20.00 p50-wait-ns	    117741 p99-wait-ns	    153559 p99.9-wait-ns	     17727 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-4  	 2000000	       103.4 ns/op	   1013347 max-wait-ns	        30.00 p50-wait-ns	     57589 p99-wait-ns	    368964 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	         9.153 ns/op	    538984 max-wait-ns	        20.00 p50-wait-ns	        40.00 p99-wait-ns	    140725 p99.9-wait-ns	     31289 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	        67.01 ns/op	   1276532 max-wait-ns	        91.00 p50-wait-ns	    172815 p99-wait-ns	    467730 p99.9-wait-ns	     31280 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       105.1 ns/op	    359236 max-wait-ns	        30.00 p50-wait-ns	    125977 p99-wait-ns	    203422 p99.9-wait-ns	     31272 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	       173.2 ns/op	   1383052 max-wait-ns	        30.00 p50-wait-ns	    344058 p99-wait-ns	    650504 p99.9-wait-ns	     31286 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-32         	 2000000	        11.72 ns/op	    575974 max-wait-ns	        20.00 p50-wait-ns	    109777 p99-wait-ns	    201719 p99.9-wait-ns	     31318 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-32    	 2000000	        64.89 ns/op	   2859059 max-wait-ns	        90.00 p50-wait-ns	    373292 p99-wait-ns	   1287762 p99.9-wait-ns	     31308 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-32       	 2000000	       124.2 ns/op	    349848 max-wait-ns	        30.00 p50-wait-ns	    153148 p99-wait-ns	    199406 p99.9-wait-ns	     31292 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-32  	 2000000	       115.3 ns/op	   5998225 max-wait-ns	        30.00 p50-wait-ns	   1138923 p99-wait-ns	   3466522 p99.9-wait-ns	     31314 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-4         	 2000000	         8.143 ns/op	    275859 max-wait-ns	        21.00 p50-wait-ns	        40.00 p99-wait-ns	     94758 p99.9-wait-ns	     31257 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-4    	 2000000	        76.70 ns/op	    614656 max-wait-ns	       121.0 p50-wait-ns	     31149 p99-wait-ns	    148349 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-4       	 2000000	        91.84 ns/op	    317167 max-wait-ns	        20.00 p50-wait-ns	    113294 p99-wait-ns	    127309 p99.9-wait-ns	     31259 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-4  	 2000000	        94.60 ns/op	   3047894 max-wait-ns	        30.00 p50-wait-ns	      2294 p99-wait-ns	   1042932 p99.9-wait-ns	     31259 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	         9.344 ns/op	    484071 max-wait-ns	        21.00 p50-wait-ns	        40.00 p99-wait-ns	    134903 p99.9-wait-ns	     31283 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	        64.41 ns/op	   1016222 max-wait-ns	        91.00 p50-wait-ns	    160122 p99-wait-ns	    456729 p99.9-wait-ns	     31279 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       102.4 ns/op	    359286 max-wait-ns	        30.00 p50-wait-ns	    125246 p99-wait-ns	    158318 p99.9-wait-ns	     31285 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	        93.74 ns/op	   5268893 max-wait-ns	        30.00 p50-wait-ns	    122600 p99-wait-ns	   2584011 p99.9-wait-ns	     31280 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-32         	 2000000	        11.36 ns/op	    523084 max-wait-ns	        20.00 p50-wait-ns	    114275 p99-wait-ns	    196710 p99.9-wait-ns	     31316 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-32    	 2000000	        55.34 ns/op	   3953969 max-wait-ns	        50.00 p50-wait-ns	    202000 p99-wait-ns	   1081445 p99.9-wait-ns	     31317 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-32       	 2000000	       123.0 ns/op	    338377 max-wait-ns	        30.00 p50-wait-ns	    151345 p99-wait-ns	    217258 p99.9-wait-ns	     31333 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-32  	 2000000	       114.2 ns/op	  10454929 max-wait-ns	        30.00 p50-wait-ns	   1041079 p99-wait-ns	   2991378 p99.9-wait-ns	     31314 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-4         	 2000000	         7.834 ns/op	    192692 max-wait-ns	        20.00 p50-wait-ns	        31.00 p99-wait-ns	      9898 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-4    	 2000000	        72.77 ns/op	   1211079 max-wait-ns	       110.0 p50-wait-ns	     34285 p99-wait-ns	    170891 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-4       	 2000000	        91.58 ns/op	    233520 max-wait-ns	        20.00 p50-wait-ns	    113223 p99-wait-ns	    129504 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-4  	 2000000	        92.62 ns/op	   2401418 max-wait-ns	        30.00 p50-wait-ns	      1974 p99-wait-ns	   1048573 p99.9-wait-ns	     31261 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	         8.885 ns/op	    525900 max-wait-ns	        20.00 p50-wait-ns	        40.00 p99-wait-ns	    123472 p99.9-wait-ns	     31290 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	        64.65 ns/op	    737988 max-wait-ns	        90.00 p50-wait-ns	    166985 p99-wait-ns	    445468 p99.9-wait-ns	     31280 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       103.4 ns/op	    316916 max-wait-ns	        30.00 p50-wait-ns	    125246 p99-wait-ns	    153329 p99.9-wait-ns	     31276 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	        93.30 ns/op	   6852812 max-wait-ns	        30.00 p50-wait-ns	    106270 p99-wait-ns	   2169642 p99.9-wait-ns	     31280 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-32         	 2000000	         9.798 ns/op	    671153 max-wait-ns	        20.00 p50-wait-ns	    112983 p99-wait-ns	    205186 p99.9-wait-ns	     31316 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-32    	 2000000	        59.63 ns/op	   2324744 max-wait-ns	        70.00 p50-wait-ns	    292881 p99-wait-ns	    999460 p99.9-wait-ns	     31319 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-32       	 2000000	       118.7 ns/op	    438495 max-wait-ns	        30.00 p50-wait-ns	    147488 p99-wait-ns	    196961 p99.9-wait-ns	     31347 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-32  	 2000000	        97.60 ns/op	   8614537 max-wait-ns	        30.00 p50-wait-ns	   1145364 p99-wait-ns	   3889608 p99.9-wait-ns	     31322 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-4         	 2000000	         8.361 ns/op	    257965 max-wait-ns	        30.00 p50-wait-ns	        40.00 p99-wait-ns	    114786 p99.9-wait-ns	     31257 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-4    	 2000000	        65.69 ns/op	    324841 max-wait-ns	       120.0 p50-wait-ns	     34285 p99-wait-ns	    134283 p99.9-wait-ns	     31259 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-4       	 2000000	        90.46 ns/op	    252205 max-wait-ns	        20.00 p50-wait-ns	    113274 p99-wait-ns	    131668 p99.9-wait-ns	     31257 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-4  	 2000000	        93.42 ns/op	   3123556 max-wait-ns	        30.00 p50-wait-ns	      7935 p99-wait-ns	   1019168 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	         9.131 ns/op	    409871 max-wait-ns	        20.00 p50-wait-ns	        40.00 p99-wait-ns	    128431 p99.9-wait-ns	     31285 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	        66.47 ns/op	    984122 max-wait-ns	       100.0 p50-wait-ns	    154842 p99-wait-ns	    410552 p99.9-wait-ns	     31277 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       103.2 ns/op	    401335 max-wait-ns	        30.00 p50-wait-ns	    127710 p99-wait-ns	    159590 p99.9-wait-ns	     25755 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	        95.59 ns/op	   6098293 max-wait-ns	        30.00 p50-wait-ns	     60484 p99-wait-ns	   2495745 p99.9-wait-ns	     31285 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-32         	 2000000	        10.38 ns/op	    743329 max-wait-ns	        20.00 p50-wait-ns	    114515 p99-wait-ns	    191009 p99.9-wait-ns	     31316 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-32    	 2000000	        45.94 ns/op	   3805901 max-wait-ns	        40.00 p50-wait-ns	    292431 p99-wait-ns	   1171354 p99.9-wait-ns	     31315 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-32       	 2000000	       120.8 ns/op	    418988 max-wait-ns	        30.00 p50-wait-ns	    150393 p99-wait-ns	    205156 p99.9-wait-ns	     31317 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-32  	 2000000	        95.74 ns/op	   6905672 max-wait-ns	        30.00 p50-wait-ns	   1269248 p99-wait-ns	   3890439 p99.9-wait-ns	     31317 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-4         	 2000000	         8.064 ns/op	    257615 max-wait-ns	        20.00 p50-wait-ns	        40.00 p99-wait-ns	    115998 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-4    	 2000000	        80.88 ns/op	    312928 max-wait-ns	       130.0 p50-wait-ns	     37240 p99-wait-ns	    138691 p99.9-wait-ns	     31256 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-4       	 2000000	        94.14 ns/op	    261352 max-wait-ns	        20.00 p50-wait-ns	    113663 p99-wait-ns	    127821 p99.9-wait-ns	     31259 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-4  	 2000000	        99.39 ns/op	   1135296 max-wait-ns	        30.00 p50-wait-ns	     74060 p99-wait-ns	    458283 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	         9.413 ns/op	    473731 max-wait-ns	        30.00 p50-wait-ns	        40.00 p99-wait-ns	    140334 p99.9-wait-ns	     31286 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	        59.78 ns/op	   1659863 max-wait-ns	        60.00 p50-wait-ns	    126368 p99-wait-ns	    517002 p99.9-wait-ns	     31282 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       104.8 ns/op	    288323 max-wait-ns	        30.00 p50-wait-ns	    127109 p99-wait-ns	    161284 p99.9-wait-ns	     28291 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	       115.2 ns/op	   2213595 max-wait-ns	        30.00 p50-wait-ns	    407497 p99-wait-ns	   1161275 p99.9-wait-ns	     31279 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-32         	 2000000	        10.61 ns/op	    481656 max-wait-ns	        20.00 p50-wait-ns	    114766 p99-wait-ns	    180881 p99.9-wait-ns	     31319 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-32    	 2000000	        55.27 ns/op	   2273908 max-wait-ns	        90.00 p50-wait-ns	    387820 p99-wait-ns	   1149002 p99.9-wait-ns	     31315 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-32       	 2000000	       122.0 ns/op	    385175 max-wait-ns	        30.00 p50-wait-ns	    142839 p99-wait-ns	    194556 p99.9-wait-ns	     31281 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-32  	 2000000	       115.9 ns/op	   7143339 max-wait-ns	        30.00 p50-wait-ns	   1182915 p99-wait-ns	   3052623 p99.9-wait-ns	     31313 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-4         	 2000000	         8.243 ns/op	    287571 max-wait-ns	        21.00 p50-wait-ns	        40.00 p99-wait-ns	    114947 p99.9-wait-ns	     31257 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-4    	 2000000	        63.07 ns/op	    296468 max-wait-ns	       110.0 p50-wait-ns	     29886 p99-wait-ns	    142889 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-4       	 2000000	        90.26 ns/op	    242356 max-wait-ns	        20.00 p50-wait-ns	    113464 p99-wait-ns	    129052 p99.9-wait-ns	     31257 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-4  	 2000000	        95.82 ns/op	   2798245 max-wait-ns	        30.00 p50-wait-ns	      2204 p99-wait-ns	   1174350 p99.9-wait-ns	     31259 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	         9.123 ns/op	    370828 max-wait-ns	        21.00 p50-wait-ns	        40.00 p99-wait-ns	    126438 p99.9-wait-ns	     31284 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	        67.01 ns/op	   1058572 max-wait-ns	       100.0 p50-wait-ns	    163859 p99-wait-ns	    541979 p99.9-wait-ns	     31278 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       105.2 ns/op	    341021 max-wait-ns	        30.00 p50-wait-ns	    126939 p99-wait-ns	    158438 p99.9-wait-ns	     29167 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	       105.5 ns/op	   5292277 max-wait-ns	        30.00 p50-wait-ns	    370588 p99-wait-ns	   2209547 p99.9-wait-ns	     31285 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-32         	 2000000	        10.97 ns/op	    392418 max-wait-ns	        20.00 p50-wait-ns	    110969 p99-wait-ns	    197963 p99.9-wait-ns	     31317 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-32    	 2000000	        66.49 ns/op	   2138573 max-wait-ns	        90.00 p50-wait-ns	    403990 p99-wait-ns	   1252206 p99.9-wait-ns	     31311 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-32       	 2000000	       119.4 ns/op	    367732 max-wait-ns	        30.00 p50-wait-ns	    137538 p99-wait-ns	    183656 p99.9-wait-ns	     31294 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-32  	 2000000	       122.9 ns/op	   6269475 max-wait-ns	        30.00 p50-wait-ns	   1063380 p99-wait-ns	   2877824 p99.9-wait-ns	     31313 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-4         	 2000000	         7.819 ns/op	    272423 max-wait-ns	        20.00 p50-wait-ns	        31.00 p99-wait-ns	     94127 p99.9-wait-ns	     31260 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-4    	 2000000	        65.62 ns/op	    562418 max-wait-ns	       120.0 p50-wait-ns	     42280 p99-wait-ns	    174869 p99.9-wait-ns	     31259 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-4       	 2000000	        91.27 ns/op	    253477 max-wait-ns	        20.00 p50-wait-ns	    113233 p99-wait-ns	    136847 p99.9-wait-ns	     31258 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-4  	 2000000	        96.00 ns/op	   3686465 max-wait-ns	        30.00 p50-wait-ns	     11521 p99-wait-ns	   1233611 p99.9-wait-ns	     31256 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-16         	 2000000	         9.325 ns/op	    411615 max-wait-ns	        20.00 p50-wait-ns	        31.00 p99-wait-ns	    135074 p99.9-wait-ns	     31288 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-16    	 2000000	        67.38 ns/op	   1109868 max-wait-ns	       100.0 p50-wait-ns	    164800 p99-wait-ns	    524026 p99.9-wait-ns	     31285 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-16       	 2000000	       107.8 ns/op	    361450 max-wait-ns	        30.00 p50-wait-ns	    125195 p99-wait-ns	    163949 p99.9-wait-ns	     30786 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-16  	 2000000	       105.3 ns/op	   5486713 max-wait-ns	        30.00 p50-wait-ns	    527883 p99-wait-ns	   2351464 p99.9-wait-ns	     31280 samples	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkWaitLatency/TryMutex/Work0-32         	 2000000	         9.799 ns/op	    436571 max-wait-ns	        20.00 p50-wait-ns	    106130 p99-wait-ns	    147087 p99.9-wait-ns	     31312 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work0-32    	 2000000	        60.35 ns/op	   3613779 max-wait-ns	        60.00 p50-wait-ns	    257024 p99-wait-ns	   1134625 p99.9-wait-ns	     31312 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/TryMutex/Work100-32       	 2000000	       125.5 ns/op	    412045 max-wait-ns	        30.00 p50-wait-ns	    154461 p99-wait-ns	    207921 p99.9-wait-ns	     31341 samples	       0 B/op	       0 allocs/op
+BenchmarkWaitLatency/StandardMutex/Work100-32  	 2000000	       103.4 ns/op	   5339355 max-wait-ns	        30.00 p50-wait-ns	   1111000 p99-wait-ns	   2853308 p99.9-wait-ns	     31318 samples	       0 B/op	       0 allocs/op
+PASS

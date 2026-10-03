@@ -1,0 +1,136 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+                                     │ latency/base.txt │           latency/new.txt           │
+                                     │      sec/op      │    sec/op     vs base               │
+WaitLatency/TryMutex/Work0-4               8.134n ±  4%   8.081n ±  5%       ~ (p=0.927 n=10)
+WaitLatency/StandardMutex/Work0-4          69.39n ± 11%   70.86n ± 22%       ~ (p=0.912 n=10)
+WaitLatency/TryMutex/Work100-4             91.41n ±  1%   90.91n ±  1%       ~ (p=0.393 n=10)
+WaitLatency/StandardMutex/Work100-4        94.85n ±  5%   96.66n ±  7%       ~ (p=0.631 n=10)
+WaitLatency/TryMutex/Work0-16              9.326n ±  3%   8.742n ±  5%  -6.26% (p=0.000 n=10)
+WaitLatency/StandardMutex/Work0-16         64.94n ±  8%   66.08n ± 12%       ~ (p=0.724 n=10)
+WaitLatency/TryMutex/Work100-16            104.0n ±  1%   101.0n ±  3%  -2.88% (p=0.006 n=10)
+WaitLatency/StandardMutex/Work100-16       99.14n ± 16%   95.44n ± 20%       ~ (p=0.631 n=10)
+WaitLatency/TryMutex/Work0-32             10.790n ± 11%   9.953n ± 11%  -7.76% (p=0.005 n=10)
+WaitLatency/StandardMutex/Work0-32         59.99n ± 10%   64.07n ± 13%       ~ (p=0.436 n=10)
+WaitLatency/TryMutex/Work100-32            121.4n ±  3%   120.2n ±  3%       ~ (p=0.481 n=10)
+WaitLatency/StandardMutex/Work100-32       112.7n ± 13%   116.5n ± 14%       ~ (p=0.218 n=10)
+geomean                                    50.43n         50.11n        -0.65%
+
+                                     │ latency/base.txt │             latency/new.txt             │
+                                     │   max-wait-sec   │  max-wait-sec   vs base                 │
+WaitLatency/TryMutex/Work0-4               265.2µ ± 36%    669.6µ ±  26%  +152.49% (p=0.000 n=10)
+WaitLatency/StandardMutex/Work0-4          452.8µ ± 36%    468.7µ ±  30%         ~ (p=0.971 n=10)
+WaitLatency/TryMutex/Work100-4             254.7µ ± 29%    210.7µ ±  40%   -17.29% (p=0.029 n=10)
+WaitLatency/StandardMutex/Work100-4        2.923m ± 61%    2.032m ±  52%   -30.50% (p=0.019 n=10)
+WaitLatency/TryMutex/Work0-16              453.6µ ± 18%    954.6µ ±  25%  +110.43% (p=0.000 n=10)
+WaitLatency/StandardMutex/Work0-16         1.084m ± 53%    1.213m ± 145%         ~ (p=0.190 n=10)
+WaitLatency/TryMutex/Work100-16            359.3µ ± 16%    283.3µ ± 284%         ~ (p=0.353 n=10)
+WaitLatency/StandardMutex/Work100-16       5.389m ± 59%    6.267m ±  13%         ~ (p=0.143 n=10)
+WaitLatency/TryMutex/Work0-32              549.5µ ± 29%   1076.5µ ±  53%   +95.90% (p=0.000 n=10)
+WaitLatency/StandardMutex/Work0-32         2.353m ± 62%    2.398m ±  83%         ~ (p=0.971 n=10)
+WaitLatency/TryMutex/Work100-32            415.5µ ± 16%    415.5µ ±  32%         ~ (p=0.631 n=10)
+WaitLatency/StandardMutex/Work100-32       6.588m ± 31%    7.046m ±  58%         ~ (p=0.853 n=10)
+geomean                                    904.9µ          1.063m          +17.50%
+
+                                     │ latency/base.txt │            latency/new.txt             │
+                                     │   p50-wait-sec   │ p50-wait-sec  vs base                  │
+WaitLatency/TryMutex/Work0-4               21.00n ±  5%   20.50n ± 46%        ~ (p=1.000 n=10)
+WaitLatency/StandardMutex/Work0-4          120.0n ±  8%   111.0n ±  8%        ~ (p=0.367 n=10)
+WaitLatency/TryMutex/Work100-4             20.00n ±  0%   20.00n ±  0%        ~ (p=1.000 n=10) ¹
+WaitLatency/StandardMutex/Work100-4        30.00n ±  0%   30.00n ±  0%        ~ (p=1.000 n=10) ¹
+WaitLatency/TryMutex/Work0-16              20.00n ±  5%   20.00n ±  5%        ~ (p=0.596 n=10)
+WaitLatency/StandardMutex/Work0-16         90.50n ± 34%   90.50n ± 45%        ~ (p=0.993 n=10)
+WaitLatency/TryMutex/Work100-16            30.00n ±  0%   20.00n ±  0%  -33.33% (p=0.000 n=10)
+WaitLatency/StandardMutex/Work100-16       30.00n ±  0%   30.00n ±  0%        ~ (p=1.000 n=10) ¹
+WaitLatency/TryMutex/Work0-32              20.00n ±  5%   20.00n ±  5%        ~ (p=1.000 n=10)
+WaitLatency/StandardMutex/Work0-32         80.00n ± 38%   80.50n ± 38%        ~ (p=0.835 n=10)
+WaitLatency/TryMutex/Work100-32            30.00n ±  0%   20.50n ± 46%  -31.67% (p=0.003 n=10)
+WaitLatency/StandardMutex/Work100-32       30.00n ±  0%   30.00n ±  0%        ~ (p=1.000 n=10) ¹
+geomean                                    35.14n         32.65n         -7.09%
+¹ all samples are equal
+
+                                     │ latency/base.txt │             latency/new.txt             │
+                                     │   p99-wait-sec   │  p99-wait-sec   vs base                 │
+WaitLatency/TryMutex/Work0-4              35.50n ±  13%    40.00n ± 150%   +12.68% (p=0.039 n=10)
+WaitLatency/StandardMutex/Work0-4         32.72µ ±  14%    33.56µ ±  25%         ~ (p=0.469 n=10)
+WaitLatency/TryMutex/Work100-4            113.4µ ±   0%    114.7µ ±   1%    +1.17% (p=0.002 n=10)
+WaitLatency/StandardMutex/Work100-4       8.296µ ± 594%   20.579µ ± 222%         ~ (p=0.165 n=10)
+WaitLatency/TryMutex/Work0-16             40.00n ±   0%    90.50n ±  56%  +126.25% (p=0.004 n=10)
+WaitLatency/StandardMutex/Work0-16        162.0µ ±  11%    154.9µ ±   6%         ~ (p=0.218 n=10)
+WaitLatency/TryMutex/Work100-16           126.5µ ±   1%    131.6µ ±   9%    +4.04% (p=0.009 n=10)
+WaitLatency/StandardMutex/Work100-16      357.3µ ±  83%    215.9µ ±  99%         ~ (p=0.796 n=10)
+WaitLatency/TryMutex/Work0-32          114240.0n ±   4%    101.0n ±  60%   -99.91% (p=0.000 n=10)
+WaitLatency/StandardMutex/Work0-32        307.3µ ±  26%    347.0µ ±  21%         ~ (p=0.684 n=10)
+WaitLatency/TryMutex/Work100-32           148.9µ ±   4%    161.6µ ±  10%    +8.52% (p=0.024 n=10)
+WaitLatency/StandardMutex/Work100-32     1125.0µ ±   8%    953.7µ ±  27%   -15.22% (p=0.002 n=10)
+geomean                                   33.33µ           20.87µ          -37.40%
+
+                                     │ latency/base.txt │             latency/new.txt             │
+                                     │  p99.9-wait-sec  │ p99.9-wait-sec  vs base                 │
+WaitLatency/TryMutex/Work0-4              114.87µ ± 18%    72.67µ ±  99%         ~ (p=0.481 n=10)
+WaitLatency/StandardMutex/Work0-4          150.2µ ± 14%    156.2µ ±  13%         ~ (p=0.579 n=10)
+WaitLatency/TryMutex/Work100-4             129.8µ ±  5%    126.7µ ±   8%         ~ (p=0.190 n=10)
+WaitLatency/StandardMutex/Work100-4       1045.8µ ± 56%    794.2µ ±  53%   -24.06% (p=0.011 n=10)
+WaitLatency/TryMutex/Work0-16              135.0µ ±  6%    250.6µ ±  38%   +85.65% (p=0.000 n=10)
+WaitLatency/StandardMutex/Work0-16         480.6µ ±  9%    460.0µ ±   8%         ~ (p=0.280 n=10)
+WaitLatency/TryMutex/Work100-16            162.4µ ± 12%    199.0µ ± 307%   +22.59% (p=0.000 n=10)
+WaitLatency/StandardMutex/Work100-16       2.281m ± 55%    2.467m ±  14%         ~ (p=0.190 n=10)
+WaitLatency/TryMutex/Work0-32              197.3µ ±  8%    396.6µ ±  43%  +100.99% (p=0.000 n=10)
+WaitLatency/StandardMutex/Work0-32         1.170m ±  8%    1.165m ±   7%         ~ (p=0.684 n=10)
+WaitLatency/TryMutex/Work100-32            206.5µ ± 10%    336.3µ ±   6%   +62.82% (p=0.000 n=10)
+WaitLatency/StandardMutex/Work100-32       3.037m ± 28%    2.824m ±  49%         ~ (p=0.052 n=10)
+geomean                                    376.6µ          417.9µ          +10.96%
+
+                                     │ latency/base.txt │           latency/new.txt           │
+                                     │     samples      │   samples     vs base               │
+WaitLatency/TryMutex/Work0-4                31.26k ± 0%   31.26k ±  0%       ~ (p=0.066 n=10)
+WaitLatency/StandardMutex/Work0-4           31.26k ± 0%   31.26k ±  0%       ~ (p=0.966 n=10)
+WaitLatency/TryMutex/Work100-4              31.26k ± 3%   30.88k ± 23%       ~ (p=0.220 n=10)
+WaitLatency/StandardMutex/Work100-4         31.26k ± 0%   31.26k ±  0%       ~ (p=0.359 n=10)
+WaitLatency/TryMutex/Work0-16               31.29k ± 0%   31.28k ±  0%       ~ (p=0.122 n=10)
+WaitLatency/StandardMutex/Work0-16          31.28k ± 0%   31.28k ±  0%       ~ (p=0.136 n=10)
+WaitLatency/TryMutex/Work100-16             30.66k ± 8%   31.19k ± 26%       ~ (p=0.971 n=10)
+WaitLatency/StandardMutex/Work100-16        31.28k ± 0%   31.28k ±  0%       ~ (p=0.927 n=10)
+WaitLatency/TryMutex/Work0-32               31.32k ± 0%   31.32k ±  0%       ~ (p=0.668 n=10)
+WaitLatency/StandardMutex/Work0-32          31.31k ± 0%   31.32k ±  0%       ~ (p=0.642 n=10)
+WaitLatency/TryMutex/Work100-32             31.33k ± 0%   31.32k ±  0%       ~ (p=0.447 n=10)
+WaitLatency/StandardMutex/Work100-32        31.32k ± 0%   31.31k ±  0%       ~ (p=0.089 n=10)
+geomean                                     31.23k        31.25k        +0.04%
+
+                                     │ latency/base.txt │           latency/new.txt           │
+                                     │       B/op       │    B/op     vs base                 │
+WaitLatency/TryMutex/Work0-4               0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/StandardMutex/Work0-4          0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/TryMutex/Work100-4             0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/StandardMutex/Work100-4        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/TryMutex/Work0-16              0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/StandardMutex/Work0-16         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/TryMutex/Work100-16            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/StandardMutex/Work100-16       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/TryMutex/Work0-32              0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/StandardMutex/Work0-32         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/TryMutex/Work100-32            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/StandardMutex/Work100-32       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                               ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                                     │ latency/base.txt │           latency/new.txt           │
+                                     │    allocs/op     │ allocs/op   vs base                 │
+WaitLatency/TryMutex/Work0-4               0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/StandardMutex/Work0-4          0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/TryMutex/Work100-4             0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/StandardMutex/Work100-4        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/TryMutex/Work0-16              0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/StandardMutex/Work0-16         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/TryMutex/Work100-16            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/StandardMutex/Work100-16       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/TryMutex/Work0-32              0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/StandardMutex/Work0-32         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/TryMutex/Work100-32            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+WaitLatency/StandardMutex/Work100-32       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                               ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

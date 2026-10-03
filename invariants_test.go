@@ -1,6 +1,7 @@
 package nsync
 
 import (
+	"context"
 	"go/ast"
 	"go/parser"
 	"go/token"
@@ -9,6 +10,7 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+	"sync/atomic"
 	"testing"
 	"testing/synctest"
 	"time"
@@ -44,14 +46,18 @@ func TestLibraryDoesNotUseChannels(t *testing.T) {
 }
 
 func TestCacheLineLayouts(t *testing.T) {
-	for _, size := range []uintptr{unsafe.Sizeof(namedMutexEntry{}), unsafe.Sizeof(namedPrimaryEntry{}), unsafe.Sizeof(namedOnceShard{})} {
+	for _, size := range []uintptr{unsafe.Sizeof(namedEntry{}), unsafe.Sizeof(namedFirst{}), unsafe.Sizeof(namedShard{}), unsafe.Sizeof(namedOnceShard{})} {
 		if size%cacheLineSize != 0 {
 			t.Errorf("size %d is not a multiple of cache line size %d", size, cacheLineSize)
 		}
 	}
-	var primary namedPrimaryEntry
-	if unsafe.Offsetof(primary.mutex)%cacheLineSize != 0 {
-		t.Error("primary mutex shares a cache line with its name")
+	var first namedFirst
+	if unsafe.Offsetof(first.lock)%cacheLineSize != 0 {
+		t.Error("first lock shares a cache line with its name")
+	}
+	var shard namedShard
+	if unsafe.Offsetof(shard.namedShardData)%cacheLineSize != 0 {
+		t.Error("shard state shares a cache line with its cached lock")
 	}
 	var once NamedOnceMutex
 	if unsafe.Offsetof(once.primaryShard)%cacheLineSize != 0 {
@@ -59,87 +65,100 @@ func TestCacheLineLayouts(t *testing.T) {
 	}
 }
 
-func TestStopWaitsForStartedTimerCallback(t *testing.T) {
+func TestDisarmWaitsForStartedCallback(t *testing.T) {
 	synctest.Test(t, func(t *testing.T) {
-		var mu sync.Mutex
-		cond := sync.NewCond(&mu)
-		w := &timedWait{cond: cond}
-		w.callback = w.expire
-		mu.Lock()
+		var q waitQueue
+		w := getWaiter(&q.mu)
+		q.mu.Lock()
+		q.pushBack(w)
 		started := make(chan struct{})
-		timer := time.AfterFunc(0, func() { close(started); w.expire() })
+		timer := time.AfterFunc(0, func() { close(started); w.fire() })
 		<-started
-		// The callback has started but cannot set expired while mu is held.
-		// stop must release mu while waiting for it, then reacquire mu.
-		w.stop(timer)
-		if mu.TryLock() {
-			t.Fatal("stop returned without the condition mutex held")
+		// The callback has started but cannot cancel the waiter while q.mu is
+		// held. disarm must release q.mu while waiting for it, then reacquire it.
+		w.disarm(waitCancel{timer: timer})
+		if q.mu.TryLock() {
+			t.Fatal("disarm returned without the queue lock held")
 		}
-		mu.Unlock()
+		if !w.canceled || w.queued || q.head != nil {
+			t.Fatal("the callback did not remove the waiter")
+		}
+		q.mu.Unlock()
+		putWaiter(w)
 	})
 }
 
-func TestMutexHandoffRejectsBarging(t *testing.T) {
+func TestStarvingMutexHandsOffInOrder(t *testing.T) {
 	synctest.Test(t, func(t *testing.T) {
 		m := NewTryMutex()
 		m.Lock()
-		entered := make(chan struct{})
+		entered := make(chan int)
 		release := make(chan struct{})
 		var workers sync.WaitGroup
-		for range 8 {
+		for i := range 8 {
 			workers.Go(func() {
 				m.Lock()
-				entered <- struct{}{}
+				entered <- i
 				<-release
 				m.Unlock()
 			})
+			synctest.Wait() // queue the waiters in a known order
 		}
-		synctest.Wait()
-		// Force the slow-path condition deterministically, without depending
-		// on the host scheduler to exceed the handoff threshold.
-		m.state.mu.Lock()
-		m.state.fair = true
-		m.state.mu.Unlock()
+		// Force handoff mode deterministically, without depending on the host
+		// scheduler to exceed the handoff threshold.
+		m.state.state.Or(stateStarving)
 		m.Unlock()
 		if m.TryLock() {
 			m.Unlock()
-			t.Fatal("a new arrival stole a reserved handoff")
+			t.Fatal("a new arrival took a lock handed to a waiter")
 		}
-		for range 8 {
-			<-entered
+		for want := range 8 {
+			if got := <-entered; got != want {
+				t.Errorf("waiter %d acquired the lock in position %d", got, want)
+			}
 			release <- struct{}{}
 		}
 		workers.Wait()
-		if !m.TryLock() {
-			t.Fatal("handoff did not return the mutex to an idle state")
+		if s := m.state.state.Load(); s != 0 {
+			t.Fatalf("state after all waiters left = %#x, want 0", s)
 		}
-		m.Unlock()
 	})
 }
 
-func TestLastTimedWaiterMayLeaveBeforeUnlockSlow(t *testing.T) {
-	// unlock's CAS can fail on state 2, then the last timed waiter can leave
-	// and restore state 1 before unlock obtains the queue mutex.
-	var m mutexState
+func TestReleaseClearsQueuedFlagOfEmptyQueue(t *testing.T) {
+	// A canceled waiter's callback removes it from the queue before the
+	// waiter clears stateQueued. A release in between must clear it.
+	var m lockState
 	m.lock()
-	m.unlockSlow()
+	m.waitQueue()
+	m.state.Store(stateUnit | stateQueued)
+	m.unlock()
+	if s := m.state.Load(); s != 0 {
+		t.Fatalf("state = %#x, want 0", s)
+	}
 	if !m.tryLock() {
-		t.Fatal("release after the last waiter left retained the lock")
+		t.Fatal("release left the mutex unusable")
 	}
 	m.unlock()
 }
 
 func TestLastCanceledWaiterClearsHandoff(t *testing.T) {
 	synctest.Test(t, func(t *testing.T) {
-		// Exercise a reserved lock with no owner. A new timed arrival cannot
-		// take the reservation; leaving as the last waiter must release it.
-		var m mutexState
-		m.state.Store(3)
-		if m.lockTimeout(time.Nanosecond) {
-			t.Fatal("new arrival consumed a reserved handoff")
+		var m lockState
+		m.lock()
+		done := make(chan bool)
+		go func() { done <- m.lockTimeout(time.Second) }()
+		synctest.Wait()
+		m.state.Or(stateStarving)
+		if <-done {
+			t.Fatal("acquired a held mutex")
 		}
+		if s := m.state.Load(); s != stateUnit {
+			t.Fatalf("state after the last waiter left = %#x, want %#x", s, stateUnit)
+		}
+		m.unlock()
 		if !m.tryLock() {
-			t.Fatal("canceled waiter left an ownerless reservation")
+			t.Fatal("canceled waiter left the mutex unusable")
 		}
 		m.unlock()
 	})
@@ -200,4 +219,190 @@ func TestControlWaitGroupMultipleWaiters(t *testing.T) {
 			}
 		})
 	}
+}
+
+func (nm *NamedMutex) shardOf(name string) *namedShard {
+	return nm.existingShard(maphash.String(namedMutexSeed, name))
+}
+
+// inUse counts the names locked or awaited in the shard. mu must be held, or
+// the shard must be quiescent.
+func (sh *namedShard) inUse() int {
+	n := len(sh.more)
+	for _, e := range sh.small {
+		if e != nil {
+			n++
+		}
+	}
+	return n
+}
+
+// A release without an acquisition wraps the semaphore word negative until
+// releaseSlow undoes it and panics. Acquirers that see the negative word must
+// wait for the permit rather than take the word for a retired lock.
+func TestSemaphoreMisusedReleaseWindow(t *testing.T) {
+	acquirers := []struct {
+		name    string
+		acquire func(*Semaphore) bool
+	}{
+		{"Acquire", func(s *Semaphore) bool { s.Acquire(); return true }},
+		{"AcquireContext", func(s *Semaphore) bool { return s.AcquireContext(context.Background()) == nil }},
+		{"TryAcquireTimeout", func(s *Semaphore) bool { return s.TryAcquireTimeout(time.Hour) }},
+	}
+	for _, a := range acquirers {
+		for _, capacity := range []int{1, 2} {
+			t.Run(a.name+"/"+strconv.Itoa(capacity), func(t *testing.T) {
+				synctest.Test(t, func(t *testing.T) {
+					s := NewSemaphore(capacity)
+					s.lock.state.Add(^(stateUnit - 1)) // the decrement of the misused Release
+					var done, ok atomic.Bool
+					go func() {
+						ok.Store(a.acquire(s))
+						done.Store(true)
+					}()
+					synctest.Wait()
+					if done.Load() {
+						t.Fatalf("returned %v while the release was being undone", ok.Load())
+					}
+					if r := undoMisusedRelease(s); r != "nsync: release without acquisition" {
+						t.Errorf("undoing the release panicked with %v", r)
+					}
+					synctest.Wait()
+					if !done.Load() || !ok.Load() {
+						t.Fatalf("after the release was undone: returned %v, acquired %v", done.Load(), ok.Load())
+					}
+					if v := s.Value(); v != 1 {
+						t.Fatalf("Value() = %d, want 1", v)
+					}
+					s.Release()
+					if st := s.lock.state.Load(); st != 0 {
+						t.Fatalf("state = %#x, want 0", st)
+					}
+				})
+			})
+		}
+	}
+}
+
+// undoMisusedRelease runs the second half of a Release without an acquisition
+// and returns its panic value.
+func undoMisusedRelease(s *Semaphore) (r any) {
+	defer func() { r = recover() }()
+	s.releaseSlow()
+	return nil
+}
+
+// Overlapping misused releases leave the word negative until the last one is
+// undone; only then may waiters be woken, and the word must end up idle.
+func TestSemaphoreOverlappingMisusedReleases(t *testing.T) {
+	for _, contended := range []bool{false, true} {
+		t.Run("queue="+strconv.FormatBool(contended), func(t *testing.T) {
+			synctest.Test(t, func(t *testing.T) {
+				s := NewSemaphore(1)
+				if contended { // allocate the wait queue, then empty it
+					s.Acquire()
+					go func() { s.Acquire(); s.Release() }()
+					synctest.Wait()
+					s.Release()
+					synctest.Wait()
+				}
+				s.lock.state.Add(^(stateUnit - 1))
+				s.lock.state.Add(^(stateUnit - 1))
+				for range 2 {
+					if r := undoMisusedRelease(s); r != "nsync: release without acquisition" {
+						t.Fatalf("undoing a release panicked with %v", r)
+					}
+				}
+				if st := s.lock.state.Load(); st != 0 {
+					t.Fatalf("state = %#x, want 0", st)
+				}
+				if !s.TryAcquire() {
+					t.Fatal("TryAcquire failed on an idle semaphore")
+				}
+				s.Release()
+			})
+		})
+	}
+}
+
+// An acquirer that gives up while a misused release is being undone must not
+// clear bits of the wrapped count.
+func TestSemaphoreWaiterGivesUpDuringMisusedRelease(t *testing.T) {
+	acquirers := []struct {
+		name    string
+		acquire func(*Semaphore) bool
+	}{
+		{"TryAcquireTimeout", func(s *Semaphore) bool { return s.TryAcquireTimeout(time.Second) }},
+		{"AcquireContext", func(s *Semaphore) bool {
+			ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+			defer cancel()
+			return s.AcquireContext(ctx) == nil
+		}},
+	}
+	for _, a := range acquirers {
+		t.Run(a.name, func(t *testing.T) {
+			synctest.Test(t, func(t *testing.T) {
+				s := NewSemaphore(1)
+				s.lock.state.Add(^(stateUnit - 1))
+				var done, ok atomic.Bool
+				go func() {
+					ok.Store(a.acquire(s))
+					done.Store(true)
+				}()
+				time.Sleep(2 * time.Second)
+				synctest.Wait()
+				if !done.Load() || ok.Load() {
+					t.Fatalf("returned %v, acquired %v; want a timeout", done.Load(), ok.Load())
+				}
+				if r := undoMisusedRelease(s); r != "nsync: release without acquisition" {
+					t.Fatalf("undoing the release panicked with %v", r)
+				}
+				if st := s.lock.state.Load(); st != 0 {
+					t.Fatalf("state = %#x, want 0", st)
+				}
+			})
+		})
+	}
+}
+
+// On 32-bit platforms a shard keeps only the low 32 bits of its cached lock's
+// name hash. Names whose hashes share those bits must still get their own locks.
+func TestNamedMutexPartialHashCollision(t *testing.T) {
+	seen := make(map[uint32]string)
+	var a, b string
+	for i := 0; a == ""; i++ {
+		name := "n" + strconv.Itoa(i)
+		h := uint32(maphash.String(namedMutexSeed, name))
+		if other, ok := seen[h]; ok {
+			a, b = other, name
+		}
+		seen[h] = name
+	}
+	var m NamedMutex
+	m.Lock("first") // the first name has its own lock; keep it out of the way
+	m.Unlock("first")
+	m.Lock(a)
+	m.Unlock(a) // a's lock becomes its shard's cached lock
+	if sh := m.shardOf(a); sh == nil || sh.cached.Load() == nil || sh.cached.Load().name != a {
+		t.Fatalf("%q is not the cached lock of its shard", a)
+	}
+	m.Lock(a)
+	if !m.TryLock(b) {
+		t.Fatalf("%q and %q share a lock", a, b)
+	}
+	if m.TryLock(a) || m.TryLock(b) {
+		t.Fatal("a held name was locked again")
+	}
+	m.Unlock(b)
+	// While a shard replaces its cached lock, a lock-free lookup can see the
+	// new hash beside the old lock. Another name must not use that lock either.
+	sh := m.shardOf(a)
+	sh.cachedHash.Store(uintptr(maphash.String(namedMutexSeed, b)))
+	if !m.TryLock(b) {
+		t.Fatalf("%q used %q's lock through a stale cached hash", b, a)
+	}
+	m.Unlock(b)
+	sh.cachedHash.Store(uintptr(maphash.String(namedMutexSeed, a)))
+	m.Unlock(a)
+	checkNamedMutexIdle(t, &m)
 }

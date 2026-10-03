@@ -4,12 +4,12 @@ package nsync
 
 import "runtime"
 
-func (m *mutexState) spin() bool {
+func (l *lockState) spin() bool {
 	if runtime.GOMAXPROCS(0) <= 1 {
 		return false
 	}
 	for range 16 {
-		if m.tryLock() {
+		if l.tryLock() {
 			return true
 		}
 		spinPause()

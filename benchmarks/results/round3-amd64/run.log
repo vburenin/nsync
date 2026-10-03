@@ -1,0 +1,23 @@
+17:06:21 load before settings:  10:06:21 up 19:11,  6 users,  load average: 0.67, 0.60, 0.63
+17:06:21 settings: governor performance epp performance boost 1 perf_event_paranoid 1 (originally powersave/balance_power/4)
+17:06:21 throughput: compare-revisions.sh 6e6bc42 benchmarks/results/round3-amd64-final 10
+Results: benchstat benchmarks/results/round3-amd64-final/base.txt benchmarks/results/round3-amd64-final/new.txt
+17:17:40 throughput exit status 0
+17:17:40 latency: compare-revisions.sh 6e6bc42 benchmarks/results/round3-amd64-final/latency 10 '^BenchmarkWaitLatency$' 4,16,32 2000000x
+Results: benchstat benchmarks/results/round3-amd64-final/latency/base.txt benchmarks/results/round3-amd64-final/latency/new.txt
+17:18:15 latency exit status 0
+17:18:16 built default, nsync_spin, nsync_baseline, and 6e6bc42 test binaries: status 0
+17:18:16 spin: 10 alternating rounds, TryMutex Uncontended|Contended, one process per cpu
+17:19:07 spin done
+17:19:07 context: BenchmarkContext interleaved with the plain counterparts, 10 rounds, one process per cpu
+17:20:32 context done
+17:20:32 cumulative: channel baseline (nsync_baseline) vs round 3, 10 alternating rounds, one process per cpu
+17:32:09 cumulative done
+17:32:09 counters: perf stat per-op instructions/cycles/branch-misses at GOMAXPROCS=1, base vs new
+17:33:13 counters exit status 0
+17:33:13 386: GOARCH=386 compare-revisions.sh 6e6bc42 benchmarks/results/round3-amd64-final/386 6
+Results: benchstat benchmarks/results/round3-amd64-final/386/base.txt benchmarks/results/round3-amd64-final/386/new.txt
+17:40:12 386 exit status 0
+17:40:12 load after:  10:40:12 up 19:45,  4 users,  load average: 1.95, 1.95, 1.96
+17:40:12 ALLDONE
+17:40:13 restored: governor powersave epp balance_power perf_event_paranoid 4

@@ -1,0 +1,1224 @@
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	25397960	         6.376 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess          	24592246	         7.388 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure          	57151474	         3.118 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess      	26007496	         6.927 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired      	 1886979	        95.21 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark         	     175	   1039270 ns/op	      83 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0          	26443653	         6.888 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 1698873	       105.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended      	25893624	         7.145 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel         	22406217	         8.194 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended      	26107308	         7.128 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel         	22453938	         8.171 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended     	26533398	         7.137 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel        	22445409	         8.185 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure         	50924865	         3.551 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess     	20777881	         8.928 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value              	96363612	         1.852 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure    	51169695	         3.496 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32         	14777748	        12.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128        	11913314	        15.27 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024       	12036442	        15.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey            	14848759	        12.50 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel   	13276110	        13.61 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys   	13424896	        13.71 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys          	 2359399	        75.86 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames       	 1598119	       112.5 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024        	    2182	     89508 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First              	 7651828	        23.50 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed          	60083796	         2.999 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel  	45933693	         4.076 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended   	 6274070	        28.82 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel         	 5944994	        30.27 ns/op	         1.000 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys         	 6707911	        26.83 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel                     	43463342	         4.275 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex                  	 8017191	        21.81 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore                 	 8408108	        21.50 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey        	 2623408	        68.70 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey         	 1702534	       105.5 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1                     	  342414	       501.7 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16                    	  382302	       506.8 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256                   	  384232	       519.7 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted               	53293461	         3.363 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read                          	95870535	         1.846 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write                         	12317044	        14.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended              	32916223	         5.453 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended                	28396111	         6.336 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4 	27621722	         6.484 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-4  	24427968	         7.262 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-4  	53861284	         3.110 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-4         	25288282	         6.819 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-4         	 1853373	        96.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-4            	     189	    987974 ns/op	      87 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-4             	23096726	         7.594 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4           	 1612633	       112.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-4         	26403042	         7.229 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-4            	19120458	         9.437 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-4         	26318186	         7.176 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-4            	21168007	         9.786 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-4        	24765231	         7.256 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-4           	17287131	        10.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-4            	51884457	         3.514 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-4        	21138098	         8.823 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-4                 	88257487	         1.925 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-4       	50726287	         3.534 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-4            	14197808	        12.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-4           	11650706	        15.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-4          	12085930	        15.19 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-4               	14808184	        12.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-4      	12620089	        13.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-4      	22076005	         8.216 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-4             	 2343685	        76.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-4          	 1597489	       111.6 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-4           	    2150	     86794 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-4                 	 7969204	        21.50 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-4             	57377064	         3.000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-4     	170952494	         1.062 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-4      	 6112029	        29.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-4  	 5338771	        33.06 ns/op	         0.9984 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-4  	14281506	        12.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-4              	159660300	         1.124 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-4           	 9903700	        16.94 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-4          	 9585026	        18.98 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-4 	 2779658	        63.98 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-4  	 1853457	        97.70 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-4              	  363408	       470.2 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4             	  780928	       233.4 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4            	  970270	       192.8 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4        	55576928	         3.334 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-4                   	85000924	         1.856 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-4                  	13313109	        13.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-4       	33189738	         5.433 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4         	 7240333	        24.14 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16  	27658036	         6.430 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-16   	23008581	         7.282 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-16   	56066557	         3.090 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-16         	25964385	         6.769 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-16         	 1810788	        98.08 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-16            	     198	    978397 ns/op	      95 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-16             	22391532	         8.901 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16           	 1517048	       117.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-16         	24770217	         7.168 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-16            	18980109	         9.231 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-16         	25039771	         7.117 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-16            	20630785	         8.268 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-16        	25475244	         7.210 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-16           	20657924	         8.259 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-16            	50073537	         3.517 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-16        	20400645	         8.859 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-16                 	92499284	         1.858 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-16       	46786933	         3.529 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-16            	14102600	        12.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-16           	11833590	        15.26 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-16          	11965672	        15.32 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-16               	14363979	        12.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-16      	12351620	        14.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-16      	36987294	         4.125 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-16             	 2306480	        77.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-16          	 1556764	       115.5 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-16           	    2096	     87224 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-16                 	 7590451	        21.68 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-16             	57661203	         3.000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-16     	471349726	         0.3569 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-16      	 5977543	        29.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-16  	 4500217	        37.07 ns/op	         0.9929 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-16  	27010573	         5.763 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-16              	453800773	         0.3678 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-16           	 9579578	        18.64 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-16          	 8325117	        20.95 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-16 	 2576199	        68.56 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-16  	 1769023	       101.5 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-16              	  379441	       480.3 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16             	  835528	       204.1 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16            	  969601	       195.2 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16        	51177988	         3.368 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-16                   	94054206	         1.862 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-16                  	13590292	        13.39 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16       	32566518	         5.500 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16         	 2783233	        65.90 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32  	26703133	         6.488 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-32   	24224059	         7.294 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-32   	56003287	         3.144 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-32         	26557912	         6.766 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-32         	 1779784	        99.72 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-32            	     204	    967568 ns/op	     109 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-32             	20171755	         7.794 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32           	 1402412	       128.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-32         	25281981	         7.223 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-32            	17593659	         9.498 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-32         	26262902	         7.204 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-32            	21010222	         8.278 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-32        	25198972	         7.287 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-32           	20854189	         8.340 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-32            	49545910	         3.542 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-32        	20576065	         8.507 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-32                 	87104767	         1.870 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-32       	49560794	         3.504 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-32            	14239908	        12.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-32           	11875593	        15.37 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-32          	11660893	        15.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-32               	14857413	        12.50 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-32      	11118903	        15.09 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-32      	39984636	         4.092 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-32             	 2317608	        77.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-32          	 1571820	       115.9 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-32           	    1964	     90877 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-32                 	 7588648	        21.91 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-32             	58089062	         2.902 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-32     	614397650	         0.2871 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-32      	 6056614	        29.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-32  	 4062614	        46.70 ns/op	         0.9815 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-32  	34882051	         5.149 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-32              	565339771	         0.3139 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-32           	 8973565	        18.94 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-32          	 8317720	        20.25 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-32 	 2588667	        68.88 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-32  	 1745102	       104.0 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-32              	  327608	       480.6 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32             	  719781	       221.1 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32            	  901909	       242.0 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32        	53612802	         3.367 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-32                   	94420788	         1.894 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-32                  	12434722	        14.13 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32       	31358889	         5.471 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32         	 2677267	        66.73 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	26736276	         6.421 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess          	24234645	         7.326 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure          	57586363	         3.094 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess      	26054493	         6.912 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired      	 1872880	        96.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark         	     175	   1041082 ns/op	      83 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0          	23744192	         6.929 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 1704134	       105.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended      	26654444	         7.138 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel         	22458650	         8.351 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended      	26488096	         7.196 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel         	22446416	         8.197 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended     	26512962	         7.095 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel        	22459689	         8.272 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure         	51122362	         3.503 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess     	20815942	         8.911 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value              	95757618	         1.865 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure    	50910865	         3.500 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32         	14599017	        12.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128        	11995176	        15.21 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024       	11880007	        15.20 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey            	14804160	        12.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel   	13456902	        13.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys   	13424565	        13.78 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys          	 2393104	        75.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames       	 1593487	       112.6 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024        	    2190	     89403 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First              	 7633946	        23.44 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed          	60070942	         3.008 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel  	45631528	         4.020 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended   	 6257090	        28.73 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel         	 5988510	        30.36 ns/op	         1.000 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys         	 6670396	        26.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel                     	43593372	         4.294 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex                  	 8151388	        21.70 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore                 	 8456148	        21.39 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey        	 2622530	        68.78 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey         	 1708032	       105.4 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1                     	  345493	       498.0 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16                    	  375364	       493.6 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256                   	  388498	       499.4 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted               	58458772	         3.270 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read                          	96507552	         1.851 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write                         	13399544	        13.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended              	32804493	         5.446 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended                	28472569	         6.324 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4 	26759173	         6.456 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-4  	24832220	         7.238 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-4  	57766143	         3.086 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-4         	25986016	         6.943 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-4         	 1832869	        96.98 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-4            	     174	   1043819 ns/op	      88 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-4             	23474251	         7.744 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4           	 1564635	       113.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-4         	26432644	         7.209 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-4            	19215508	         9.434 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-4         	24006765	         7.304 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-4            	19279616	         9.295 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-4        	26361084	         7.181 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-4           	20123110	         9.513 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-4            	51009014	         3.593 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-4        	20977866	         8.987 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-4                 	96143662	         1.870 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-4       	51017254	         3.500 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-4            	14400234	        12.37 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-4           	11953596	        15.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-4          	11881366	        15.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-4               	14404424	        12.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-4      	12699294	        13.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-4      	21974530	         8.105 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-4             	 2343891	        76.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-4          	 1592301	       112.4 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-4           	    2176	     86061 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-4                 	 7847715	        21.38 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-4             	59217752	         3.014 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-4     	169675083	         1.066 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-4      	 6106364	        29.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-4  	 5443647	        32.99 ns/op	         0.9984 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-4  	14444564	        12.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-4              	164118247	         1.121 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-4           	 9907322	        17.33 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-4          	 9156799	        20.22 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-4 	 2539782	        68.14 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-4  	 1729473	       102.3 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-4              	  347371	       473.3 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4             	  775699	       343.5 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4            	  844672	       223.2 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4        	51371592	         3.347 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-4                   	95611333	         1.853 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-4                  	13260588	        13.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-4       	33132207	         5.456 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4         	 7385523	        24.46 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16  	26911726	         6.526 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-16   	22828316	         7.512 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-16   	52360162	         3.142 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-16         	26219322	         6.770 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-16         	 1853682	        96.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-16            	     177	   1032720 ns/op	      97 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-16             	22917012	         8.090 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16           	 1472001	       123.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-16         	25512177	         7.182 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-16            	18655996	         9.218 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-16         	25438812	         7.380 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-16            	20673662	         8.673 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-16        	24952447	         7.220 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-16           	20296934	         8.267 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-16            	47269353	         3.552 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-16        	20735604	         8.704 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-16                 	95781279	         1.873 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-16       	47259289	         3.541 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-16            	13608873	        12.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-16           	11838019	        15.26 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-16          	11663269	        15.39 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-16               	14414571	        12.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-16      	12176534	        14.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-16      	40751834	         4.209 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-16             	 2335600	        77.08 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-16          	 1552495	       114.8 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-16           	    2098	     88484 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-16                 	 7585068	        22.23 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-16             	59521447	         2.929 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-16     	549364170	         0.3299 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-16      	 6047222	        29.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-16  	 4155200	        42.67 ns/op	         0.9912 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-16  	28225788	         5.644 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-16              	534577242	         0.3443 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-16           	 9108985	        18.83 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-16          	 8276277	        21.45 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-16 	 2453242	        74.16 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-16  	 1647604	       109.3 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-16              	  369470	       480.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16             	  458872	       381.2 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16            	  591403	       296.5 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16        	51183097	         3.440 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-16                   	91237129	         1.855 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-16                  	12717568	        13.63 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16       	32382324	         5.470 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16         	 2843799	        59.58 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32  	26685524	         6.496 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-32   	24251751	         7.285 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-32   	53668382	         3.106 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-32         	25346578	         6.749 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-32         	 1838550	        97.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-32            	     174	   1043897 ns/op	     112 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-32             	20955378	         8.492 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32           	 1371325	       129.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-32         	25896909	         7.167 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-32            	17719988	         9.762 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-32         	23945524	         7.376 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-32            	20146015	         8.369 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-32        	25781408	         7.221 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-32           	19394438	         8.481 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-32            	47542299	         3.538 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-32        	20504463	         8.590 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-32                 	96563372	         1.863 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-32       	46803148	         3.677 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-32            	13667157	        12.73 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-32           	11864128	        15.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-32          	11723569	        15.32 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-32               	14558157	        12.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-32      	11537640	        15.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-32      	38387371	         4.131 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-32             	 2327521	        77.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-32          	 1538341	       117.2 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-32           	    2001	     90673 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-32                 	 7705506	        22.47 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-32             	59652483	         3.015 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-32     	632416243	         0.2846 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-32      	 5809605	        29.72 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-32  	 3355254	        53.25 ns/op	         0.9795 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-32  	30920492	         5.269 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-32              	570335970	         0.3127 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-32           	 8702806	        19.24 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-32          	 8149633	        21.77 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-32 	 2312524	        76.91 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-32  	 1545246	       118.4 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-32              	  365631	       495.1 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32             	  661911	       286.6 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32            	  894607	       196.5 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32        	56607475	         3.332 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-32                   	84763122	         1.864 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-32                  	13413540	        13.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32       	32329356	         5.458 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32         	 2670860	        67.52 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	25706852	         6.436 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess          	24774456	         7.284 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure          	57917721	         3.129 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess      	25992111	         6.915 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired      	 1851802	        97.21 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark         	     175	   1039842 ns/op	      83 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0          	26791653	         6.898 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 1704861	       105.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended      	26660812	         7.108 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel         	22395859	         8.189 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended      	26507288	         7.146 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel         	22458174	         8.344 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended     	25677243	         7.221 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel        	22116170	         8.275 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure         	51034512	         3.502 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess     	20755341	         8.860 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value              	96456818	         1.854 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure    	51205272	         3.496 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32         	14577897	        12.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128        	12074706	        15.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024       	11892984	        15.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey            	14411924	        12.71 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel   	13248472	        13.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys   	13277248	        13.83 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys          	 2392773	        75.39 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames       	 1591888	       113.2 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024        	    2173	     89403 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First              	 8009229	        23.47 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed          	60143120	         3.034 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel  	45715945	         4.027 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended   	 6124238	        28.93 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel         	 6025256	        29.87 ns/op	         1.000 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys         	 6726504	        26.87 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel                     	43491738	         4.204 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex                  	 7978566	        21.76 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore                 	 8420691	        21.47 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey        	 2344771	        72.48 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey         	 1703203	       105.8 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1                     	  346758	       478.3 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16                    	  381408	       491.0 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256                   	  382651	       503.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted               	58482172	         3.321 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read                          	95910432	         1.849 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write                         	13491128	        13.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended              	33208818	         5.436 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended                	28216473	         6.330 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4 	26824897	         6.480 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-4  	24166513	         7.288 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-4  	53790656	         3.119 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-4         	26571265	         6.728 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-4         	 1843452	        96.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-4            	     177	   1030078 ns/op	      88 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-4             	24082808	         7.428 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4           	 1618942	       113.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-4         	24195805	         7.367 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-4            	19121514	         9.520 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-4         	25953210	         7.368 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-4            	16352205	         9.494 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-4        	24060004	         7.270 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-4           	21183458	         9.386 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-4            	51830284	         3.530 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-4        	20615000	         8.813 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-4                 	92458375	         1.856 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-4       	44401062	         3.531 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-4            	14755549	        12.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-4           	11814711	        15.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-4          	11587452	        15.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-4               	14204791	        12.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-4      	12537061	        14.07 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-4      	22001548	         8.170 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-4             	 2322392	        77.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-4          	 1595420	       112.7 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-4           	    2168	     86083 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-4                 	 7886548	        21.39 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-4             	46848537	         3.700 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-4     	175432113	         1.062 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-4      	 6052026	        29.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-4  	 5375982	        32.93 ns/op	         0.9985 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-4  	14486343	        12.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-4              	161585851	         1.352 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-4           	 9650625	        17.35 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-4          	 9061809	        19.24 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-4 	 2782100	        64.34 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-4  	 1865892	        95.67 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-4              	  368161	       466.7 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4             	  787669	       265.7 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4            	  936501	       192.6 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4        	54303621	         3.363 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-4                   	86410548	         1.885 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-4                  	13363443	        13.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-4       	32580753	         5.473 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4         	 7402213	        24.27 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16  	27068278	         6.485 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-16   	23380831	         7.287 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-16   	55074182	         3.138 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-16         	24482859	         6.815 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-16         	 1768699	       100.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-16            	     182	   1019525 ns/op	      96 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-16             	21053384	         7.653 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16           	 1538752	       120.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-16         	26177720	         7.200 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-16            	18969108	         9.270 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-16         	25415529	         7.207 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-16            	20458118	         8.644 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-16        	24771619	         7.218 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-16           	21126142	         8.227 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-16            	46202192	         3.603 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-16        	21765050	         8.472 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-16                 	86810955	         1.869 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-16       	50142724	         3.538 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-16            	14450815	        12.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-16           	11565081	        15.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-16          	11951036	        15.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-16               	14671167	        12.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-16      	11992430	        14.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-16      	44567326	         4.074 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-16             	 2280146	        78.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-16          	 1550622	       116.0 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-16           	    2138	     88747 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-16                 	 7640040	        21.98 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-16             	57923331	         3.023 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-16     	523278859	         0.3322 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-16      	 5891527	        29.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-16  	 3890024	        46.29 ns/op	         0.9910 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-16  	30157072	         5.260 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-16              	502454532	         0.3485 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-16           	 8983988	        18.56 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-16          	 8194972	        21.10 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-16 	 2400706	        75.75 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-16  	 1641024	       109.2 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-16              	  349640	       496.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16             	  811212	       213.6 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16            	  929779	       223.1 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16        	47451009	         3.356 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-16                   	81854755	         1.904 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-16                  	13402213	        13.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16       	32437639	         5.444 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16         	 2921038	        64.32 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32  	28114346	         6.484 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-32   	23517824	         7.293 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-32   	54092551	         3.108 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-32         	24716786	         6.810 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-32         	 1786611	        99.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-32            	     194	    984758 ns/op	     109 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-32             	21655966	         8.171 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32           	 1399305	       123.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-32         	25596544	         7.210 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-32            	16727545	         9.627 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-32         	26324856	         7.172 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-32            	19880706	         8.519 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-32        	26355093	         7.185 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-32           	20764699	         8.290 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-32            	51498373	         3.523 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-32        	21198054	         8.456 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-32                 	80036246	         1.878 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-32       	49857739	         3.543 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-32            	14204983	        12.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-32           	11252824	        15.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-32          	11953564	        15.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-32               	13842625	        12.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-32      	12022000	        15.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-32      	39539887	         3.987 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-32             	 2333028	        77.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-32          	 1563105	       114.5 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-32           	    1930	     90288 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-32                 	 7603303	        22.09 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-32             	55975892	         2.901 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-32     	601757432	         0.2902 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-32      	 5772340	        29.90 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-32  	 3345295	        47.17 ns/op	         0.9814 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-32  	31426960	         5.858 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-32              	564259695	         0.3203 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-32           	 9347313	        18.45 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-32          	 8950041	        20.12 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-32 	 2476567	        70.56 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-32  	 1706436	       104.0 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-32              	  360854	       472.8 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32             	  695832	       227.5 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32            	  965043	       204.0 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32        	55915102	         3.339 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-32                   	89086329	         1.871 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-32                  	13014506	        13.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32       	32947372	         5.450 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32         	 2674956	        67.40 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	27588679	         6.447 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess          	24204670	         7.315 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure          	57629763	         3.096 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess      	26132221	         6.902 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired      	 1847674	        97.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark         	     175	   1039636 ns/op	      83 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0          	26301081	         6.887 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 1701680	       105.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended      	26625134	         7.126 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel         	22435094	         8.317 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended      	26153788	         7.209 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel         	22115760	         8.323 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended     	26379550	         7.157 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel        	22458285	         8.177 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure         	50808632	         3.529 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess     	20758580	         8.815 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value              	96347622	         1.856 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure    	51148263	         3.496 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32         	14785932	        12.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128        	12065347	        15.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024       	12004232	        15.14 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey            	14819776	        12.50 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel   	13463698	        13.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys   	13256714	        13.88 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys          	 2379258	        76.27 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames       	 1566438	       114.6 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024        	    2149	     89796 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First              	 7920054	        23.31 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed          	48673813	         3.696 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel  	45906468	         4.078 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended   	 6265116	        28.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel         	 6010575	        30.31 ns/op	         1.000 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys         	 6700238	        26.90 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel                     	43447249	         4.313 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex                  	 8064978	        21.69 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore                 	 8449868	        21.45 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey        	 2605508	        68.85 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey         	 1705407	       105.8 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1                     	  345870	       497.7 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16                    	  378315	       502.0 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256                   	  383877	       511.5 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted               	53873907	         3.411 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read                          	96117236	         1.850 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write                         	12286393	        14.67 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended              	33017847	         5.481 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended                	28469232	         6.333 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4 	25769169	         6.665 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-4  	24121995	         7.291 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-4  	51102450	         3.120 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-4         	25097731	         6.803 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-4         	 1832296	        97.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-4            	     186	   1008536 ns/op	      87 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-4             	22325641	         7.646 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4           	 1580684	       116.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-4         	25846056	         7.200 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-4            	19586977	         9.509 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-4         	26395171	         7.168 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-4            	19769576	         9.368 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-4        	26154248	         7.156 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-4           	17378533	         9.216 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-4            	51194466	         3.551 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-4        	21610432	         8.412 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-4                 	88678774	         1.856 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-4       	45569262	         3.519 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-4            	14750594	        12.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-4           	12014251	        15.20 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-4          	11962924	        15.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-4               	14748693	        12.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-4      	11939408	        14.32 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-4      	20195018	         8.138 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-4             	 2350137	        76.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-4          	 1607293	       111.6 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-4           	    2118	     85707 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-4                 	 8054454	        21.00 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-4             	57993072	         2.995 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-4     	172878074	         1.068 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-4      	 6058899	        29.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-4  	 5354142	        33.11 ns/op	         0.9985 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-4  	14532358	        12.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-4              	164306643	         1.123 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-4           	 9837913	        17.09 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-4          	 9150284	        19.20 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-4 	 2893477	        63.42 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-4  	 1840286	        96.67 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-4              	  362004	       478.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4             	  768781	       229.1 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4            	  971998	       193.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4        	52810516	         3.336 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-4                   	94079768	         1.858 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-4                  	13545301	        13.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-4       	31884360	         5.521 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4         	 7234648	        24.59 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16  	26238622	         6.481 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-16   	23353508	         7.442 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-16   	51281700	         3.129 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-16         	24921469	         6.762 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-16         	 1853103	        96.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-16            	     177	   1031679 ns/op	      97 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-16             	22585219	         7.544 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16           	 1484193	       123.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-16         	24943678	         7.160 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-16            	19912284	         9.540 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-16         	25093594	         7.229 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-16            	21116806	         8.308 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-16        	25341322	         7.248 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-16           	20770123	         8.327 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-16            	48165805	         3.557 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-16        	21333120	         8.460 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-16                 	95924210	         1.872 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-16       	48396098	         3.549 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-16            	14544898	        12.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-16           	11826121	        15.11 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-16          	11993486	        15.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-16               	14590398	        12.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-16      	12405838	        14.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-16      	39286298	         4.234 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-16             	 2331966	        76.99 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-16          	 1560255	       115.1 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-16           	    2068	     87378 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-16                 	 8010914	        22.13 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-16             	52933282	         3.086 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-16     	523014102	         0.3529 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-16      	 5847098	        29.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-16  	 4814104	        41.09 ns/op	         0.9918 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-16  	30397594	         5.659 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-16              	523833462	         0.3427 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-16           	 9599607	        18.40 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-16          	 8054634	        20.93 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-16 	 2430236	        73.49 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-16  	 1667278	       107.7 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-16              	  342464	       496.0 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16             	  721383	       240.2 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16            	  777094	       226.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16        	57045860	         3.347 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-16                   	96077116	         1.861 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-16                  	13216176	        13.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16       	31961900	         5.474 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16         	 3047751	        60.22 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32  	24595209	         6.513 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-32   	24281319	         7.293 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-32   	51663640	         3.196 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-32         	24998415	         6.830 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-32         	 1829557	        98.97 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-32            	     177	   1019475 ns/op	     112 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-32             	22999714	         7.802 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32           	 1342837	       126.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-32         	26365690	         7.128 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-32            	17377742	         9.940 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-32         	25470006	         7.205 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-32            	20551186	         8.598 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-32        	25460840	         7.252 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-32           	20740344	         8.341 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-32            	48282950	         3.586 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-32        	21194854	         8.491 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-32                 	96099738	         1.858 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-32       	50474190	         3.510 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-32            	14660943	        12.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-32           	11520349	        15.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-32          	11720830	        15.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-32               	14157610	        12.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-32      	11943289	        15.29 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-32      	41660610	         3.941 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-32             	 2332506	        76.97 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-32          	 1552518	       114.7 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-32           	    1894	     89310 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-32                 	 7754050	        22.32 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-32             	54278518	         3.029 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-32     	607372202	         0.2881 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-32      	 6028494	        29.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-32  	 3912118	        44.34 ns/op	         0.9819 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-32  	33656263	         5.505 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-32              	573077013	         0.3131 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-32           	 8881450	        18.32 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-32          	 8797148	        19.99 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-32 	 2532195	        69.50 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-32  	 1721688	       104.6 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-32              	  361800	       472.7 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32             	  827185	       226.3 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32            	  915730	       199.2 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32        	52332106	         3.339 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-32                   	94729662	         1.859 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-32                  	12800959	        13.67 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32       	31353804	         5.456 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32         	 2732586	        67.32 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	26707102	         6.529 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess          	24796574	         7.276 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure          	58046277	         3.084 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess      	26156760	         6.942 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired      	 1856806	        96.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark         	     172	   1047035 ns/op	      83 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0          	26910358	         6.867 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 1672696	       105.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended      	26616260	         7.081 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel         	22441987	         8.328 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended      	26077333	         7.157 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel         	22526882	         8.174 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended     	25691526	         7.090 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel        	22488058	         8.312 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure         	51047262	         3.497 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess     	20786080	         8.883 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value              	95684114	         1.850 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure    	51315544	         3.497 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32         	14614562	        12.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128        	12074551	        15.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024       	11972020	        15.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey            	14788952	        12.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel   	13451864	        13.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys   	13266699	        13.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys          	 2401530	        74.97 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames       	 1608240	       113.3 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024        	    2151	     91326 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First              	 7972840	        23.15 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed          	60251025	         3.000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel  	45736773	         4.092 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended   	 6285212	        28.93 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel         	 5962221	        30.22 ns/op	         1.000 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys         	 6662323	        26.83 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel                     	43711939	         4.300 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex                  	 8018630	        21.82 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore                 	 8469350	        21.54 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey        	 2621715	        76.36 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey         	 1697143	       106.1 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1                     	  345164	       502.8 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16                    	  374068	       508.0 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256                   	  375897	       510.3 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted               	54741595	         3.291 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read                          	84763920	         1.856 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write                         	13593788	        13.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended              	32878033	         5.446 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended                	28423068	         6.329 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4 	27197312	         6.450 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-4  	23153281	         7.422 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-4  	55260864	         3.095 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-4         	25564669	         6.758 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-4         	 1844028	        97.04 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-4            	     171	   1052905 ns/op	      87 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-4             	24355347	         7.293 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4           	 1605606	       110.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-4         	25698620	         7.173 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-4            	19209160	         9.264 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-4         	25726736	         7.357 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-4            	17025622	         9.256 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-4        	26249857	         7.354 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-4           	19655505	         9.466 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-4            	51209365	         3.540 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-4        	20411842	         8.846 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-4                 	87942110	         1.854 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-4       	50486521	         3.504 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-4            	14712856	        12.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-4           	11745526	        15.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-4          	11754818	        15.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-4               	13628570	        12.97 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-4      	12631446	        14.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-4      	19411243	         8.221 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-4             	 2337177	        76.87 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-4          	 1608745	       111.0 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-4           	    2082	     85359 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-4                 	 7951478	        21.15 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-4             	59004998	         2.999 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-4     	171763832	         1.071 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-4      	 6079551	        29.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-4  	 5139370	        33.40 ns/op	         0.9985 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-4  	14465816	        12.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-4              	163676054	         1.125 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-4           	 9893208	        17.17 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-4          	 9267658	        18.82 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-4 	 2902608	        62.39 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-4  	 1844918	        96.42 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-4              	  379046	       470.1 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4             	  807822	       234.3 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4            	  940118	       193.2 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4        	49859534	         3.350 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-4                   	91538300	         1.861 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-4                  	13207567	        13.50 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-4       	32144148	         5.490 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4         	 7056279	        24.57 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16  	26956792	         6.556 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-16   	23672731	         7.317 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-16   	49350330	         3.128 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-16         	24509679	         6.835 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-16         	 1832317	        97.95 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-16            	     182	   1019755 ns/op	      96 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-16             	23269213	         7.889 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16           	 1526590	       123.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-16         	24151762	         7.212 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-16            	18076710	         9.445 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-16         	26068141	         7.161 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-16            	20622121	         8.322 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-16        	26483335	         7.158 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-16           	20184198	         8.405 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-16            	51330939	         3.529 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-16        	21026992	         8.634 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-16                 	88090030	         1.872 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-16       	46197781	         3.617 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-16            	14603005	        12.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-16           	11864661	        15.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-16          	11503878	        15.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-16               	14756738	        12.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-16      	12140240	        14.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-16      	39777747	         4.007 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-16             	 2324716	        77.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-16          	 1555326	       114.6 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-16           	    2079	     88433 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-16                 	 7793241	        21.78 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-16             	54647014	         3.017 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-16     	504944330	         0.3333 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-16      	 6094084	        29.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-16  	 4105612	        43.91 ns/op	         0.9913 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-16  	29818684	         6.085 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-16              	487553212	         0.3449 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-16           	 9481610	        18.69 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-16          	 8352596	        20.81 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-16 	 2498978	        71.13 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-16  	 1717593	       104.2 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-16              	  377294	       493.5 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16             	  515862	       310.5 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16            	  821842	       203.6 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16        	56246659	         3.331 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-16                   	94319354	         1.855 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-16                  	13363087	        13.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16       	32583295	         5.466 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16         	 2782651	        64.91 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32  	25418547	         6.539 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-32   	22390638	         7.368 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-32   	56888878	         3.098 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-32         	24880190	         6.799 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-32         	 1844338	        97.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-32            	     196	    970403 ns/op	     110 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-32             	21015631	         8.116 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32           	 1405039	       126.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-32         	25657881	         7.169 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-32            	17917095	         9.426 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-32         	24818428	         7.103 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-32            	19888674	         8.367 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-32        	25340466	         7.212 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-32           	20536222	         8.398 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-32            	49064342	         3.566 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-32        	20774469	         8.537 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-32                 	86396862	         1.865 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-32       	49153884	         3.511 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-32            	14302392	        12.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-32           	11890983	        15.20 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-32          	11747202	        15.29 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-32               	14616525	        12.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-32      	11605483	        14.91 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-32      	41596269	         3.859 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-32             	 2225976	        79.17 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-32          	 1551000	       115.6 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-32           	    2110	     90744 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-32                 	 7421443	        22.53 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-32             	57499554	         3.011 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-32     	615119598	         0.2863 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-32      	 6102559	        29.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-32  	 3368180	        55.73 ns/op	         0.9787 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-32  	31110514	         4.917 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-32              	568300608	         0.3122 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-32           	 8873077	        18.95 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-32          	 8485927	        20.72 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-32 	 2332921	        76.96 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-32  	 1718524	       107.4 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-32              	  378765	       472.6 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32             	  726667	       239.4 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32            	  963454	       236.8 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32        	57747759	         3.321 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-32                   	93720076	         1.861 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-32                  	12989533	        13.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32       	32098435	         5.441 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32         	 2881585	        66.41 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	26713020	         6.561 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess          	24269572	         7.361 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure          	57466621	         3.101 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess      	25746384	         6.940 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired      	 1851085	        97.22 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark         	     175	   1039923 ns/op	      83 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0          	26890177	         6.893 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 1699413	       105.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended      	26661606	         7.090 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel         	22314438	         8.193 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended      	26498258	         7.137 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel         	22428765	         8.314 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended     	26197875	         7.165 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel        	22460785	         8.185 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure         	51238402	         3.504 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess     	20790097	         8.871 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value              	95993497	         1.873 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure    	51264013	         3.515 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32         	14706114	        12.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128        	11805434	        15.26 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024       	11899860	        15.34 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey            	14779180	        12.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel   	13380034	        13.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys   	13477354	        13.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys          	 2381490	        76.73 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames       	 1584019	       113.4 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024        	    2146	     89843 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First              	 7942603	        23.29 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed          	60054669	         3.008 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel  	45699892	         4.094 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended   	 6271736	        28.77 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel         	 5994976	        30.00 ns/op	         1.000 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys         	 6690109	        26.89 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel                     	43373107	         4.317 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex                  	 8058720	        21.72 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore                 	 8449296	        21.44 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey        	 2618317	        68.76 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey         	 1695732	       106.2 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1                     	  348111	       498.3 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16                    	  375750	       504.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256                   	  384838	       503.4 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted               	58034094	         3.310 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read                          	95580819	         1.863 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write                         	13467060	        13.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended              	33085528	         5.515 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended                	28528318	         6.349 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4 	26666037	         6.462 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-4  	24551986	         7.256 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-4  	52454491	         3.107 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-4         	26779716	         6.747 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-4         	 1853905	        96.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-4            	     176	   1035834 ns/op	      88 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-4             	22576650	         7.377 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4           	 1593590	       113.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-4         	26409643	         7.496 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-4            	19363376	         9.363 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-4         	24357064	         7.412 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-4            	18870434	         9.658 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-4        	26560702	         7.181 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-4           	17520433	         9.490 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-4            	46100002	         3.547 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-4        	20981172	         8.611 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-4                 	87286692	         1.941 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-4       	46318800	         3.618 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-4            	13616382	        12.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-4           	11875233	        15.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-4          	11807738	        15.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-4               	14730724	        12.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-4      	12477072	        14.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-4      	20632540	         8.107 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-4             	 2339206	        76.79 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-4          	 1588398	       113.4 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-4           	    2118	     85675 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-4                 	 7715562	        21.57 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-4             	56979100	         2.919 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-4     	171489902	         1.067 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-4      	 5998261	        29.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-4  	 5366226	        33.00 ns/op	         0.9985 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-4  	12462013	        12.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-4              	162453270	         1.124 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-4           	 9890026	        17.17 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-4          	 9808544	        19.42 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-4 	 2863747	        62.97 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-4  	 1799391	       100.4 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-4              	  347702	       485.8 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-4             	  612992	       274.0 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-4            	  971230	       188.7 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-4        	54196820	         3.353 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-4                   	94206064	         1.855 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-4                  	13384122	        13.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-4       	33053328	         5.435 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-4         	 7458096	        23.93 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16  	25151983	         6.485 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-16   	23698148	         7.416 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-16   	57386412	         3.098 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-16         	24754142	         6.830 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-16         	 1843860	        97.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-16            	     182	    920669 ns/op	      96 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-16             	22884961	         7.778 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16           	 1554025	       115.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-16         	24809589	         7.399 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-16            	18699025	         9.112 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-16         	25621218	         7.368 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-16            	20464900	         8.581 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-16        	24995145	         7.281 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-16           	20495484	         8.223 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-16            	49456839	         3.531 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-16        	21433880	         8.541 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-16                 	96806143	         1.860 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-16       	48439689	         3.573 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-16            	14185298	        12.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-16           	11696466	        15.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-16          	11585210	        15.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-16               	14724903	        12.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-16      	12117027	        14.50 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-16      	34736702	         4.474 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-16             	 2287682	        77.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-16          	 1553592	       116.7 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-16           	    2038	     89139 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-16                 	 7650434	        22.04 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-16             	55592942	         3.025 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-16     	493365224	         0.3330 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-16      	 5881330	        29.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-16  	 4452908	        37.04 ns/op	         0.9927 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-16  	28421313	         5.547 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-16              	545797669	         0.3416 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-16           	 9418636	        18.51 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-16          	 8409202	        21.01 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-16 	 2456358	        73.41 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-16  	 1665904	       107.4 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-16              	  362289	       471.7 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-16             	  859862	       241.6 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-16            	  818800	       193.7 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-16        	51119604	         3.344 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-16                   	89759310	         1.858 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-16                  	13371679	        13.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-16       	30569259	         5.476 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-16         	 2703490	        65.47 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: 386
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32  	27718674	         6.466 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TrySuccess-32   	21993175	         7.446 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TryFailure-32   	51052184	         3.133 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutSuccess-32         	25743618	         6.857 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutExpired-32         	 1830192	        97.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/TimeoutPark-32            	     174	   1042281 ns/op	     112 B/op	       1 allocs/op
+BenchmarkTryMutex/Contended0-32             	20208580	         7.877 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32           	 1390141	       129.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Uncontended-32         	25776081	         7.198 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/1/Parallel-32            	18177651	         9.950 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Uncontended-32         	25324177	         7.403 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/8/Parallel-32            	20132922	         8.213 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Uncontended-32        	24736147	         7.188 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/64/Parallel-32           	21535286	         8.309 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TryFailure-32            	51022041	         3.518 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/TimeoutSuccess-32        	21501370	         8.565 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Value-32                 	96192326	         1.868 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSemaphore/Full8TryFailure-32       	49846665	         3.509 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey32-32            	14547525	        12.39 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey128-32           	11568001	        15.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/LongKey1024-32          	11711173	        15.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/HotKey-32               	14733998	        12.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/SameKeyParallel-32      	12105907	        15.04 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/IndependentKeys-32      	38819256	         4.075 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/ManyKeys-32             	 2253696	        77.87 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedMutex/UniqueNames-32          	 1558773	       114.8 ns/op	      17 B/op	       1 allocs/op
+BenchmarkNamedMutex/Create1024-32           	    1974	     90762 ns/op	   21928 B/op	     195 allocs/op
+BenchmarkOnceMutex/First-32                 	 7541838	        22.80 ns/op	       8 B/op	       1 allocs/op
+BenchmarkOnceMutex/Completed-32             	53822246	         3.019 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOnceMutex/CompletedParallel-32     	627104064	         0.2868 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/Uncontended-32      	 6081552	        29.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/SameKeyParallel-32  	 3297818	        53.68 ns/op	         0.9799 leaders/op	       0 B/op	       0 allocs/op
+BenchmarkNamedOnceMutex/IndependentKeys-32  	34871076	         5.159 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryFailureParallel-32              	570880923	         0.3122 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConstruction/TryMutex-32           	 8945055	        19.05 ns/op	      16 B/op	       1 allocs/op
+BenchmarkConstruction/Semaphore-32          	 8267445	        21.61 ns/op	      24 B/op	       1 allocs/op
+BenchmarkConstruction/NamedMutexFirstKey-32 	 2313954	        78.02 ns/op	     136 B/op	       2 allocs/op
+BenchmarkConstruction/NamedOnceFirstKey-32  	 1571264	       114.4 ns/op	     144 B/op	       2 allocs/op
+BenchmarkControlWaitGroup/1-32              	  324008	       493.1 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/16-32             	  600740	       278.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/256-32            	  845377	       216.4 ns/op	      16 B/op	       1 allocs/op
+BenchmarkControlWaitGroup/Aborted-32        	56931253	         3.350 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Read-32                   	92575543	         1.876 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyncFlag/Write-32                  	12994869	        13.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Uncontended-32       	31294926	         5.464 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMutex/Contended-32         	 2864751	        60.22 ns/op	       0 B/op	       0 allocs/op
+PASS

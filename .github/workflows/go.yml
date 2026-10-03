@@ -37,6 +37,9 @@ jobs:
         run: go test -race -shuffle=on -count=10 -timeout=2m ./...
       - name: Test assembly experiment
         run: go test -tags=nsync_spin -race -shuffle=on -count=3 -timeout=2m ./...
+      - name: Test as 32-bit x86
+        if: matrix.os == 'ubuntu-latest'
+        run: GOARCH=386 go test -shuffle=on -count=3 -timeout=2m ./...
       - name: Cross-compile common architectures
         if: matrix.os == 'ubuntu-latest'
         run: ./benchmarks/cross-build.sh

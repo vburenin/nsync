@@ -1,0 +1,67 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+                            │ round3-amd64/alignment-check/before.txt │ round3-amd64/alignment-check/after.txt │
+                            │                 sec/op                  │     sec/op      vs base                │
+ControlWaitGroup/1                                       295.2n ±  1%     291.6n ±  2%   -1.24% (p=0.041 n=10)
+ControlWaitGroup/16                                      295.7n ±  4%     296.2n ±  2%        ~ (p=0.869 n=10)
+ControlWaitGroup/256                                     293.2n ±  2%     294.2n ±  1%        ~ (p=0.955 n=10)
+ControlWaitGroup/Aborted                                0.6170n ±  0%    0.4562n ±  1%  -26.06% (p=0.000 n=10)
+ControlWaitGroup/1-4                                     303.3n ±  2%     303.0n ±  2%        ~ (p=0.739 n=10)
+ControlWaitGroup/16-4                                    183.5n ± 28%     180.9n ±  8%        ~ (p=0.138 n=10)
+ControlWaitGroup/256-4                                   140.9n ±  9%     139.5n ±  1%   -0.92% (p=0.022 n=10)
+ControlWaitGroup/Aborted-4                              0.6262n ±  1%    0.4602n ±  4%  -26.51% (p=0.000 n=10)
+ControlWaitGroup/1-16                                    306.8n ±  2%     306.3n ±  1%        ~ (p=0.481 n=10)
+ControlWaitGroup/16-16                                   169.2n ± 14%     179.0n ± 34%        ~ (p=0.190 n=10)
+ControlWaitGroup/256-16                                  151.4n ± 10%     158.4n ±  5%        ~ (p=0.481 n=10)
+ControlWaitGroup/Aborted-16                             0.6286n ±  1%    0.4611n ±  1%  -26.64% (p=0.000 n=10)
+ControlWaitGroup/1-32                                    307.2n ±  1%     304.4n ±  2%        ~ (p=0.078 n=10)
+ControlWaitGroup/16-32                                   206.4n ± 16%     184.7n ± 21%        ~ (p=0.160 n=10)
+ControlWaitGroup/256-32                                  158.7n ±  9%     153.8n ±  8%        ~ (p=0.239 n=10)
+ControlWaitGroup/Aborted-32                             0.6295n ±  1%    0.4627n ±  2%  -26.49% (p=0.000 n=10)
+geomean                                                  51.47n           47.42n         -7.87%
+
+                            │ round3-amd64/alignment-check/before.txt │ round3-amd64/alignment-check/after.txt │
+                            │                  B/op                   │     B/op       vs base                 │
+ControlWaitGroup/1                                       24.00 ± 0%        24.00 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16                                      24.00 ± 0%        24.00 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256                                     24.00 ± 0%        24.00 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted                                 0.000 ± 0%        0.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/1-4                                     24.00 ± 0%        24.00 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16-4                                    24.00 ± 0%        24.00 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256-4                                   24.00 ± 0%        24.00 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted-4                               0.000 ± 0%        0.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/1-16                                    24.00 ± 0%        24.00 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16-16                                   24.00 ± 0%        24.00 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256-16                                  24.00 ± 0%        24.00 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted-16                              0.000 ± 0%        0.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/1-32                                    24.00 ± 0%        24.00 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16-32                                   24.00 ± 0%        24.00 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256-32                                  24.00 ± 0%        24.00 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted-32                              0.000 ± 0%        0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                                             ²                  +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                            │ round3-amd64/alignment-check/before.txt │ round3-amd64/alignment-check/after.txt │
+                            │                allocs/op                │   allocs/op    vs base                 │
+ControlWaitGroup/1                                       1.000 ± 0%        1.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16                                      1.000 ± 0%        1.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256                                     1.000 ± 0%        1.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted                                 0.000 ± 0%        0.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/1-4                                     1.000 ± 0%        1.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16-4                                    1.000 ± 0%        1.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256-4                                   1.000 ± 0%        1.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted-4                               0.000 ± 0%        0.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/1-16                                    1.000 ± 0%        1.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16-16                                   1.000 ± 0%        1.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256-16                                  1.000 ± 0%        1.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted-16                              0.000 ± 0%        0.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/1-32                                    1.000 ± 0%        1.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16-32                                   1.000 ± 0%        1.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256-32                                  1.000 ± 0%        1.000 ± 0%       ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted-32                              0.000 ± 0%        0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                                             ²                  +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

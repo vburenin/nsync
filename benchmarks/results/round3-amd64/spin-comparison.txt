@@ -1,0 +1,55 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+                         │ spin-default.txt │               spin.txt               │
+                         │      sec/op      │    sec/op     vs base                │
+TryMutex/Uncontended            3.591n ± 1%    3.582n ± 1%        ~ (p=0.448 n=10)
+TryMutex/Contended0             3.641n ± 0%    3.654n ± 0%   +0.36% (p=0.019 n=10)
+TryMutex/Contended100           81.08n ± 0%    80.77n ± 1%        ~ (p=0.063 n=10)
+TryMutex/Uncontended-4          3.646n ± 2%    3.599n ± 2%        ~ (p=0.280 n=10)
+TryMutex/Contended0-4           3.748n ± 2%    5.402n ± 9%  +44.14% (p=0.000 n=10)
+TryMutex/Contended100-4         84.84n ± 1%    87.00n ± 3%   +2.55% (p=0.000 n=10)
+TryMutex/Uncontended-16         3.651n ± 1%    3.619n ± 1%        ~ (p=0.197 n=10)
+TryMutex/Contended0-16          3.856n ± 3%    5.196n ± 5%  +34.76% (p=0.000 n=10)
+TryMutex/Contended100-16        87.76n ± 3%    92.62n ± 3%   +5.54% (p=0.000 n=10)
+TryMutex/Uncontended-32         3.612n ± 1%    3.591n ± 1%   -0.57% (p=0.006 n=10)
+TryMutex/Contended0-32          3.959n ± 2%    5.197n ± 2%  +31.27% (p=0.000 n=10)
+TryMutex/Contended100-32        90.19n ± 3%   102.10n ± 2%  +13.21% (p=0.000 n=10)
+geomean                         10.58n         11.60n        +9.68%
+
+                         │ spin-default.txt │              spin.txt               │
+                         │       B/op       │    B/op     vs base                 │
+TryMutex/Uncontended           0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended0            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended100          0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Uncontended-4         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended0-4          0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended100-4        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Uncontended-16        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended0-16         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended100-16       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Uncontended-32        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended0-32         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended100-32       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                   ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                         │ spin-default.txt │              spin.txt               │
+                         │    allocs/op     │ allocs/op   vs base                 │
+TryMutex/Uncontended           0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended0            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended100          0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Uncontended-4         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended0-4          0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended100-4        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Uncontended-16        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended0-16         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended100-16       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Uncontended-32        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended0-32         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TryMutex/Contended100-32       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                   ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

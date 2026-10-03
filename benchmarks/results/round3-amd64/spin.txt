@@ -1,0 +1,320 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	48382166	         3.612 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0          	48628486	         3.660 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 2225984	        80.84 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4         	48332578	         3.741 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4          	33739600	         5.756 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4        	 1996920	        89.06 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16         	45020348	         3.667 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	40104056	         5.165 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	 1898294	       142.0 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32         	46541019	         3.597 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-32          	38927511	         5.139 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32        	 1761310	       101.3 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	44972341	         3.633 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0          	49322283	         3.707 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 2215862	        81.98 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4         	46021468	         3.593 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4          	37134235	         4.956 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4        	 2056874	        87.49 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16         	45218188	         3.600 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	35991584	         4.969 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	 1903495	        95.79 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32         	46963054	         3.624 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-32          	32793592	         5.197 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32        	 1752993	       102.4 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	49850407	         3.569 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0          	49535658	         3.657 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 2232343	        80.68 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4         	48755700	         3.586 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4          	38211586	         4.826 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4        	 1998790	        89.28 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16         	43829030	         3.650 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	35796958	         5.329 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	 1855548	        91.87 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32         	49432880	         3.583 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-32          	34525167	         5.075 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32        	 1798963	       104.4 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	48581277	         3.601 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0          	49277104	         3.649 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 2216030	        81.57 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4         	49756111	         3.621 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4          	40291666	         5.999 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4        	 2034692	        86.48 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16         	48615602	         3.677 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	37155038	         5.458 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	 1923957	        93.07 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32         	49717822	         3.587 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-32          	35052727	         5.323 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32        	 1809986	       100.0 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	49996902	         3.580 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0          	49380439	         3.647 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 2231623	        80.47 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4         	45933096	         3.600 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4          	40105316	         5.016 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4        	 1973354	        86.63 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16         	49715350	         3.582 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	33892298	         5.467 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	 1940522	        90.59 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32         	48813452	         3.597 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-32          	38356401	         5.324 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32        	 1717129	       100.6 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	50267310	         3.574 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0          	49241179	         3.656 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 2233891	        80.62 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4         	48877473	         3.588 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4          	39342214	         5.610 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4        	 2058651	        86.97 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16         	48740491	         3.627 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	34736635	         4.656 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	 1848048	        92.40 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32         	49374615	         3.637 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-32          	39477596	         5.154 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32        	 1788379	       102.1 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	49879056	         3.564 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0          	48891440	         3.652 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 2236996	        81.16 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4         	44569370	         3.598 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4          	34562356	         4.936 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4        	 2075215	        86.10 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16         	49062470	         3.585 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	38833694	         5.035 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	 1841830	        93.32 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32         	47709834	         3.593 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-32          	36905164	         5.116 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32        	 1754173	       103.7 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	49960614	         3.584 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0          	49177962	         3.660 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 2233196	        80.82 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4         	47052585	         3.685 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4          	35723577	         5.560 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4        	 2054779	        86.71 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16         	47463798	         3.611 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	35807804	         5.189 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	 1928406	        92.85 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32         	49074121	         3.583 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-32          	31926175	         5.268 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32        	 1735562	       102.1 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	50342932	         3.563 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0          	49317688	         3.641 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 2238782	        80.30 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4         	49785204	         3.576 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4          	41657418	         5.580 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4        	 2035522	        87.04 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16         	47453637	         3.634 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	35244021	         5.220 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	 1938517	        91.12 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32         	52236854	         3.587 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-32          	37977831	         5.211 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32        	 1763044	        99.48 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended         	50153077	         3.595 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0          	48852349	         3.650 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100        	 2195631	        80.72 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-4         	47756365	         3.678 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-4          	38343459	         5.243 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-4        	 2008332	        89.81 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-16         	47219913	         3.585 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-16          	39699422	         5.202 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-16        	 1912524	        92.38 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkTryMutex/Uncontended-32         	46778530	         3.590 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended0-32          	36317091	         5.197 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTryMutex/Contended100-32        	 1779003	       102.8 ns/op	       0 B/op	       0 allocs/op
+PASS

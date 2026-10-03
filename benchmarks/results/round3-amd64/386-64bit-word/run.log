@@ -1,0 +1,4 @@
+16:08:04 settings: governor performance  epp performance ;  09:08:04 up 18:13,  6 users,  load average: 1.47, 2.04, 1.84
+Results: benchstat benchmarks/results/round3-amd64-run2/386/base.txt benchmarks/results/round3-amd64-run2/386/new.txt
+16:15:03 exit status 0;  09:15:03 up 18:20,  6 users,  load average: 2.62, 2.36, 2.08
+16:15:03 restored: governor powersave  epp balance_power 

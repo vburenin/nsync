@@ -115,6 +115,11 @@ samples are kept separate from the full suite.
 | ControlWaitGroup/256 | 16 | 554.4 | 603.9 | 9% more time, p=0.010; optimized CI ±57% |
 | ControlWaitGroup/256 | 32 | 560.0 | 568.8 | Inconclusive, p=0.382 |
 
+Note added in round 3: this confirmation took one sample per process with
+`-cpu=4,16,32`, and Go 1.27 measures a `b.Loop` benchmark's first `-cpu` value
+at the GOMAXPROCS left by the previous measurement. The 4-P rows of
+`OnceMutex/First` and `ControlWaitGroup/256` above therefore ran at 32 Ps.
+
 The initial 22% first-use slowdown at 16 Ps did not reproduce at that magnitude.
 The 256-worker case at 16 Ps continued to measure worse, although its optimized
 samples were variable. The unchanged contended control at 4 Ps now differed by

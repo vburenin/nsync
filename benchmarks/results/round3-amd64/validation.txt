@@ -1,0 +1,83 @@
+Validation of the final round 3 code, 2026-10-03 18:17 UTC
+go version go1.27.1 linux/amd64
+
+$ gofmt -l .
+$ go vet ./... (default, nsync_spin, nsync_baseline, GOARCH=386)
+ok
+
+$ staticcheck ./... (findings other than SA2001, empty critical sections in tests)
+(none)
+
+$ go test -race -shuffle=on -count=3 ./...
+ok  	github.com/vburenin/nsync	2.984s
+ok  	github.com/vburenin/nsync/benchmarks/asm	1.012s
+?   	github.com/vburenin/nsync/internal/baseline	[no test files]
+
+$ GOARCH=386 go test -shuffle=on -count=3 ./...
+ok  	github.com/vburenin/nsync	1.011s
+?   	github.com/vburenin/nsync/internal/baseline	[no test files]
+
+$ ./benchmarks/cross-build.sh
+linux/amd64 compiled (default and nsync_spin)
+linux/arm64 compiled (default and nsync_spin)
+linux/arm compiled (default and nsync_spin)
+linux/386 compiled (default and nsync_spin)
+linux/riscv64 compiled (default and nsync_spin)
+linux/ppc64le compiled (default and nsync_spin)
+linux/s390x compiled (default and nsync_spin)
+linux/loong64 compiled (default and nsync_spin)
+linux/mips64le compiled (default and nsync_spin)
+linux/mips compiled (default and nsync_spin)
+linux/mipsle compiled (default and nsync_spin)
+darwin/amd64 compiled (default and nsync_spin)
+darwin/arm64 compiled (default and nsync_spin)
+windows/amd64 compiled (default and nsync_spin)
+windows/arm64 compiled (default and nsync_spin)
+freebsd/amd64 compiled (default and nsync_spin)
+freebsd/arm64 compiled (default and nsync_spin)
+js/wasm compiled (default and nsync_spin)
+
+Soak (18:12 UTC, same tree): soak.test -test.count=15, soak-race.test (-race) -test.count=5, soak-spin.test (nsync_spin) -test.count=5; each with -test.shuffle=on at -test.cpu 1, 2, 4, 8, 32, twice
+norace cpu=1 r=1 rc=0
+race cpu=1 r=1 rc=0
+spin cpu=1 r=1 rc=0
+norace cpu=1 r=2 rc=0
+race cpu=1 r=2 rc=0
+spin cpu=1 r=2 rc=0
+norace cpu=2 r=1 rc=0
+race cpu=2 r=1 rc=0
+spin cpu=2 r=1 rc=0
+norace cpu=2 r=2 rc=0
+race cpu=2 r=2 rc=0
+spin cpu=2 r=2 rc=0
+norace cpu=4 r=1 rc=0
+race cpu=4 r=1 rc=0
+spin cpu=4 r=1 rc=0
+norace cpu=4 r=2 rc=0
+race cpu=4 r=2 rc=0
+spin cpu=4 r=2 rc=0
+norace cpu=8 r=1 rc=0
+race cpu=8 r=1 rc=0
+spin cpu=8 r=1 rc=0
+norace cpu=8 r=2 rc=0
+race cpu=8 r=2 rc=0
+spin cpu=8 r=2 rc=0
+norace cpu=32 r=1 rc=0
+race cpu=32 r=1 rc=0
+spin cpu=32 r=1 rc=0
+norace cpu=32 r=2 rc=0
+race cpu=32 r=2 rc=0
+spin cpu=32 r=2 rc=0
+DONE
+
+Soak as GOARCH=386 (18:13 UTC): -test.count=15 -test.shuffle=on at -test.cpu 1, 2, 4, 8, 32, twice
+386 cpu=1 r=1 rc=0
+386 cpu=1 r=2 rc=0
+386 cpu=2 r=1 rc=0
+386 cpu=2 r=2 rc=0
+386 cpu=4 r=1 rc=0
+386 cpu=4 r=2 rc=0
+386 cpu=8 r=1 rc=0
+386 cpu=8 r=2 rc=0
+386 cpu=32 r=1 rc=0
+386 cpu=32 r=2 rc=0

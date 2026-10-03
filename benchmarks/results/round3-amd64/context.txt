@@ -1,0 +1,520 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background         	42030571	         3.756 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background        	47346591	         3.783 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background       	23391001	         7.732 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background         	45555745	         3.912 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable                  	44534799	         4.018 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable                 	42049648	         4.281 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable                	21525996	         8.440 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable         	45875042	         3.952 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-4         	48749744	         3.698 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-4        	43815032	         3.842 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-4       	23475540	         7.778 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-4         	44223457	         4.046 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-4                  	44866320	         4.053 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-4                 	41723494	         4.285 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-4                	21477465	         8.250 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-4         	37059165	         4.454 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-16         	47186912	         3.763 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-16        	44076885	         3.800 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-16       	21939646	         7.753 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-16         	40455883	         4.264 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-16                  	43019582	         4.068 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-16                 	39595491	         4.299 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-16                	21154399	         8.340 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-16         	39812034	         4.593 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-32         	44354584	         3.813 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-32        	43013702	         3.829 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-32       	23075606	         7.777 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-32         	40691740	         4.406 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-32                  	41664949	         4.099 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-32                 	39983650	         4.450 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-32                	20739123	         8.492 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-32         	34880685	         5.055 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background         	43165725	         3.814 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background        	47351324	         3.780 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background       	23645782	         7.814 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background         	46302679	         3.897 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable                  	44828139	         4.019 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable                 	42090040	         4.263 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable                	21763814	         8.392 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable         	45537847	         3.930 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-4         	47132818	         3.793 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-4        	47364693	         3.797 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-4       	22434926	         8.026 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-4         	41861739	         4.067 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-4                  	44963568	         4.050 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-4                 	40779393	         4.275 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-4                	21664951	         8.451 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-4         	40082766	         4.431 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-16         	47035963	         3.754 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-16        	47194347	         3.800 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-16       	22360095	         7.929 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-16         	38306266	         4.396 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-16                  	42586706	         4.061 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-16                 	37001923	         4.367 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-16                	21103186	         8.577 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-16         	38412488	         4.588 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-32         	48002880	         3.763 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-32        	42332421	         3.867 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-32       	23010613	         7.836 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-32         	39218215	         4.325 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-32                  	42098330	         4.078 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-32                 	37772552	         4.334 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-32                	21215076	         8.345 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-32         	34759018	         5.273 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background         	39775629	         3.895 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background        	47628118	         3.786 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background       	23570830	         7.751 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background         	46146284	         3.903 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable                  	44693768	         4.024 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable                 	41853446	         4.316 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable                	21715515	         8.429 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable         	45630602	         3.944 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-4         	46245244	         3.793 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-4        	47608681	         3.773 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-4       	22554796	         7.763 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-4         	43499852	         4.021 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-4                  	44251344	         4.057 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-4                 	39385171	         4.270 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-4                	21552234	         8.440 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-4         	39525187	         4.349 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-16         	47239779	         3.732 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-16        	44601894	         3.813 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-16       	23174036	         7.830 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-16         	41567500	         4.272 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-16                  	44818652	         4.031 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-16                 	40291485	         4.298 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-16                	21469585	         8.433 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-16         	40669813	         4.678 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-32         	46138111	         3.753 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-32        	44550352	         3.810 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-32       	20687445	         7.813 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-32         	38768246	         4.479 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-32                  	43247086	         4.170 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-32                 	38033466	         4.303 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-32                	20127799	         8.406 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-32         	34655030	         5.106 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background         	46731434	         3.807 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background        	47527575	         3.783 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background       	23469528	         7.941 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background         	45155458	         3.970 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable                  	44274146	         4.060 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable                 	41938450	         4.290 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable                	21663016	         8.411 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable         	45489535	         3.951 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-4         	46952360	         3.726 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-4        	47046178	         3.784 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-4       	22441933	         7.987 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-4         	42252280	         4.086 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-4                  	41949416	         4.079 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-4                 	39468836	         4.294 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-4                	20659562	         8.474 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-4         	36758608	         4.319 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-16         	47046916	         3.774 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-16        	47609059	         3.775 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-16       	22409211	         7.850 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-16         	42240867	         4.165 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-16                  	39815300	         4.070 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-16                 	41041627	         4.278 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-16                	21350005	         8.271 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-16         	36584346	         4.934 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-32         	47639868	         3.766 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-32        	44631156	         3.876 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-32       	21697024	         7.939 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-32         	38874194	         4.317 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-32                  	40645714	         4.056 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-32                 	40299712	         4.284 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-32                	20830134	         8.451 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-32         	37723534	         4.893 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background         	45895314	         3.792 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background        	47089945	         3.789 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background       	23551026	         7.771 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background         	45739329	         3.931 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable                  	45115653	         4.026 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable                 	42041586	         4.276 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable                	21751032	         8.408 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable         	45479512	         3.933 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-4         	46877025	         3.804 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-4        	44502132	         3.782 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-4       	21473486	         7.828 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-4         	40851907	         4.112 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-4                  	45200440	         4.037 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-4                 	41966659	         4.279 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-4                	20796450	         8.524 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-4         	40748596	         4.318 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-16         	46138820	         3.733 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-16        	46526078	         3.775 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-16       	22470591	         7.910 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-16         	38708186	         4.245 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-16                  	41712453	         4.092 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-16                 	38508571	         4.320 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-16                	20487420	         8.394 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-16         	37209224	         4.555 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-32         	44436434	         3.751 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-32        	43294614	         3.792 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-32       	22369813	         7.714 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-32         	39938414	         4.490 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-32                  	42060093	         4.068 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-32                 	39322593	         4.334 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-32                	21210819	         8.419 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-32         	33888393	         5.023 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background         	46185678	         3.731 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background        	47185798	         3.786 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background       	23506684	         7.737 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background         	45783154	         3.923 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable                  	44874060	         4.021 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable                 	42107114	         4.295 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable                	21739610	         8.586 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable         	44705335	         3.977 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-4         	46777789	         3.751 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-4        	46528483	         3.788 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-4       	22469887	         7.777 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-4         	43720029	         4.059 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-4                  	42000306	         4.066 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-4                 	41778704	         4.285 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-4                	20887117	         8.400 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-4         	39090723	         4.399 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-16         	46448136	         3.794 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-16        	45517879	         3.839 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-16       	22592716	         7.895 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-16         	41286751	         4.377 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-16                  	42850479	         4.133 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-16                 	37420248	         4.370 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-16                	20531599	         8.460 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-16         	36827928	         4.536 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-32         	45991308	         3.839 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-32        	43994215	         3.879 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-32       	21687963	         7.907 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-32         	39853276	         4.328 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-32                  	42833828	         4.054 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-32                 	39799507	         4.280 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-32                	21164841	         8.367 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-32         	37183574	         5.052 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background         	47189275	         3.824 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background        	47935650	         3.782 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background       	23593490	         7.817 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background         	45437643	         3.967 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable                  	44442139	         4.035 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable                 	42148308	         4.283 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable                	21833054	         8.432 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable         	45703386	         3.964 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-4         	48122847	         3.723 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-4        	47386177	         3.788 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-4       	23338462	         7.824 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-4         	40759779	         4.107 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-4                  	44756568	         4.036 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-4                 	40019457	         4.303 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-4                	21213673	         8.368 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-4         	37373078	         4.375 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-16         	46668430	         3.789 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-16        	44189421	         3.825 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-16       	22413684	         7.979 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-16         	40329111	         4.199 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-16                  	44778090	         4.086 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-16                 	39494340	         4.301 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-16                	21354217	         8.333 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-16         	37015345	         4.657 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-32         	45268897	         3.797 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-32        	44428942	         3.835 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-32       	22161944	         7.809 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-32         	42624886	         4.297 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-32                  	42935172	         4.044 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-32                 	39818832	         4.295 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-32                	20257389	         8.553 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-32         	35146536	         5.137 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background         	47640738	         3.752 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background        	47567590	         3.775 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background       	23625758	         7.774 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background         	45907405	         3.929 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable                  	44704780	         4.022 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable                 	41876173	         4.269 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable                	21765817	         8.455 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable         	45867783	         3.938 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-4         	46738848	         3.736 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-4        	44430270	         3.991 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-4       	21859645	         7.893 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-4         	42030080	         4.017 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-4                  	45181459	         4.037 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-4                 	39815300	         4.276 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-4                	21737662	         8.428 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-4         	40487158	         4.307 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-16         	42801073	         3.766 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-16        	44905574	         3.830 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-16       	22442605	         7.767 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-16         	40052379	         4.189 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-16                  	41545866	         4.071 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-16                 	39573511	         4.335 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-16                	21463226	         8.433 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-16         	37112215	         4.671 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-32         	47174409	         3.737 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-32        	43885890	         3.800 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-32       	21972060	         7.851 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-32         	39990952	         4.292 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-32                  	45128797	         4.028 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-32                 	37161496	         4.327 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-32                	21370220	         8.470 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-32         	36259260	         5.106 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background         	47379429	         3.735 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background        	47514376	         3.776 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background       	23587572	         7.798 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background         	45198738	         3.949 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable                  	44841015	         4.015 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable                 	42138115	         4.272 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable                	21559965	         8.392 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable         	45889112	         3.968 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-4         	45686751	         3.751 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-4        	46904559	         3.783 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-4       	22331220	         7.836 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-4         	42431804	         4.086 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-4                  	44256480	         4.082 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-4                 	40709907	         4.523 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-4                	20466019	         8.753 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-4         	41695506	         4.366 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-16         	45723028	         3.805 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-16        	44399529	         3.811 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-16       	22967960	         7.804 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-16         	39171181	         4.307 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-16                  	43439164	         4.046 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-16                 	40442412	         4.273 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-16                	21306429	         8.447 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-16         	36118352	         4.579 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-32         	45575030	         3.842 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-32        	46024658	         3.833 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-32       	22971780	         7.846 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-32         	39118893	         4.470 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-32                  	44419064	         4.070 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-32                 	38502055	         4.335 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-32                	20938575	         8.439 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-32         	36375694	         5.058 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background         	47040154	         3.752 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background        	47659948	         3.805 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background       	23150178	         7.757 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background         	46218705	         3.878 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable                  	44949386	         4.013 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable                 	41596173	         4.277 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable                	21637710	         8.239 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable         	45722100	         3.958 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-4         	48388292	         3.725 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-4        	43037602	         3.871 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-4       	23261469	         7.804 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-4         	39833389	         4.087 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-4                  	43986678	         4.043 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-4                 	40835558	         4.281 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-4                	20514063	         8.580 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-4         	42683734	         4.286 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-16         	46480940	         3.743 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-16        	43465766	         3.782 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-16       	23590886	         7.746 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-16         	41042095	         4.307 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-16                  	40058992	         4.068 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-16                 	39969516	         4.284 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-16                	20450828	         8.345 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-16         	37723772	         4.625 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+BenchmarkContext/TryMutex/Background-32         	46757824	         3.757 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Background-32        	42559268	         3.806 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Background-32       	22047775	         7.745 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Background-32         	41359077	         4.292 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutex/Cancelable-32                  	41674808	         4.142 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/Semaphore/Cancelable-32                 	39582230	         4.327 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/NamedMutex/Cancelable-32                	21657715	         8.431 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContext/TryMutexContended/Cancelable-32         	31819255	         5.008 ns/op	       0 B/op	       0 allocs/op
+PASS

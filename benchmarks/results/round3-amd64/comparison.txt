@@ -1,0 +1,580 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vburenin/nsync
+cpu: AMD Ryzen 9 5950X 16-Core Processor            
+                                   │    base.txt    │                new.txt                 │
+                                   │     sec/op     │     sec/op      vs base                │
+TryMutex/Uncontended                   3.598n ±  1%     3.635n ±  2%        ~ (p=0.143 n=10)
+TryMutex/TrySuccess                    3.842n ±  0%     3.887n ±  1%   +1.18% (p=0.000 n=10)
+TryMutex/TryFailure                   0.6190n ±  0%    0.6190n ±  2%        ~ (p=0.697 n=10)
+TryMutex/TimeoutSuccess                3.498n ±  2%     3.597n ±  1%   +2.84% (p=0.001 n=10)
+TryMutex/TimeoutExpired                66.92n ±  0%     61.15n ±  1%   -8.61% (p=0.000 n=10)
+TryMutex/TimeoutPark                   1.045m ±  0%     1.045m ±  0%        ~ (p=0.280 n=10)
+TryMutex/Contended0                    3.621n ±  0%     3.625n ±  1%        ~ (p=0.163 n=10)
+TryMutex/Contended100                  80.79n ±  0%     80.80n ±  2%        ~ (p=0.424 n=10)
+Semaphore/1/Uncontended                3.602n ±  1%     3.706n ±  0%   +2.90% (p=0.000 n=10)
+Semaphore/1/Parallel                   3.664n ±  0%     3.727n ±  0%   +1.72% (p=0.000 n=10)
+Semaphore/8/Uncontended                8.848n ±  0%     3.709n ±  0%  -58.08% (p=0.000 n=10)
+Semaphore/8/Parallel                   8.867n ±  1%     3.725n ±  0%  -57.99% (p=0.000 n=10)
+Semaphore/64/Uncontended               8.838n ±  1%     3.710n ±  0%  -58.02% (p=0.000 n=10)
+Semaphore/64/Parallel                  8.890n ±  1%     3.726n ±  0%  -58.09% (p=0.000 n=10)
+Semaphore/TryFailure                  1.6460n ±  0%    0.6199n ±  1%  -62.34% (p=0.000 n=10)
+Semaphore/TimeoutSuccess               4.262n ±  0%     3.733n ±  0%  -12.40% (p=0.000 n=10)
+Semaphore/Value                       3.5705n ±  0%    0.4613n ±  0%  -87.08% (p=0.000 n=10)
+Semaphore/Full8TryFailure             4.0165n ±  0%    0.6185n ±  0%  -84.60% (p=0.000 n=10)
+NamedMutex/LongKey32                   8.436n ±  0%     5.986n ±  0%  -29.04% (p=0.000 n=10)
+NamedMutex/LongKey128                 10.910n ±  0%     8.844n ±  0%  -18.94% (p=0.000 n=10)
+NamedMutex/LongKey1024                10.895n ±  1%     8.870n ±  1%  -18.58% (p=0.000 n=10)
+NamedMutex/HotKey                      8.652n ±  0%     6.383n ±  3%  -26.24% (p=0.000 n=10)
+NamedMutex/SameKeyParallel             8.433n ±  0%     6.167n ±  3%  -26.87% (p=0.000 n=10)
+NamedMutex/IndependentKeys             8.436n ±  0%     6.189n ±  1%  -26.64% (p=0.000 n=10)
+NamedMutex/ManyKeys                    43.39n ±  1%     33.81n ±  1%  -22.09% (p=0.000 n=10)
+NamedMutex/UniqueNames                333.70n ±  6%     60.76n ±  1%  -81.79% (p=0.000 n=10)
+NamedMutex/Create1024                 133.76µ ±  1%     47.91µ ±  1%  -64.19% (p=0.000 n=10)
+OnceMutex/First                        14.36n ±  0%     13.65n ±  1%   -4.91% (p=0.000 n=10)
+OnceMutex/Completed                   1.6455n ±  0%    0.4523n ±  1%  -72.51% (p=0.000 n=10)
+OnceMutex/CompletedParallel           1.4410n ±  1%    0.4133n ±  2%  -71.32% (p=0.000 n=10)
+NamedOnceMutex/Uncontended             26.80n ±  1%     17.31n ±  1%  -35.40% (p=0.000 n=10)
+NamedOnceMutex/SameKeyParallel         27.25n ±  1%     17.92n ±  1%  -34.24% (p=0.000 n=10)
+NamedOnceMutex/IndependentKeys         24.54n ±  0%     13.23n ±  1%  -46.10% (p=0.000 n=10)
+TryFailureParallel                    0.6190n ±  0%    0.6182n ±  1%        ~ (p=0.671 n=10)
+Construction/TryMutex                  26.86n ±  1%     15.48n ±  0%  -42.36% (p=0.000 n=10)
+Construction/Semaphore                 26.64n ±  1%     15.75n ±  0%  -40.88% (p=0.000 n=10)
+Construction/NamedMutexFirstKey        58.77n ±  2%     48.51n ±  1%  -17.45% (p=0.000 n=10)
+Construction/NamedOnceFirstKey         80.20n ±  4%     70.19n ±  1%  -12.49% (p=0.000 n=10)
+ControlWaitGroup/1                     266.4n ±  2%     290.7n ±  2%   +9.10% (p=0.000 n=10)
+ControlWaitGroup/16                    262.4n ±  3%     287.0n ±  2%   +9.34% (p=0.000 n=10)
+ControlWaitGroup/256                   262.9n ±  2%     287.7n ±  1%   +9.43% (p=0.000 n=10)
+ControlWaitGroup/Aborted              1.4405n ±  1%    0.4549n ±  1%  -68.42% (p=0.000 n=10)
+SyncFlag/Read                          1.011n ±  1%     1.015n ±  0%   +0.40% (p=0.024 n=10)
+SyncFlag/Write                         9.728n ±  1%     9.713n ±  0%        ~ (p=0.137 n=10)
+StandardMutex/Uncontended              3.555n ±  1%     3.534n ±  1%   -0.59% (p=0.004 n=10)
+StandardMutex/Contended                3.542n ±  1%     3.532n ±  0%   -0.30% (p=0.022 n=10)
+TryMutex/Uncontended-4                 3.622n ±  1%     3.629n ±  1%   +0.21% (p=0.033 n=10)
+TryMutex/TrySuccess-4                  3.870n ±  1%     3.889n ±  0%        ~ (p=0.403 n=10)
+TryMutex/TryFailure-4                 0.6223n ±  1%    0.6214n ±  1%        ~ (p=0.393 n=10)
+TryMutex/TimeoutSuccess-4              3.514n ±  1%     3.587n ±  0%   +2.09% (p=0.000 n=10)
+TryMutex/TimeoutExpired-4              67.11n ±  1%     61.17n ±  1%   -8.84% (p=0.000 n=10)
+TryMutex/TimeoutPark-4                 1.015m ±  6%     1.017m ±  3%        ~ (p=0.739 n=10)
+TryMutex/Contended0-4                  4.004n ±  4%     3.677n ±  2%   -8.17% (p=0.000 n=10)
+TryMutex/Contended100-4                87.18n ±  1%     85.15n ±  1%   -2.33% (p=0.000 n=10)
+Semaphore/1/Uncontended-4              3.634n ±  1%     3.741n ±  1%   +2.93% (p=0.000 n=10)
+Semaphore/1/Parallel-4                 4.027n ±  4%     3.972n ±  2%        ~ (p=0.210 n=10)
+Semaphore/8/Uncontended-4              8.904n ±  1%     3.741n ±  1%  -57.99% (p=0.000 n=10)
+Semaphore/8/Parallel-4                 9.784n ±  5%     4.818n ±  5%  -50.75% (p=0.000 n=10)
+Semaphore/64/Uncontended-4             8.927n ±  0%     3.745n ±  1%  -58.05% (p=0.000 n=10)
+Semaphore/64/Parallel-4                9.684n ±  1%     4.867n ±  3%  -49.74% (p=0.000 n=10)
+Semaphore/TryFailure-4                1.6685n ±  1%    0.6268n ±  2%  -62.44% (p=0.000 n=10)
+Semaphore/TimeoutSuccess-4             4.273n ±  1%     3.767n ±  1%  -11.84% (p=0.000 n=10)
+Semaphore/Value-4                     3.6030n ±  1%    0.4633n ±  1%  -87.14% (p=0.000 n=10)
+Semaphore/Full8TryFailure-4           4.0420n ±  2%    0.6222n ±  1%  -84.61% (p=0.000 n=10)
+NamedMutex/LongKey32-4                 8.473n ±  1%     6.014n ±  0%  -29.03% (p=0.000 n=10)
+NamedMutex/LongKey128-4               10.970n ±  1%     8.901n ±  1%  -18.87% (p=0.000 n=10)
+NamedMutex/LongKey1024-4              10.985n ±  1%     8.871n ±  2%  -19.24% (p=0.000 n=10)
+NamedMutex/HotKey-4                    8.687n ±  1%     6.212n ±  1%  -28.49% (p=0.000 n=10)
+NamedMutex/SameKeyParallel-4           9.230n ±  0%     6.245n ±  1%  -32.33% (p=0.000 n=10)
+NamedMutex/IndependentKeys-4           4.380n ±  0%     3.692n ±  1%  -15.71% (p=0.000 n=10)
+NamedMutex/ManyKeys-4                  44.38n ±  2%     33.58n ±  1%  -24.34% (p=0.000 n=10)
+NamedMutex/UniqueNames-4              279.45n ±  5%     54.37n ±  1%  -80.55% (p=0.000 n=10)
+NamedMutex/Create1024-4               124.90µ ±  7%     40.47µ ±  3%  -67.60% (p=0.000 n=10)
+OnceMutex/First-4                      12.67n ±  2%     11.97n ±  4%   -5.49% (p=0.000 n=10)
+OnceMutex/Completed-4                 1.6655n ±  1%    0.4583n ±  1%  -72.48% (p=0.000 n=10)
+OnceMutex/CompletedParallel-4         0.3748n ±  0%    0.1103n ±  6%  -70.58% (p=0.000 n=10)
+NamedOnceMutex/Uncontended-4           27.39n ±  0%     17.66n ±  0%  -35.49% (p=0.000 n=10)
+NamedOnceMutex/SameKeyParallel-4       31.24n ±  1%     19.58n ±  1%  -37.33% (p=0.000 n=10)
+NamedOnceMutex/IndependentKeys-4       6.520n ±  1%     5.285n ±  2%  -18.93% (p=0.001 n=10)
+TryFailureParallel-4                  0.1626n ±  1%    0.1614n ±  0%   -0.68% (p=0.002 n=10)
+Construction/TryMutex-4                25.46n ±  3%     12.91n ±  6%  -49.28% (p=0.000 n=10)
+Construction/Semaphore-4               26.20n ±  4%     14.41n ±  6%  -44.98% (p=0.000 n=10)
+Construction/NamedMutexFirstKey-4      55.39n ±  2%     44.67n ±  2%  -19.36% (p=0.000 n=10)
+Construction/NamedOnceFirstKey-4       74.06n ±  1%     62.50n ±  2%  -15.60% (p=0.000 n=10)
+ControlWaitGroup/1-4                   255.3n ±  1%     284.5n ±  1%  +11.42% (p=0.000 n=10)
+ControlWaitGroup/16-4                  181.3n ±  4%     170.2n ± 10%   -6.12% (p=0.015 n=10)
+ControlWaitGroup/256-4                 163.9n ± 10%     139.9n ±  3%  -14.61% (p=0.000 n=10)
+ControlWaitGroup/Aborted-4            1.4680n ±  0%    0.4606n ±  0%  -68.63% (p=0.000 n=10)
+SyncFlag/Read-4                        1.018n ±  0%     1.021n ±  1%        ~ (p=0.059 n=10)
+SyncFlag/Write-4                       9.761n ±  1%     9.781n ±  1%        ~ (p=0.565 n=10)
+StandardMutex/Uncontended-4            3.557n ±  0%     3.546n ±  0%   -0.34% (p=0.019 n=10)
+StandardMutex/Contended-4              10.55n ± 15%     10.35n ±  8%        ~ (p=0.210 n=10)
+TryMutex/Uncontended-16                3.620n ±  1%     3.629n ±  1%        ~ (p=0.239 n=10)
+TryMutex/TrySuccess-16                 3.870n ±  2%     3.927n ±  1%   +1.47% (p=0.029 n=10)
+TryMutex/TryFailure-16                0.6259n ±  1%    0.6266n ±  2%        ~ (p=0.684 n=10)
+TryMutex/TimeoutSuccess-16             3.541n ±  1%     3.600n ±  2%   +1.67% (p=0.001 n=10)
+TryMutex/TimeoutExpired-16             67.67n ±  1%     61.71n ±  1%   -8.80% (p=0.000 n=10)
+TryMutex/TimeoutPark-16               1013.3µ ±  3%     995.1µ ±  5%        ~ (p=0.280 n=10)
+TryMutex/Contended0-16                 4.455n ±  5%     3.845n ±  3%  -13.69% (p=0.000 n=10)
+TryMutex/Contended100-16               90.97n ±  1%     87.06n ±  3%   -4.30% (p=0.000 n=10)
+Semaphore/1/Uncontended-16             3.638n ±  1%     3.741n ±  0%   +2.83% (p=0.000 n=10)
+Semaphore/1/Parallel-16                4.448n ±  2%     4.045n ±  2%   -9.06% (p=0.000 n=10)
+Semaphore/8/Uncontended-16             8.933n ±  0%     3.762n ±  0%  -57.88% (p=0.000 n=10)
+Semaphore/8/Parallel-16               12.680n ±  3%     3.841n ±  1%  -69.70% (p=0.000 n=10)
+Semaphore/64/Uncontended-16            8.950n ±  1%     3.756n ±  1%  -58.04% (p=0.000 n=10)
+Semaphore/64/Parallel-16              10.915n ±  2%     3.835n ±  2%  -64.86% (p=0.000 n=10)
+Semaphore/TryFailure-16               1.6660n ±  0%    0.6274n ±  0%  -62.34% (p=0.000 n=10)
+Semaphore/TimeoutSuccess-16            4.285n ±  1%     3.749n ±  1%  -12.53% (p=0.000 n=10)
+Semaphore/Value-16                    3.5890n ±  2%    0.4642n ±  1%  -87.06% (p=0.000 n=10)
+Semaphore/Full8TryFailure-16          4.0420n ±  1%    0.6211n ±  0%  -84.63% (p=0.000 n=10)
+NamedMutex/LongKey32-16                8.497n ±  1%     6.007n ±  1%  -29.30% (p=0.000 n=10)
+NamedMutex/LongKey128-16              11.020n ±  1%     8.905n ±  1%  -19.20% (p=0.000 n=10)
+NamedMutex/LongKey1024-16             11.030n ±  3%     8.864n ±  1%  -19.63% (p=0.000 n=10)
+NamedMutex/HotKey-16                   8.692n ±  1%     6.225n ±  1%  -28.37% (p=0.000 n=10)
+NamedMutex/SameKeyParallel-16         10.090n ±  2%     6.415n ±  1%  -36.42% (p=0.000 n=10)
+NamedMutex/IndependentKeys-16          1.852n ± 12%     1.748n ± 11%        ~ (p=0.529 n=10)
+NamedMutex/ManyKeys-16                 44.75n ±  2%     33.98n ±  1%  -24.07% (p=0.000 n=10)
+NamedMutex/UniqueNames-16             286.60n ±  5%     55.77n ±  2%  -80.54% (p=0.000 n=10)
+NamedMutex/Create1024-16              137.70µ ±  2%     41.98µ ±  2%  -69.51% (p=0.000 n=10)
+OnceMutex/First-16                     13.65n ±  3%     12.84n ±  3%   -5.97% (p=0.000 n=10)
+OnceMutex/Completed-16                1.6575n ±  1%    0.4594n ±  1%  -72.28% (p=0.000 n=10)
+OnceMutex/CompletedParallel-16       0.12045n ±  6%   0.03764n ± 19%  -68.75% (p=0.000 n=10)
+NamedOnceMutex/Uncontended-16          27.43n ±  1%     17.67n ±  0%  -35.59% (p=0.000 n=10)
+NamedOnceMutex/SameKeyParallel-16      45.75n ±  5%     22.21n ±  5%  -51.45% (p=0.000 n=10)
+NamedOnceMutex/IndependentKeys-16      2.399n ± 22%     2.244n ± 15%        ~ (p=0.190 n=10)
+TryFailureParallel-16                0.05295n ±  4%   0.05094n ±  4%   -3.81% (p=0.011 n=10)
+Construction/TryMutex-16               31.10n ±  6%     14.26n ±  3%  -54.17% (p=0.000 n=10)
+Construction/Semaphore-16              30.29n ± 17%     15.86n ± 10%  -47.65% (p=0.000 n=10)
+Construction/NamedMutexFirstKey-16     61.64n ± 11%     48.49n ± 11%  -21.35% (p=0.000 n=10)
+Construction/NamedOnceFirstKey-16      81.16n ± 13%     67.03n ± 13%  -17.40% (p=0.000 n=10)
+ControlWaitGroup/1-16                  257.1n ±  3%     284.7n ±  2%  +10.74% (p=0.000 n=10)
+ControlWaitGroup/16-16                 177.4n ± 16%     163.5n ± 14%   -7.84% (p=0.023 n=10)
+ControlWaitGroup/256-16                384.1n ± 43%     144.3n ± 14%  -62.42% (p=0.000 n=10)
+ControlWaitGroup/Aborted-16           1.4730n ±  1%    0.4628n ±  1%  -68.58% (p=0.000 n=10)
+SyncFlag/Read-16                       1.018n ±  1%     1.022n ±  1%   +0.44% (p=0.041 n=10)
+SyncFlag/Write-16                      9.834n ±  1%     9.777n ±  1%        ~ (p=0.105 n=10)
+StandardMutex/Uncontended-16           3.593n ±  1%     3.564n ±  2%        ~ (p=0.159 n=10)
+StandardMutex/Contended-16             47.05n ± 14%     51.49n ± 24%        ~ (p=0.280 n=10)
+TryMutex/Uncontended-32                3.629n ±  1%     3.641n ±  1%        ~ (p=0.210 n=10)
+TryMutex/TrySuccess-32                 3.869n ±  1%     3.905n ±  1%   +0.93% (p=0.007 n=10)
+TryMutex/TryFailure-32                0.6270n ±  1%    0.6271n ±  1%        ~ (p=0.631 n=10)
+TryMutex/TimeoutSuccess-32             3.556n ±  1%     3.609n ±  2%   +1.48% (p=0.000 n=10)
+TryMutex/TimeoutExpired-32             67.48n ±  2%     61.54n ±  1%   -8.80% (p=0.000 n=10)
+TryMutex/TimeoutPark-32                1.023m ±  5%     1.023m ±  2%        ~ (p=0.436 n=10)
+TryMutex/Contended0-32                 4.484n ±  4%     3.907n ±  3%  -12.88% (p=0.000 n=10)
+TryMutex/Contended100-32               92.69n ±  3%     89.79n ±  5%        ~ (p=0.052 n=10)
+Semaphore/1/Uncontended-32             3.642n ±  2%     3.749n ±  1%   +2.94% (p=0.000 n=10)
+Semaphore/1/Parallel-32                4.521n ±  5%     4.123n ±  2%   -8.79% (p=0.000 n=10)
+Semaphore/8/Uncontended-32             8.938n ±  0%     3.756n ±  1%  -57.97% (p=0.000 n=10)
+Semaphore/8/Parallel-32               15.140n ±  8%     3.835n ±  1%  -74.67% (p=0.000 n=10)
+Semaphore/64/Uncontended-32            8.991n ±  1%     3.750n ±  3%  -58.29% (p=0.000 n=10)
+Semaphore/64/Parallel-32              10.995n ±  5%     3.846n ±  1%  -65.02% (p=0.000 n=10)
+Semaphore/TryFailure-32               1.6695n ±  1%    0.6264n ±  2%  -62.48% (p=0.000 n=10)
+Semaphore/TimeoutSuccess-32            4.294n ±  1%     3.737n ±  1%  -12.98% (p=0.000 n=10)
+Semaphore/Value-32                    3.5895n ±  1%    0.4635n ±  2%  -87.09% (p=0.000 n=10)
+Semaphore/Full8TryFailure-32          4.0330n ±  2%    0.6220n ±  1%  -84.58% (p=0.000 n=10)
+NamedMutex/LongKey32-32                8.513n ±  1%     6.005n ±  0%  -29.46% (p=0.000 n=10)
+NamedMutex/LongKey128-32              10.940n ±  0%     8.869n ±  0%  -18.93% (p=0.000 n=10)
+NamedMutex/LongKey1024-32             10.935n ±  1%     8.882n ±  1%  -18.77% (p=0.000 n=10)
+NamedMutex/HotKey-32                   8.654n ±  1%     6.211n ±  2%  -28.23% (p=0.000 n=10)
+NamedMutex/SameKeyParallel-32         10.180n ±  4%     6.560n ±  1%  -35.56% (p=0.000 n=10)
+NamedMutex/IndependentKeys-32          1.813n ± 22%     1.806n ± 10%        ~ (p=0.382 n=10)
+NamedMutex/ManyKeys-32                 44.85n ±  3%     34.29n ±  1%  -23.55% (p=0.000 n=10)
+NamedMutex/UniqueNames-32             283.30n ±  4%     57.09n ±  2%  -79.85% (p=0.000 n=10)
+NamedMutex/Create1024-32              138.46µ ±  8%     42.68µ ±  1%  -69.17% (p=0.000 n=10)
+OnceMutex/First-32                     14.51n ±  5%     13.31n ±  2%   -8.24% (p=0.000 n=10)
+OnceMutex/Completed-32                1.6620n ±  1%    0.4624n ±  2%  -72.18% (p=0.000 n=10)
+OnceMutex/CompletedParallel-32       0.10540n ±  1%   0.03417n ±  8%  -67.58% (p=0.000 n=10)
+NamedOnceMutex/Uncontended-32          27.40n ±  1%     17.66n ±  2%  -35.53% (p=0.000 n=10)
+NamedOnceMutex/SameKeyParallel-32      53.36n ±  8%     25.97n ± 18%  -51.33% (p=0.000 n=10)
+NamedOnceMutex/IndependentKeys-32      2.266n ±  7%     2.233n ±  9%        ~ (p=0.739 n=10)
+TryFailureParallel-32                0.04985n ±  0%   0.04976n ±  1%        ~ (p=0.671 n=10)
+Construction/TryMutex-32               34.15n ±  6%     15.37n ±  5%  -55.00% (p=0.000 n=10)
+Construction/Semaphore-32              33.76n ± 14%     17.56n ±  7%  -47.99% (p=0.000 n=10)
+Construction/NamedMutexFirstKey-32     67.07n ± 16%     51.65n ± 16%  -22.99% (p=0.000 n=10)
+Construction/NamedOnceFirstKey-32      91.49n ± 12%     72.06n ± 13%  -21.23% (p=0.000 n=10)
+ControlWaitGroup/1-32                  260.8n ±  5%     287.3n ±  3%  +10.16% (p=0.000 n=10)
+ControlWaitGroup/16-32                 186.2n ±  7%     166.7n ± 18%  -10.48% (p=0.018 n=10)
+ControlWaitGroup/256-32                200.6n ± 68%     143.4n ± 13%  -28.54% (p=0.000 n=10)
+ControlWaitGroup/Aborted-32           1.4685n ±  0%    0.4641n ±  1%  -68.39% (p=0.000 n=10)
+SyncFlag/Read-32                       1.020n ±  1%     1.026n ±  1%   +0.69% (p=0.006 n=10)
+SyncFlag/Write-32                      9.758n ±  1%     9.803n ±  1%        ~ (p=0.363 n=10)
+StandardMutex/Uncontended-32           3.568n ±  1%     3.560n ±  3%        ~ (p=0.644 n=10)
+StandardMutex/Contended-32             54.94n ± 28%     55.08n ± 25%        ~ (p=0.315 n=10)
+geomean                                14.98n           9.587n        -36.00%
+
+                                   │    base.txt     │                new.txt                 │
+                                   │      B/op       │     B/op      vs base                  │
+TryMutex/Uncontended                    0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TrySuccess                     0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TryFailure                     0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutSuccess                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutExpired                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutPark                    116.0 ± 0%       117.0 ± 0%   +0.86% (p=0.000 n=10)
+TryMutex/Contended0                     0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Contended100                   0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Uncontended                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Parallel                    0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Uncontended                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Parallel                    0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Uncontended                0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Parallel                   0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TryFailure                    0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TimeoutSuccess                0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Value                         0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Full8TryFailure               0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey32                    0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey128                   0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey1024                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/HotKey                       0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/SameKeyParallel              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/IndependentKeys              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/ManyKeys                     0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/UniqueNames                 165.50 ± 5%       17.00 ± 0%  -89.73% (p=0.000 n=10)
+NamedMutex/Create1024                164.50Ki ± 2%     20.64Ki ± 0%  -87.45% (p=0.000 n=10)
+OnceMutex/First                         16.00 ± 0%       16.00 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/Completed                     0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/CompletedParallel             0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/Uncontended              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/SameKeyParallel          0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/IndependentKeys          0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryFailureParallel                      0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/TryMutex                   96.00 ± 0%       24.00 ± 0%  -75.00% (p=0.000 n=10)
+Construction/Semaphore                 112.00 ± 0%       48.00 ± 0%  -57.14% (p=0.000 n=10)
+Construction/NamedMutexFirstKey         208.0 ± 0%       144.0 ± 0%  -30.77% (p=0.000 n=10)
+Construction/NamedOnceFirstKey          216.0 ± 0%       152.0 ± 0%  -29.63% (p=0.000 n=10)
+ControlWaitGroup/1                      24.00 ± 0%       24.00 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16                     24.00 ± 0%       24.00 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256                    24.00 ± 0%       24.00 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted                0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Read                           0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Write                          0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Uncontended               0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Contended                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Uncontended-4                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TrySuccess-4                   0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TryFailure-4                   0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutSuccess-4               0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutExpired-4               0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutPark-4                  120.5 ± 2%       122.0 ± 1%        ~ (p=0.081 n=10)
+TryMutex/Contended0-4                   0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Contended100-4                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Uncontended-4               0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Parallel-4                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Uncontended-4               0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Parallel-4                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Uncontended-4              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Parallel-4                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TryFailure-4                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TimeoutSuccess-4              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Value-4                       0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Full8TryFailure-4             0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey32-4                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey128-4                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey1024-4                0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/HotKey-4                     0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/SameKeyParallel-4            0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/IndependentKeys-4            0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/ManyKeys-4                   0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/UniqueNames-4               166.00 ± 4%       17.00 ± 0%  -89.76% (p=0.000 n=10)
+NamedMutex/Create1024-4              164.72Ki ± 2%     20.64Ki ± 0%  -87.47% (p=0.000 n=10)
+OnceMutex/First-4                       16.00 ± 0%       16.00 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/Completed-4                   0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/CompletedParallel-4           0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/Uncontended-4            0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/SameKeyParallel-4        0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/IndependentKeys-4        0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryFailureParallel-4                    0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/TryMutex-4                 96.00 ± 0%       24.00 ± 0%  -75.00% (p=0.000 n=10)
+Construction/Semaphore-4               112.00 ± 0%       48.00 ± 0%  -57.14% (p=0.000 n=10)
+Construction/NamedMutexFirstKey-4       208.0 ± 0%       144.0 ± 0%  -30.77% (p=0.000 n=10)
+Construction/NamedOnceFirstKey-4        216.0 ± 0%       152.0 ± 0%  -29.63% (p=0.000 n=10)
+ControlWaitGroup/1-4                    24.00 ± 0%       24.00 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16-4                   24.00 ± 0%       24.00 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256-4                  24.00 ± 0%       24.00 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted-4              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Read-4                         0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Write-4                        0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Uncontended-4             0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Contended-4               0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Uncontended-16                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TrySuccess-16                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TryFailure-16                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutSuccess-16              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutExpired-16              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutPark-16                 130.0 ± 1%       131.0 ± 2%        ~ (p=0.145 n=10)
+TryMutex/Contended0-16                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Contended100-16                0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Uncontended-16              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Parallel-16                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Uncontended-16              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Parallel-16                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Uncontended-16             0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Parallel-16                0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TryFailure-16                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TimeoutSuccess-16             0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Value-16                      0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Full8TryFailure-16            0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey32-16                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey128-16                0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey1024-16               0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/HotKey-16                    0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/SameKeyParallel-16           0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/IndependentKeys-16           0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/ManyKeys-16                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/UniqueNames-16              165.50 ± 3%       17.00 ± 0%  -89.73% (p=0.000 n=10)
+NamedMutex/Create1024-16             164.28Ki ± 3%     20.64Ki ± 0%  -87.44% (p=0.000 n=10)
+OnceMutex/First-16                      16.00 ± 0%       16.00 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/Completed-16                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/CompletedParallel-16          0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/Uncontended-16           0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/SameKeyParallel-16       0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/IndependentKeys-16       0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryFailureParallel-16                   0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/TryMutex-16                96.00 ± 0%       24.00 ± 0%  -75.00% (p=0.000 n=10)
+Construction/Semaphore-16              112.00 ± 0%       48.00 ± 0%  -57.14% (p=0.000 n=10)
+Construction/NamedMutexFirstKey-16      208.0 ± 0%       144.0 ± 0%  -30.77% (p=0.000 n=10)
+Construction/NamedOnceFirstKey-16       216.0 ± 0%       152.0 ± 0%  -29.63% (p=0.000 n=10)
+ControlWaitGroup/1-16                   24.00 ± 0%       24.00 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16-16                  24.00 ± 0%       24.00 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256-16                 24.00 ± 0%       24.00 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted-16             0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Read-16                        0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Write-16                       0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Uncontended-16            0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Contended-16              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Uncontended-32                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TrySuccess-32                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TryFailure-32                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutSuccess-32              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutExpired-32              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutPark-32                 145.5 ± 3%       146.5 ± 2%        ~ (p=0.192 n=10)
+TryMutex/Contended0-32                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Contended100-32                0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Uncontended-32              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Parallel-32                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Uncontended-32              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Parallel-32                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Uncontended-32             0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Parallel-32                0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TryFailure-32                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TimeoutSuccess-32             0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Value-32                      0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Full8TryFailure-32            0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey32-32                 0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey128-32                0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey1024-32               0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/HotKey-32                    0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/SameKeyParallel-32           0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/IndependentKeys-32           0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/ManyKeys-32                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/UniqueNames-32              165.00 ± 3%       17.00 ± 0%  -89.70% (p=0.000 n=10)
+NamedMutex/Create1024-32             164.29Ki ± 2%     20.64Ki ± 0%  -87.44% (p=0.000 n=10)
+OnceMutex/First-32                      16.00 ± 0%       16.00 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/Completed-32                  0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/CompletedParallel-32          0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/Uncontended-32           0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/SameKeyParallel-32       0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/IndependentKeys-32       0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryFailureParallel-32                   0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/TryMutex-32                96.00 ± 0%       24.00 ± 0%  -75.00% (p=0.000 n=10)
+Construction/Semaphore-32              112.00 ± 0%       48.00 ± 0%  -57.14% (p=0.000 n=10)
+Construction/NamedMutexFirstKey-32      208.0 ± 0%       144.0 ± 0%  -30.77% (p=0.000 n=10)
+Construction/NamedOnceFirstKey-32       216.0 ± 0%       152.0 ± 0%  -29.63% (p=0.000 n=10)
+ControlWaitGroup/1-32                   24.00 ± 0%       24.00 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16-32                  24.00 ± 0%       24.00 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256-32                 24.00 ± 0%       24.00 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted-32             0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Read-32                        0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Write-32                       0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Uncontended-32            0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Contended-32              0.000 ± 0%       0.000 ± 0%        ~ (p=1.000 n=10) ¹
+geomean                                            ²                 -14.67%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                                   │   base.txt    │               new.txt                │
+                                   │   allocs/op   │ allocs/op   vs base                  │
+TryMutex/Uncontended                  0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TrySuccess                   0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TryFailure                   0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutSuccess               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutExpired               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutPark                  1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Contended0                   0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Contended100                 0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Uncontended               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Parallel                  0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Uncontended               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Parallel                  0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Uncontended              0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Parallel                 0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TryFailure                  0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TimeoutSuccess              0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Value                       0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Full8TryFailure             0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey32                  0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey128                 0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey1024                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/HotKey                     0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/SameKeyParallel            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/IndependentKeys            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/ManyKeys                   0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/UniqueNames                2.000 ± 0%     1.000 ± 0%  -50.00% (p=0.000 n=10)
+NamedMutex/Create1024                1470.0 ± 0%     195.0 ± 0%  -86.73% (p=0.000 n=10)
+OnceMutex/First                       1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/Completed                   0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/CompletedParallel           0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/Uncontended            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/SameKeyParallel        0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/IndependentKeys        0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryFailureParallel                    0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/TryMutex                 1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/Semaphore                1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/NamedMutexFirstKey       2.000 ± 0%     2.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/NamedOnceFirstKey        2.000 ± 0%     2.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/1                    1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16                   1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256                  1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted              0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Read                         0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Write                        0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Uncontended             0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Contended               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Uncontended-4                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TrySuccess-4                 0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TryFailure-4                 0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutSuccess-4             0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutExpired-4             0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutPark-4                1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Contended0-4                 0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Contended100-4               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Uncontended-4             0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Parallel-4                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Uncontended-4             0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Parallel-4                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Uncontended-4            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Parallel-4               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TryFailure-4                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TimeoutSuccess-4            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Value-4                     0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Full8TryFailure-4           0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey32-4                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey128-4               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey1024-4              0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/HotKey-4                   0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/SameKeyParallel-4          0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/IndependentKeys-4          0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/ManyKeys-4                 0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/UniqueNames-4              2.000 ± 0%     1.000 ± 0%  -50.00% (p=0.000 n=10)
+NamedMutex/Create1024-4              1472.5 ± 1%     195.0 ± 0%  -86.76% (p=0.000 n=10)
+OnceMutex/First-4                     1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/Completed-4                 0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/CompletedParallel-4         0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/Uncontended-4          0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/SameKeyParallel-4      0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/IndependentKeys-4      0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryFailureParallel-4                  0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/TryMutex-4               1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/Semaphore-4              1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/NamedMutexFirstKey-4     2.000 ± 0%     2.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/NamedOnceFirstKey-4      2.000 ± 0%     2.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/1-4                  1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16-4                 1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256-4                1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted-4            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Read-4                       0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Write-4                      0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Uncontended-4           0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Contended-4             0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Uncontended-16               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TrySuccess-16                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TryFailure-16                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutSuccess-16            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutExpired-16            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutPark-16               1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Contended0-16                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Contended100-16              0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Uncontended-16            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Parallel-16               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Uncontended-16            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Parallel-16               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Uncontended-16           0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Parallel-16              0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TryFailure-16               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TimeoutSuccess-16           0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Value-16                    0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Full8TryFailure-16          0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey32-16               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey128-16              0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey1024-16             0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/HotKey-16                  0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/SameKeyParallel-16         0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/IndependentKeys-16         0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/ManyKeys-16                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/UniqueNames-16             2.000 ± 0%     1.000 ± 0%  -50.00% (p=0.000 n=10)
+NamedMutex/Create1024-16             1471.5 ± 1%     195.0 ± 0%  -86.75% (p=0.000 n=10)
+OnceMutex/First-16                    1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/Completed-16                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/CompletedParallel-16        0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/Uncontended-16         0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/SameKeyParallel-16     0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/IndependentKeys-16     0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryFailureParallel-16                 0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/TryMutex-16              1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/Semaphore-16             1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/NamedMutexFirstKey-16    2.000 ± 0%     2.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/NamedOnceFirstKey-16     2.000 ± 0%     2.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/1-16                 1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16-16                1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256-16               1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted-16           0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Read-16                      0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Write-16                     0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Uncontended-16          0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Contended-16            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Uncontended-32               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TrySuccess-32                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TryFailure-32                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutSuccess-32            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutExpired-32            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/TimeoutPark-32               1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Contended0-32                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryMutex/Contended100-32              0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Uncontended-32            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/1/Parallel-32               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Uncontended-32            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/8/Parallel-32               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Uncontended-32           0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/64/Parallel-32              0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TryFailure-32               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/TimeoutSuccess-32           0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Value-32                    0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Semaphore/Full8TryFailure-32          0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey32-32               0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey128-32              0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/LongKey1024-32             0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/HotKey-32                  0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/SameKeyParallel-32         0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/IndependentKeys-32         0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/ManyKeys-32                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedMutex/UniqueNames-32             2.000 ± 0%     1.000 ± 0%  -50.00% (p=0.000 n=10)
+NamedMutex/Create1024-32             1472.0 ± 1%     195.0 ± 0%  -86.75% (p=0.000 n=10)
+OnceMutex/First-32                    1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/Completed-32                0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+OnceMutex/CompletedParallel-32        0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/Uncontended-32         0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/SameKeyParallel-32     0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+NamedOnceMutex/IndependentKeys-32     0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+TryFailureParallel-32                 0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/TryMutex-32              1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/Semaphore-32             1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/NamedMutexFirstKey-32    2.000 ± 0%     2.000 ± 0%        ~ (p=1.000 n=10) ¹
+Construction/NamedOnceFirstKey-32     2.000 ± 0%     2.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/1-32                 1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/16-32                1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/256-32               1.000 ± 0%     1.000 ± 0%        ~ (p=1.000 n=10) ¹
+ControlWaitGroup/Aborted-32           0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Read-32                      0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+SyncFlag/Write-32                     0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Uncontended-32          0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+StandardMutex/Contended-32            0.000 ± 0%     0.000 ± 0%        ~ (p=1.000 n=10) ¹
+geomean                                          ²                -5.73%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                                  │  base.txt   │               new.txt                │
+                                  │ leaders/op  │ leaders/op   vs base                 │
+NamedOnceMutex/SameKeyParallel       1.000 ± 0%    1.000 ± 0%       ~ (p=1.000 n=10) ¹
+NamedOnceMutex/SameKeyParallel-4    996.9m ± 0%   999.0m ± 0%  +0.21% (p=0.000 n=10)
+NamedOnceMutex/SameKeyParallel-16   979.0m ± 0%   994.6m ± 0%  +1.59% (p=0.000 n=10)
+NamedOnceMutex/SameKeyParallel-32   968.9m ± 1%   987.2m ± 0%  +1.89% (p=0.000 n=10)
+geomean                             986.1m        995.2m       +0.92%
+¹ all samples are equal

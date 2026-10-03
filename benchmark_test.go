@@ -228,6 +228,20 @@ func BenchmarkNamedMutex(b *testing.B) {
 			i++
 		}
 	})
+	b.Run("UniqueNames", func(b *testing.B) {
+		// Every name is used once, as with request or user IDs. An
+		// implementation that retains unlocked names grows without bound.
+		m := newBenchNamedMutex()
+		var buf [24]byte
+		var i int64
+		b.ReportAllocs()
+		for b.Loop() {
+			name := string(strconv.AppendInt(append(buf[:0], "user-"...), i, 10))
+			m.Lock(name)
+			m.Unlock(name)
+			i++
+		}
+	})
 	b.Run("Create1024", func(b *testing.B) {
 		var keys [1024]string
 		for i := range keys {
@@ -478,6 +492,7 @@ func benchmarkWaitLatency(b *testing.B, m sync.Locker, work int) {
 	if n := len(samples); n != 0 {
 		b.ReportMetric(float64(samples[n/2]), "p50-wait-ns")
 		b.ReportMetric(float64(samples[(n-1)*99/100]), "p99-wait-ns")
+		b.ReportMetric(float64(samples[(n-1)*999/1000]), "p99.9-wait-ns")
 		b.ReportMetric(float64(samples[n-1]), "max-wait-ns")
 		b.ReportMetric(float64(n), "samples")
 	}
