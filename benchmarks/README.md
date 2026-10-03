@@ -40,8 +40,8 @@ The `ControlWaitGroup(256)` ratios at 16 and 32 Ps rest on unstable round 2
 samples, and a new name each time is not a steady state for round 2, whose cost
 grows with the names it retains. Some rows that take under a nanosecond depend
 on code alignment: between the measured build and the final code, which differ
-only in misuse-only slow paths and tests, four of them moved by 27–36% and the
-others by under 4%.
+only in how they handle a misused `Release` and in tests, four of them moved by
+27–36% and the others by under 4%.
 
 Across all 184 rows, 130 are significantly faster and 22 slower; the geometric
 mean of ns/op fell 36%, and over the 44 rows that allocate, the geometric mean
@@ -162,10 +162,10 @@ the retirement race below, misused `Semaphore.Release` calls racing with each
 other and with acquirers, and named locks whose hashes share their low 32
 bits.
 
-During development five bugs were found. The first four were fixed before the
-final measurements; the fifth, which affects only a misused `Release`, was
-fixed afterwards in slow paths that the benchmarks barely touch (an A/B check
-is in the [round 3 report](results/round3-amd64/README.md)):
+During development seven bugs were found. The first four were fixed before the
+final measurements; the last three, which affect only a misused `Release`,
+were fixed afterwards in slow paths that the benchmarks barely touch (an A/B
+check is in the [round 3 report](results/round3-amd64/README.md)):
 
 1. A semaphore release whose fetch-add ran before the queue started starving
    took the permit back for the queue head after a running goroutine had
@@ -185,6 +185,18 @@ is in the [round 3 report](results/round3-amd64/README.md)):
    cleared a bit of the wrapped count, so the word did not return to idle once
    the releases were undone. A negative word now keeps that bit, and only the
    last undo wakes waiters.
+6. Found in review: a misused `Release` that landed while a semaphore was
+   handing a permit to a starving waiter, after its holders' decrements had
+   brought the count to zero, borrowed from the starving flag instead of making
+   the word negative. It went undetected, and the waiter deadlocked. The
+   negative flag now sits directly above the count, so any decrement below zero
+   sets it, and a starving waiter no longer sets the starving flag in a
+   negative word.
+7. Found in review: undoing a misused `Release` read the word and then added to
+   it, so a valid `Release` on its slow path could undo the same decrement. One
+   misuse then caused two panics and left a permit that nobody held, and a
+   waiter could stay parked. Each unit below zero is now undone once, with a
+   compare-and-swap.
 
 Final checks, on the final code: the shuffled suite passed 30 soak runs
 (default, race detector, and `nsync_spin` builds at GOMAXPROCS 1, 2, 4, 8, and

@@ -7,6 +7,7 @@ import (
 	"go/token"
 	"hash/maphash"
 	"path/filepath"
+	"runtime"
 	"strconv"
 	"strings"
 	"sync"
@@ -363,6 +364,144 @@ func TestSemaphoreWaiterGivesUpDuringMisusedRelease(t *testing.T) {
 			})
 		})
 	}
+}
+
+// The negative flag must sit directly above the count, so that every
+// decrement below zero sets it, and below the starving and retired flags.
+func TestNegativeFlagIsAboveCount(t *testing.T) {
+	if (maxPermits+1)<<stateUnitShift != stateNegative {
+		t.Fatalf("maxPermits+1 = %#x permits, stateNegative = %#x", maxPermits+1, stateNegative)
+	}
+	if stateNegative<<1 != stateStarving || stateStarving<<1 != stateRetired {
+		t.Fatalf("flags %#x, %#x, %#x are not adjacent", stateNegative, stateStarving, stateRetired)
+	}
+}
+
+// misusedRelease calls Release without an acquisition and returns its panic.
+func misusedRelease(s *Semaphore) (r any) {
+	defer func() { r = recover() }()
+	s.Release()
+	return nil
+}
+
+// While a semaphore hands a permit to a starving waiter, its releasing
+// holders have already decremented the count, to zero once every permit is
+// released. A misused release that lands then borrows from the starving flag
+// instead of wrapping around; it must still be detected, and the waiter must
+// get the permit.
+func TestSemaphoreMisusedReleaseDuringHandoff(t *testing.T) {
+	for _, capacity := range []int{1, 2} {
+		t.Run(strconv.Itoa(capacity), func(t *testing.T) {
+			synctest.Test(t, func(t *testing.T) {
+				s := NewSemaphore(capacity)
+				for range capacity {
+					s.Acquire()
+				}
+				var acquired atomic.Bool
+				go func() {
+					s.Acquire()
+					acquired.Store(true)
+				}()
+				synctest.Wait()
+				s.lock.state.Or(stateStarving) // the queue starves
+				for range capacity {           // every holder's Release decrements
+					s.lock.state.Add(^(stateUnit - 1))
+				}
+				if r := misusedRelease(s); r != "nsync: release without acquisition" {
+					t.Fatalf("misused release during a handoff panicked with %v", r)
+				}
+				for range capacity { // the holders' Releases finish
+					s.releaseSlow()
+				}
+				synctest.Wait()
+				if !acquired.Load() {
+					t.Fatal("the waiter did not get a released permit")
+				}
+				s.Release()
+				if st := s.lock.state.Load(); st != 0 {
+					t.Fatalf("state = %#x, want 0", st)
+				}
+			})
+		})
+	}
+}
+
+// A valid Release on its slow path can see the word that a concurrent misused
+// Release made negative. Only one of them may undo a decrement and panic, and
+// the word must end up idle.
+func TestSemaphoreMisusedReleaseRacesValidRelease(t *testing.T) {
+	if runtime.GOMAXPROCS(0) < 2 {
+		t.Skip("needs two Ps")
+	}
+	trials := 20000
+	if testing.Short() || raceEnabled {
+		trials = 2000
+	}
+	release := func(s *Semaphore) (panicked bool) {
+		defer func() { panicked = recover() != nil }()
+		s.Release()
+		return false
+	}
+	for i := range trials {
+		s := NewSemaphore(1)
+		s.lock.waitQueue()
+		s.lock.state.Store(stateUnit | stateQueued) // held, with waiters flagged
+		var ready atomic.Int32
+		var panics atomic.Int32
+		var wg sync.WaitGroup
+		for range 2 {
+			wg.Go(func() {
+				ready.Add(1)
+				for ready.Load() < 2 {
+				}
+				if release(s) {
+					panics.Add(1)
+				}
+			})
+		}
+		wg.Wait()
+		if n, st := panics.Load(), s.lock.state.Load(); n != 1 || st&^stateQueued != 0 {
+			t.Fatalf("trial %d: %d panics, state %#x; want 1 panic and an idle word", i, n, st)
+		}
+	}
+}
+
+// A waiter woken while the word is negative must not set the starving flag:
+// in a negative word that bit belongs to the wrapped count, and undoing the
+// release would otherwise carry into the retired flag.
+func TestSemaphoreWaiterRetriesDuringMisusedRelease(t *testing.T) {
+	handoffOverride.Store(1) // every waiter counts as starving
+	defer handoffOverride.Store(0)
+	synctest.Test(t, func(t *testing.T) {
+		s := NewSemaphore(1)
+		s.Acquire()
+		var acquired atomic.Bool
+		go func() {
+			s.Acquire()
+			acquired.Store(true)
+		}()
+		synctest.Wait()
+		time.Sleep(time.Millisecond) // the waiter has now waited long enough to starve
+		s.lock.state.Or(stateStarving)
+		s.lock.state.Add(^(stateUnit - 1)) // the holder's Release decrements
+		s.lock.state.Add(^(stateUnit - 1)) // a misused Release decrements
+		s.lock.releaseAdded(s.limit)       // the holder's slow path wakes the waiter
+		synctest.Wait()                    // which loses and parks again
+		if acquired.Load() {
+			t.Fatal("acquired while the word was negative")
+		}
+		if r := undoMisusedRelease(s); r != "nsync: release without acquisition" {
+			t.Fatalf("undoing the release panicked with %v", r)
+		}
+		synctest.Wait()
+		if !acquired.Load() {
+			t.Fatal("the waiter did not get the permit after the undo")
+		}
+		s.Release()
+		if st := s.lock.state.Load(); st != 0 {
+			t.Fatalf("state = %#x, want 0", st)
+		}
+	})
 }
 
 // On 32-bit platforms a shard keeps only the low 32 bits of its cached lock's

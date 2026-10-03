@@ -38,13 +38,17 @@ const (
 	stateQueued    lockWord = 1      // waiters need a wakeup: releases take the slow path
 	stateUnitShift          = 3      // low bits are reserved for flags
 	stateUnit      lockWord = 1 << 3 // one held permit
-	stateStarving  lockWord = 1 << (lockWordBits - 3)
-	stateRetired   lockWord = 1 << (lockWordBits - 2) // a cached NamedMutex entry was discarded; look it up again
-	stateNegative  lockWord = 1 << (lockWordBits - 1) // a release without a held permit
+	stateStarving  lockWord = 1 << (lockWordBits - 2)
+	stateRetired   lockWord = 1 << (lockWordBits - 1) // a cached NamedMutex entry was discarded; look it up again
+
+	// stateNegative marks a release without a held permit. It sits directly
+	// above the count, so any decrement below zero sets it, including one
+	// that borrows from stateStarving instead of wrapping around.
+	stateNegative lockWord = 1 << (lockWordBits - 3)
 
 	// maxPermits bounds semaphore capacities so the count stays below the
-	// high flags: about 2.9e17, or 6.7e7 on 32-bit platforms.
-	maxPermits = stateStarving>>stateUnitShift - 1
+	// flags: about 2.9e17, or 6.7e7 on 32-bit platforms.
+	maxPermits = stateNegative>>stateUnitShift - 1
 )
 
 // handoffThreshold is how long the queue head may keep losing races to running
@@ -144,7 +148,7 @@ func (l *lockState) tryAcquire(limit lockWord) bool {
 func permits(s lockWord) lockWord { return s & (stateStarving - 1) >> stateUnitShift }
 
 // retiredWord reports whether a state word belongs to a discarded NamedMutex
-// entry. A negative word, whose high bits are all set, is instead a semaphore
+// entry. A negative word, whose count fell below zero, is instead a semaphore
 // release without an acquisition that is about to be undone.
 func retiredWord(s lockWord) bool { return s&(stateRetired|stateNegative) == stateRetired }
 
@@ -283,7 +287,8 @@ func (l *lockState) retry(w *waiter, q *waitQueue, limit lockWord) bool {
 			continue
 		}
 		ns := s | stateQueued
-		if starving {
+		// In a negative word the starving bit belongs to the wrapped count.
+		if starving && s&stateNegative == 0 {
 			ns |= stateStarving
 		}
 		if ns == s || l.state.CompareAndSwap(s, ns) {

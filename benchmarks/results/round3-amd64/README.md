@@ -22,8 +22,8 @@ GOMAXPROCS, and parallel rows report aggregate throughput.
 
 - Both builds run the working tree's `benchmark_test.go`, so the benchmark
   bodies are identical. The measured round 3 build differs from the final code
-  only in a later fix to misused-`Release` slow paths and in tests; see the
-  final-code check below.
+  only in later fixes for a misused `Release` (slow paths and the position of
+  the flag that marks it) and in tests; see the final-code check below.
 - Ten rounds. In each round both builds run every benchmark at each GOMAXPROCS
   value, one process per value, and the build that runs first alternates
   between rounds. Each sample lasts 150 ms, so every row has ten samples per
@@ -51,14 +51,13 @@ GOMAXPROCS, and parallel rows report aggregate throughput.
   check](final-code-check/comparison.txt)) shows the same effect: completed
   `OnceMutex`, a failed `TryAcquire` on a full `Semaphore(8)`, `Do` after
   `Abort`, and a failed `TryLock` in parallel take 27–36% longer in the final
-  build. Other single-goroutine rows move by at most 6.5%, and parallel rows by
-  −8% to +18% (both extremes are key-per-goroutine rows; contended nsync rows
-  move by at most 3.1%, and the unchanged contended `sync.Mutex` control by
-  7%). In the final build, the four rows are about 2.7×, 4.9×, and 2.3× faster
-  than round 2 and, for the parallel failed `TryLock`, 0.75–0.82× as fast,
-  against 3.6×, 6.5×, and 3.2× in the table below and 1.00–1.04× in
-  [table-full.md](table-full.md). Treat ratios of rows under a nanosecond as
-  approximate.
+  build. Other rows move by at most 3.3% one way or 5.3% the other (a parallel
+  row), and the unchanged controls by under 1%; `ControlWaitGroup(1)` is about
+  3% slower in the final build (0.87–0.91× of round 2). In the final build, the
+  four rows are about 2.7×, 4.9×, and 2.3× faster than round 2 and, for the
+  parallel failed `TryLock`, 0.75–0.81× as fast, against 3.6×, 6.5×, and 3.2×
+  in the table below and 1.00–1.04× in [table-full.md](table-full.md). Treat
+  ratios of rows under a nanosecond as approximate.
 - Hardware counters come from `perf stat` at GOMAXPROCS 1, counting user-space
   events only: each benchmark runs with two fixed iteration counts, and the
   difference in counts divided by the difference in iterations gives counts

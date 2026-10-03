@@ -1,4 +1,4 @@
-Validation of the final round 3 code, 2026-10-03 18:17 UTC
+Validation of the final round 3 code, 2026-10-03 21:13 UTC
 go version go1.27.1 linux/amd64
 
 $ gofmt -l .
@@ -9,12 +9,12 @@ $ staticcheck ./... (findings other than SA2001, empty critical sections in test
 (none)
 
 $ go test -race -shuffle=on -count=3 ./...
-ok  	github.com/vburenin/nsync	2.984s
+ok  	github.com/vburenin/nsync	3.147s
 ok  	github.com/vburenin/nsync/benchmarks/asm	1.012s
 ?   	github.com/vburenin/nsync/internal/baseline	[no test files]
 
 $ GOARCH=386 go test -shuffle=on -count=3 ./...
-ok  	github.com/vburenin/nsync	1.011s
+ok  	github.com/vburenin/nsync	1.516s
 ?   	github.com/vburenin/nsync/internal/baseline	[no test files]
 
 $ ./benchmarks/cross-build.sh
@@ -37,7 +37,7 @@ freebsd/amd64 compiled (default and nsync_spin)
 freebsd/arm64 compiled (default and nsync_spin)
 js/wasm compiled (default and nsync_spin)
 
-Soak (18:12 UTC, same tree): soak.test -test.count=15, soak-race.test (-race) -test.count=5, soak-spin.test (nsync_spin) -test.count=5; each with -test.shuffle=on at -test.cpu 1, 2, 4, 8, 32, twice
+Soak (21:11 UTC, same tree): soak.test -test.count=15, soak-race.test (-race) -test.count=5, soak-spin.test (nsync_spin) -test.count=5; each with -test.shuffle=on at -test.cpu 1, 2, 4, 8, 32, twice
 norace cpu=1 r=1 rc=0
 race cpu=1 r=1 rc=0
 spin cpu=1 r=1 rc=0
@@ -70,7 +70,7 @@ race cpu=32 r=2 rc=0
 spin cpu=32 r=2 rc=0
 DONE
 
-Soak as GOARCH=386 (18:13 UTC): -test.count=15 -test.shuffle=on at -test.cpu 1, 2, 4, 8, 32, twice
+Soak as GOARCH=386 (21:13 UTC): -test.count=15 -test.shuffle=on at -test.cpu 1, 2, 4, 8, 32, twice
 386 cpu=1 r=1 rc=0
 386 cpu=1 r=2 rc=0
 386 cpu=2 r=1 rc=0

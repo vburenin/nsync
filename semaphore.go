@@ -57,15 +57,23 @@ func (s *Semaphore) Release() {
 
 //go:noinline
 func (s *Semaphore) releaseSlow() {
-	if s.lock.state.Load()&stateNegative != 0 {
-		// Undo the decrement. Acquirers that saw the negative word queued
-		// meanwhile; the permit they wait for is free again. While another
-		// misused release is still being undone, the word stays negative and
-		// that release wakes them.
-		if ns := s.lock.state.Add(stateUnit); ns&stateNegative == 0 && ns&(stateQueued|stateStarving) != 0 {
-			s.lock.releaseAdded(s.limit)
+	for {
+		st := s.lock.state.Load()
+		if st&stateNegative == 0 {
+			break
 		}
-		panic("nsync: release without acquisition")
+		// Undo the decrement. A compare-and-swap undoes each unit below
+		// zero once, even when a valid release on its slow path also sees
+		// the negative word. Acquirers that saw it queued meanwhile; the
+		// permit they wait for is free again. While another misused release
+		// is still being undone, the word stays negative and that one wakes
+		// them.
+		if ns := st + stateUnit; s.lock.state.CompareAndSwap(st, ns) {
+			if ns&stateNegative == 0 && ns&(stateQueued|stateStarving) != 0 {
+				s.lock.releaseAdded(s.limit)
+			}
+			panic("nsync: release without acquisition")
+		}
 	}
 	s.lock.releaseAdded(s.limit)
 }
